@@ -1,0 +1,26 @@
+[0.388s] Invoking command in '/workspace/BMI/src/neural_data_generator': PYTHONPATH=/workspace/BMI/install/neural_data_generator/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/neural_data_generator build --build-base /workspace/BMI/build/neural_data_generator/build install --prefix /workspace/BMI/install/neural_data_generator --record /workspace/BMI/build/neural_data_generator/install.log --single-version-externally-managed
+[0.529s] running egg_info
+[0.530s] writing ../../build/neural_data_generator/neural_data_generator.egg-info/PKG-INFO
+[0.530s] writing dependency_links to ../../build/neural_data_generator/neural_data_generator.egg-info/dependency_links.txt
+[0.530s] writing entry points to ../../build/neural_data_generator/neural_data_generator.egg-info/entry_points.txt
+[0.530s] writing requirements to ../../build/neural_data_generator/neural_data_generator.egg-info/requires.txt
+[0.530s] writing top-level names to ../../build/neural_data_generator/neural_data_generator.egg-info/top_level.txt
+[0.531s] reading manifest file '../../build/neural_data_generator/neural_data_generator.egg-info/SOURCES.txt'
+[0.532s] writing manifest file '../../build/neural_data_generator/neural_data_generator.egg-info/SOURCES.txt'
+[0.532s] running build
+[0.532s] running build_py
+[0.532s] copying neural_data_generator/blackrock_ir_reader.py -> /workspace/BMI/build/neural_data_generator/build/lib/neural_data_generator
+[0.532s] running install
+[0.532s] /usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[0.532s]   warnings.warn(
+[0.532s] running install_lib
+[0.533s] copying /workspace/BMI/build/neural_data_generator/build/lib/neural_data_generator/blackrock_ir_reader.py -> /workspace/BMI/install/neural_data_generator/lib/python3.10/site-packages/neural_data_generator
+[0.533s] byte-compiling /workspace/BMI/install/neural_data_generator/lib/python3.10/site-packages/neural_data_generator/blackrock_ir_reader.py to blackrock_ir_reader.cpython-310.pyc
+[0.534s] running install_data
+[0.534s] running install_egg_info
+[0.535s] removing '/workspace/BMI/install/neural_data_generator/lib/python3.10/site-packages/neural_data_generator-0.0.0-py3.10.egg-info' (and everything under it)
+[0.535s] Copying ../../build/neural_data_generator/neural_data_generator.egg-info to /workspace/BMI/install/neural_data_generator/lib/python3.10/site-packages/neural_data_generator-0.0.0-py3.10.egg-info
+[0.535s] running install_scripts
+[0.548s] Installing br_ir_talker script to /workspace/BMI/install/neural_data_generator/lib/neural_data_generator
+[0.549s] writing list of installed files to '/workspace/BMI/build/neural_data_generator/install.log'
+[0.563s] Invoked command in '/workspace/BMI/src/neural_data_generator' returned '0': PYTHONPATH=/workspace/BMI/install/neural_data_generator/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/neural_data_generator build --build-base /workspace/BMI/build/neural_data_generator/build install --prefix /workspace/BMI/install/neural_data_generator --record /workspace/BMI/build/neural_data_generator/install.log --single-version-externally-managed

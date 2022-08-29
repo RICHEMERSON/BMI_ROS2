@@ -1,0 +1,3 @@
+[console_scripts]
+center_out_2D = presenter.psychopy_presenter_2D_center_out:main
+

@@ -1,0 +1,27 @@
+{
+  "package_name": "interfaces",
+  "output_dir": "/workspace/BMI/build/interfaces/rosidl_typesupport_introspection_c/interfaces",
+  "template_dir": "/opt/ros/humble/share/rosidl_typesupport_introspection_c/resource",
+  "idl_tuples": [
+    "/workspace/BMI/build/interfaces/rosidl_adapter/interfaces:msg/Ir.idl",
+    "/workspace/BMI/build/interfaces/rosidl_adapter/interfaces:msg/Sample.idl",
+    "/workspace/BMI/build/interfaces/rosidl_adapter/interfaces:msg/State.idl",
+    "/workspace/BMI/build/interfaces/rosidl_adapter/interfaces:msg/DecoderElement.idl",
+    "/workspace/BMI/build/interfaces/rosidl_adapter/interfaces:srv/Decoder.idl"
+  ],
+  "target_dependencies": [
+    "/opt/ros/humble/lib/rosidl_typesupport_introspection_c/rosidl_typesupport_introspection_c",
+    "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_typesupport_introspection_c/__init__.py",
+    "/opt/ros/humble/share/rosidl_typesupport_introspection_c/resource/idl__rosidl_typesupport_introspection_c.h.em",
+    "/opt/ros/humble/share/rosidl_typesupport_introspection_c/resource/idl__type_support.c.em",
+    "/opt/ros/humble/share/rosidl_typesupport_introspection_c/resource/msg__rosidl_typesupport_introspection_c.h.em",
+    "/opt/ros/humble/share/rosidl_typesupport_introspection_c/resource/msg__type_support.c.em",
+    "/opt/ros/humble/share/rosidl_typesupport_introspection_c/resource/srv__rosidl_typesupport_introspection_c.h.em",
+    "/opt/ros/humble/share/rosidl_typesupport_introspection_c/resource/srv__type_support.c.em",
+    "/workspace/BMI/build/interfaces/rosidl_adapter/interfaces/msg/Ir.idl",
+    "/workspace/BMI/build/interfaces/rosidl_adapter/interfaces/msg/Sample.idl",
+    "/workspace/BMI/build/interfaces/rosidl_adapter/interfaces/msg/State.idl",
+    "/workspace/BMI/build/interfaces/rosidl_adapter/interfaces/msg/DecoderElement.idl",
+    "/workspace/BMI/build/interfaces/rosidl_adapter/interfaces/srv/Decoder.idl"
+  ]
+}

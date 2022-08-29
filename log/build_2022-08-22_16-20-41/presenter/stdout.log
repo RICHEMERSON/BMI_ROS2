@@ -1,0 +1,22 @@
+running egg_info
+writing ../../build/presenter/presenter.egg-info/PKG-INFO
+writing dependency_links to ../../build/presenter/presenter.egg-info/dependency_links.txt
+writing entry points to ../../build/presenter/presenter.egg-info/entry_points.txt
+writing requirements to ../../build/presenter/presenter.egg-info/requires.txt
+writing top-level names to ../../build/presenter/presenter.egg-info/top_level.txt
+reading manifest file '../../build/presenter/presenter.egg-info/SOURCES.txt'
+writing manifest file '../../build/presenter/presenter.egg-info/SOURCES.txt'
+running build
+running build_py
+copying presenter/psychopy_presenter_2D_center_out.py -> /workspace/BMI/build/presenter/build/lib/presenter
+running install
+running install_lib
+copying /workspace/BMI/build/presenter/build/lib/presenter/psychopy_presenter_2D_center_out.py -> /workspace/BMI/install/presenter/lib/python3.10/site-packages/presenter
+byte-compiling /workspace/BMI/install/presenter/lib/python3.10/site-packages/presenter/psychopy_presenter_2D_center_out.py to psychopy_presenter_2D_center_out.cpython-310.pyc
+running install_data
+running install_egg_info
+removing '/workspace/BMI/install/presenter/lib/python3.10/site-packages/presenter-0.0.0-py3.10.egg-info' (and everything under it)
+Copying ../../build/presenter/presenter.egg-info to /workspace/BMI/install/presenter/lib/python3.10/site-packages/presenter-0.0.0-py3.10.egg-info
+running install_scripts
+Installing center_out_2D script to /workspace/BMI/install/presenter/lib/presenter
+writing list of installed files to '/workspace/BMI/build/presenter/install.log'

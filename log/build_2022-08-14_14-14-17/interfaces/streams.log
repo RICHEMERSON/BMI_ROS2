@@ -1,0 +1,60 @@
+[0.008s] Invoking command in '/workspace/BMI/build/interfaces': CMAKE_PREFIX_PATH=/workspace/synchronous_BMI/install/neural_data_generator:/opt/ros/humble /usr/bin/cmake /workspace/BMI/src/interfaces -DCMAKE_INSTALL_PREFIX=/workspace/BMI/install/interfaces
+[0.042s] -- The C compiler identification is GNU 11.2.0
+[0.074s] -- The CXX compiler identification is GNU 11.2.0
+[0.078s] -- Detecting C compiler ABI info
+[0.116s] -- Detecting C compiler ABI info - done
+[0.121s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.122s] -- Detecting C compile features
+[0.122s] -- Detecting C compile features - done
+[0.124s] -- Detecting CXX compiler ABI info
+[0.171s] -- Detecting CXX compiler ABI info - done
+[0.177s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.177s] -- Detecting CXX compile features
+[0.178s] -- Detecting CXX compile features - done
+[0.180s] -- Found ament_cmake: 1.3.2 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.290s] -- Found Python3: /usr/bin/python3.10 (found version "3.10.4") found components: Interpreter 
+[0.345s] -- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[0.347s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.351s] -- Found rosidl_adapter: 3.1.3 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.378s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.465s] [31mCMake Error at /opt/ros/humble/share/rosidl_adapter/cmake/rosidl_adapt_interfaces.cmake:59 (message):
+[0.465s]   execute_process(/usr/bin/python3.10 -m rosidl_adapter --package-name
+[0.465s]   interfaces --arguments-file
+[0.466s]   /workspace/BMI/build/interfaces/rosidl_adapter__arguments__interfaces.json
+[0.466s]   --output-dir /workspace/BMI/build/interfaces/rosidl_adapter/interfaces
+[0.466s]   --output-file
+[0.466s]   /workspace/BMI/build/interfaces/rosidl_adapter/interfaces.idls) returned
+[0.466s]   error code 1:
+[0.466s] 
+[0.466s]   Traceback (most recent call last):
+[0.466s] 
+[0.466s]     File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+[0.466s]       return _run_code(code, main_globals, None,
+[0.466s]     File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+[0.466s]       exec(code, run_globals)
+[0.466s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/__main__.py", line 19, in <module>
+[0.466s]       sys.exit(main())
+[0.466s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/main.py", line 53, in main
+[0.466s]       abs_idl_file = convert_to_idl(
+[0.466s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/__init__.py", line 19, in convert_to_idl
+[0.466s]       return convert_msg_to_idl(
+[0.466s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/msg/__init__.py", line 28, in convert_msg_to_idl
+[0.466s]       msg = parse_message_string(package_name, input_file.stem, content)
+[0.466s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/parser.py", line 544, in parse_message_string
+[0.466s]       msg = MessageSpecification(pkg_name, msg_name, fields, constants)
+[0.466s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/parser.py", line 388, in __init__
+[0.467s]       self.base_type = BaseType(
+[0.467s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/parser.py", line 205, in __init__
+[0.467s]       raise InvalidResourceName(
+[0.467s] 
+[0.467s]   rosidl_adapter.parser.InvalidResourceName: 'ir' is an invalid message name.
+[0.467s]   It should have the pattern '^[A-Z][A-Za-z0-9]*$'
+[0.467s] 
+[0.467s] Call Stack (most recent call first):
+[0.467s]   /opt/ros/humble/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake:130 (rosidl_adapt_interfaces)
+[0.467s]   CMakeLists.txt:15 (rosidl_generate_interfaces)
+[0.467s] 
+[0.467s] [0m
+[0.467s] -- Configuring incomplete, errors occurred!
+[0.467s] See also "/workspace/BMI/build/interfaces/CMakeFiles/CMakeOutput.log".
+[0.469s] Invoked command in '/workspace/BMI/build/interfaces' returned '1': CMAKE_PREFIX_PATH=/workspace/synchronous_BMI/install/neural_data_generator:/opt/ros/humble /usr/bin/cmake /workspace/BMI/src/interfaces -DCMAKE_INSTALL_PREFIX=/workspace/BMI/install/interfaces

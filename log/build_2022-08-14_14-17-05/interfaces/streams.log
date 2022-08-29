@@ -1,0 +1,212 @@
+[0.008s] Invoking command in '/workspace/BMI/build/interfaces': CMAKE_PREFIX_PATH=/workspace/synchronous_BMI/install/neural_data_generator:/opt/ros/humble /usr/bin/cmake /workspace/BMI/src/interfaces -DCMAKE_INSTALL_PREFIX=/workspace/BMI/install/interfaces
+[0.017s] -- Found ament_cmake: 1.3.2 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.107s] -- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[0.109s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.110s] -- Found rosidl_adapter: 3.1.3 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.130s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.292s] -- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+[0.400s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.539s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.552s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.4", minimum required is "3.6") 
+[0.553s] -- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+[0.567s] -- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.10.so (found suitable version "3.10.4", minimum required is "3.5") 
+[0.567s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.567s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+[0.568s] -- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so
+[0.580s] -- Found PythonExtra: .so  
+[0.599s] -- Found ament_lint_auto: 0.12.4 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[0.611s] -- Added test 'lint_cmake' to check CMake code style
+[0.612s] -- Added test 'xmllint' to check XML markup files
+[0.613s] -- Configuring done
+[0.629s] -- Generating done
+[0.630s] -- Build files have been written to: /workspace/BMI/build/interfaces
+[0.634s] Invoked command in '/workspace/BMI/build/interfaces' returned '0': CMAKE_PREFIX_PATH=/workspace/synchronous_BMI/install/neural_data_generator:/opt/ros/humble /usr/bin/cmake /workspace/BMI/src/interfaces -DCMAKE_INSTALL_PREFIX=/workspace/BMI/install/interfaces
+[0.634s] Invoking command in '/workspace/BMI/build/interfaces': CMAKE_PREFIX_PATH=/workspace/synchronous_BMI/install/neural_data_generator:/opt/ros/humble /usr/bin/cmake --build /workspace/BMI/build/interfaces -- -j20 -l20
+[0.654s] [  3%] [34m[1mGenerating C code for ROS interfaces[0m
+[0.659s] [  6%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[0.664s] [  6%] Built target ament_cmake_python_copy_interfaces
+[0.806s] running egg_info
+[0.806s] [  6%] Built target interfaces__cpp
+[0.807s] creating interfaces.egg-info
+[0.807s] writing interfaces.egg-info/PKG-INFO
+[0.807s] writing dependency_links to interfaces.egg-info/dependency_links.txt
+[0.807s] writing top-level names to interfaces.egg-info/top_level.txt
+[0.807s] writing manifest file 'interfaces.egg-info/SOURCES.txt'
+[0.809s] reading manifest file 'interfaces.egg-info/SOURCES.txt'
+[0.809s] writing manifest file 'interfaces.egg-info/SOURCES.txt'
+[0.812s] [ 19%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[0.812s] [ 19%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[0.812s] [ 19%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[0.812s] [ 19%] [32mBuilding C object CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/detail/num__functions.c.o[0m
+[0.827s] [ 19%] Built target ament_cmake_python_build_interfaces_egg
+[0.840s] [ 22%] [32m[1mLinking C shared library libinterfaces__rosidl_generator_c.so[0m
+[0.861s] [ 22%] Built target interfaces__rosidl_generator_c
+[0.866s] [ 32%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[0.866s] [ 32%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[0.867s] [ 32%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[0.950s] [ 35%] [32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/interfaces/msg/num__type_support.cpp.o[0m
+[0.959s] [ 38%] [32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/interfaces/msg/detail/num__type_support.cpp.o[0m
+[0.965s] [ 41%] [32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces/msg/detail/dds_fastrtps/num__type_support.cpp.o[0m
+[1.004s] [ 45%] [32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/interfaces/msg/num__type_support.cpp.o[0m
+[1.015s] [ 48%] [32mBuilding C object CMakeFiles/interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/interfaces/msg/detail/num__type_support.c.o[0m
+[1.017s] [ 51%] [32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/num__type_support_c.cpp.o[0m
+[1.021s] [ 54%] [32m[1mLinking CXX shared library libinterfaces__rosidl_typesupport_c.so[0m
+[1.035s] [ 58%] [32m[1mLinking C shared library libinterfaces__rosidl_typesupport_introspection_c.so[0m
+[1.045s] [ 58%] Built target interfaces__rosidl_typesupport_c
+[1.052s] [ 58%] Built target interfaces__rosidl_typesupport_introspection_c
+[1.120s] [ 61%] [32m[1mLinking CXX shared library libinterfaces__rosidl_typesupport_cpp.so[0m
+[1.144s] [ 61%] Built target interfaces__rosidl_typesupport_cpp
+[1.199s] [ 64%] [32m[1mLinking CXX shared library libinterfaces__rosidl_typesupport_introspection_cpp.so[0m
+[1.221s] [ 67%] [32m[1mLinking CXX shared library libinterfaces__rosidl_typesupport_fastrtps_cpp.so[0m
+[1.222s] [ 67%] Built target interfaces__rosidl_typesupport_introspection_cpp
+[1.223s] [ 70%] [32m[1mLinking CXX shared library libinterfaces__rosidl_typesupport_fastrtps_c.so[0m
+[1.265s] [ 70%] Built target interfaces__rosidl_typesupport_fastrtps_cpp
+[1.266s] [ 70%] Built target interfaces__rosidl_typesupport_fastrtps_c
+[1.275s] [ 70%] Built target interfaces
+[1.285s] [ 74%] [34m[1mGenerating Python code for ROS interfaces[0m
+[1.504s] [ 74%] Built target interfaces__py
+[1.514s] [ 77%] [32mBuilding C object CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/msg/_num_s.c.o[0m
+[1.571s] [ 80%] [32m[1mLinking C shared library rosidl_generator_py/interfaces/libinterfaces__rosidl_generator_py.so[0m
+[1.591s] [ 80%] Built target interfaces__rosidl_generator_py
+[1.602s] [ 87%] [32mBuilding C object CMakeFiles/interfaces__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/interfaces/_interfaces_s.ep.rosidl_typesupport_c.c.o[0m
+[1.602s] [ 87%] [32mBuilding C object CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/interfaces/_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[1.602s] [ 90%] [32mBuilding C object CMakeFiles/interfaces__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/interfaces/_interfaces_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[1.658s] [ 96%] [32m[1mLinking C shared library rosidl_generator_py/interfaces/interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so[0m
+[1.658s] [ 96%] [32m[1mLinking C shared library rosidl_generator_py/interfaces/interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so[0m
+[1.658s] [100%] [32m[1mLinking C shared library rosidl_generator_py/interfaces/interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so[0m
+[1.676s] [100%] Built target interfaces__rosidl_typesupport_introspection_c__pyext
+[1.676s] [100%] Built target interfaces__rosidl_typesupport_fastrtps_c__pyext
+[1.676s] [100%] Built target interfaces__rosidl_typesupport_c__pyext
+[1.682s] Invoked command in '/workspace/BMI/build/interfaces' returned '0': CMAKE_PREFIX_PATH=/workspace/synchronous_BMI/install/neural_data_generator:/opt/ros/humble /usr/bin/cmake --build /workspace/BMI/build/interfaces -- -j20 -l20
+[1.712s] Invoking command in '/workspace/BMI/build/interfaces': CMAKE_PREFIX_PATH=/workspace/synchronous_BMI/install/neural_data_generator:/opt/ros/humble /usr/bin/cmake --install /workspace/BMI/build/interfaces
+[1.716s] -- Install configuration: ""
+[1.716s] -- Installing: /workspace/BMI/install/interfaces/share/ament_index/resource_index/rosidl_interfaces/interfaces
+[1.716s] -- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces
+[1.716s] -- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg
+[1.716s] -- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/rosidl_generator_c__visibility_control.h
+[1.716s] -- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/num.h
+[1.716s] -- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail
+[1.716s] -- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/num__type_support.h
+[1.716s] -- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/num__struct.h
+[1.716s] -- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/num__functions.h
+[1.716s] -- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/num__functions.c
+[1.716s] -- Installing: /workspace/BMI/install/interfaces/share/interfaces/environment/library_path.sh
+[1.716s] -- Installing: /workspace/BMI/install/interfaces/share/interfaces/environment/library_path.dsv
+[1.716s] -- Installing: /workspace/BMI/install/interfaces/lib/libinterfaces__rosidl_generator_c.so
+[1.717s] -- Set runtime path of "/workspace/BMI/install/interfaces/lib/libinterfaces__rosidl_generator_c.so" to ""
+[1.717s] -- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces
+[1.717s] -- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg
+[1.717s] -- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail
+[1.717s] -- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/num__rosidl_typesupport_fastrtps_c.h
+[1.717s] -- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[1.717s] -- Installing: /workspace/BMI/install/interfaces/lib/libinterfaces__rosidl_typesupport_fastrtps_c.so
+[1.717s] -- Set runtime path of "/workspace/BMI/install/interfaces/lib/libinterfaces__rosidl_typesupport_fastrtps_c.so" to ""
+[1.717s] -- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces
+[1.717s] -- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg
+[1.717s] -- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[1.717s] -- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail
+[1.717s] -- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/num__rosidl_typesupport_introspection_c.h
+[1.717s] -- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/num__type_support.c
+[1.717s] -- Installing: /workspace/BMI/install/interfaces/lib/libinterfaces__rosidl_typesupport_introspection_c.so
+[1.717s] -- Set runtime path of "/workspace/BMI/install/interfaces/lib/libinterfaces__rosidl_typesupport_introspection_c.so" to ""
+[1.718s] -- Installing: /workspace/BMI/install/interfaces/lib/libinterfaces__rosidl_typesupport_c.so
+[1.718s] -- Set runtime path of "/workspace/BMI/install/interfaces/lib/libinterfaces__rosidl_typesupport_c.so" to ""
+[1.718s] -- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces
+[1.718s] -- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg
+[1.718s] -- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail
+[1.718s] -- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/num__builder.hpp
+[1.718s] -- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/num__traits.hpp
+[1.718s] -- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/num__struct.hpp
+[1.718s] -- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/num.hpp
+[1.718s] -- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces
+[1.718s] -- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg
+[1.718s] -- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[1.718s] -- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail
+[1.718s] -- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/num__rosidl_typesupport_fastrtps_cpp.hpp
+[1.718s] -- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/dds_fastrtps
+[1.718s] -- Installing: /workspace/BMI/install/interfaces/lib/libinterfaces__rosidl_typesupport_fastrtps_cpp.so
+[1.718s] -- Set runtime path of "/workspace/BMI/install/interfaces/lib/libinterfaces__rosidl_typesupport_fastrtps_cpp.so" to ""
+[1.718s] -- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces
+[1.718s] -- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg
+[1.719s] -- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail
+[1.719s] -- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/num__rosidl_typesupport_introspection_cpp.hpp
+[1.719s] -- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/num__type_support.cpp
+[1.719s] -- Installing: /workspace/BMI/install/interfaces/lib/libinterfaces__rosidl_typesupport_introspection_cpp.so
+[1.719s] -- Set runtime path of "/workspace/BMI/install/interfaces/lib/libinterfaces__rosidl_typesupport_introspection_cpp.so" to ""
+[1.719s] -- Installing: /workspace/BMI/install/interfaces/lib/libinterfaces__rosidl_typesupport_cpp.so
+[1.719s] -- Set runtime path of "/workspace/BMI/install/interfaces/lib/libinterfaces__rosidl_typesupport_cpp.so" to ""
+[1.719s] -- Installing: /workspace/BMI/install/interfaces/share/interfaces/environment/pythonpath.sh
+[1.719s] -- Installing: /workspace/BMI/install/interfaces/share/interfaces/environment/pythonpath.dsv
+[1.719s] -- Installing: /workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces-0.0.0-py3.10.egg-info
+[1.719s] -- Installing: /workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces-0.0.0-py3.10.egg-info/PKG-INFO
+[1.719s] -- Installing: /workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces-0.0.0-py3.10.egg-info/dependency_links.txt
+[1.719s] -- Installing: /workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces-0.0.0-py3.10.egg-info/top_level.txt
+[1.719s] -- Installing: /workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces-0.0.0-py3.10.egg-info/SOURCES.txt
+[1.719s] -- Installing: /workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces
+[1.719s] -- Installing: /workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg
+[1.719s] -- Installing: /workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/__init__.py
+[1.719s] -- Installing: /workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_num.py
+[1.720s] -- Installing: /workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_num_s.c
+[1.720s] -- Installing: /workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces/_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
+[1.720s] -- Installing: /workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces/libinterfaces__rosidl_generator_py.so
+[1.720s] -- Installing: /workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces/interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[1.720s] -- Installing: /workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces/interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[1.720s] -- Installing: /workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces/_interfaces_s.ep.rosidl_typesupport_c.c
+[1.720s] -- Installing: /workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces/__init__.py
+[1.720s] -- Installing: /workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces/interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[1.720s] -- Installing: /workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces/_interfaces_s.ep.rosidl_typesupport_introspection_c.c
+[1.741s] Listing '/workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces'...
+[1.741s] Compiling '/workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces/__init__.py'...
+[1.741s] Listing '/workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg'...
+[1.741s] Compiling '/workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/__init__.py'...
+[1.741s] Compiling '/workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_num.py'...
+[1.744s] -- Installing: /workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces/interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[1.744s] -- Set runtime path of "/workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces/interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so" to ""
+[1.744s] -- Installing: /workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces/interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[1.744s] -- Set runtime path of "/workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces/interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so" to ""
+[1.744s] -- Installing: /workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces/interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[1.745s] -- Set runtime path of "/workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces/interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so" to ""
+[1.745s] -- Installing: /workspace/BMI/install/interfaces/lib/libinterfaces__rosidl_generator_py.so
+[1.745s] -- Set runtime path of "/workspace/BMI/install/interfaces/lib/libinterfaces__rosidl_generator_py.so" to ""
+[1.745s] -- Installing: /workspace/BMI/install/interfaces/share/interfaces/msg/Num.idl
+[1.745s] -- Installing: /workspace/BMI/install/interfaces/share/interfaces/msg/Num.msg
+[1.745s] -- Installing: /workspace/BMI/install/interfaces/share/ament_index/resource_index/package_run_dependencies/interfaces
+[1.745s] -- Installing: /workspace/BMI/install/interfaces/share/ament_index/resource_index/parent_prefix_path/interfaces
+[1.745s] -- Installing: /workspace/BMI/install/interfaces/share/interfaces/environment/ament_prefix_path.sh
+[1.745s] -- Installing: /workspace/BMI/install/interfaces/share/interfaces/environment/ament_prefix_path.dsv
+[1.745s] -- Installing: /workspace/BMI/install/interfaces/share/interfaces/environment/path.sh
+[1.745s] -- Installing: /workspace/BMI/install/interfaces/share/interfaces/environment/path.dsv
+[1.745s] -- Installing: /workspace/BMI/install/interfaces/share/interfaces/local_setup.bash
+[1.745s] -- Installing: /workspace/BMI/install/interfaces/share/interfaces/local_setup.sh
+[1.745s] -- Installing: /workspace/BMI/install/interfaces/share/interfaces/local_setup.zsh
+[1.745s] -- Installing: /workspace/BMI/install/interfaces/share/interfaces/local_setup.dsv
+[1.746s] -- Installing: /workspace/BMI/install/interfaces/share/interfaces/package.dsv
+[1.746s] -- Installing: /workspace/BMI/install/interfaces/share/ament_index/resource_index/packages/interfaces
+[1.746s] -- Installing: /workspace/BMI/install/interfaces/share/interfaces/cmake/export_interfaces__rosidl_generator_cExport.cmake
+[1.746s] -- Installing: /workspace/BMI/install/interfaces/share/interfaces/cmake/export_interfaces__rosidl_generator_cExport-noconfig.cmake
+[1.746s] -- Installing: /workspace/BMI/install/interfaces/share/interfaces/cmake/export_interfaces__rosidl_typesupport_fastrtps_cExport.cmake
+[1.746s] -- Installing: /workspace/BMI/install/interfaces/share/interfaces/cmake/export_interfaces__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[1.746s] -- Installing: /workspace/BMI/install/interfaces/share/interfaces/cmake/interfaces__rosidl_typesupport_introspection_cExport.cmake
+[1.746s] -- Installing: /workspace/BMI/install/interfaces/share/interfaces/cmake/interfaces__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[1.746s] -- Installing: /workspace/BMI/install/interfaces/share/interfaces/cmake/interfaces__rosidl_typesupport_cExport.cmake
+[1.746s] -- Installing: /workspace/BMI/install/interfaces/share/interfaces/cmake/interfaces__rosidl_typesupport_cExport-noconfig.cmake
+[1.746s] -- Installing: /workspace/BMI/install/interfaces/share/interfaces/cmake/export_interfaces__rosidl_generator_cppExport.cmake
+[1.746s] -- Installing: /workspace/BMI/install/interfaces/share/interfaces/cmake/export_interfaces__rosidl_typesupport_fastrtps_cppExport.cmake
+[1.746s] -- Installing: /workspace/BMI/install/interfaces/share/interfaces/cmake/export_interfaces__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[1.747s] -- Installing: /workspace/BMI/install/interfaces/share/interfaces/cmake/interfaces__rosidl_typesupport_introspection_cppExport.cmake
+[1.747s] -- Installing: /workspace/BMI/install/interfaces/share/interfaces/cmake/interfaces__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[1.747s] -- Installing: /workspace/BMI/install/interfaces/share/interfaces/cmake/interfaces__rosidl_typesupport_cppExport.cmake
+[1.747s] -- Installing: /workspace/BMI/install/interfaces/share/interfaces/cmake/interfaces__rosidl_typesupport_cppExport-noconfig.cmake
+[1.747s] -- Installing: /workspace/BMI/install/interfaces/share/interfaces/cmake/export_interfaces__rosidl_generator_pyExport.cmake
+[1.747s] -- Installing: /workspace/BMI/install/interfaces/share/interfaces/cmake/export_interfaces__rosidl_generator_pyExport-noconfig.cmake
+[1.747s] -- Installing: /workspace/BMI/install/interfaces/share/interfaces/cmake/rosidl_cmake-extras.cmake
+[1.747s] -- Installing: /workspace/BMI/install/interfaces/share/interfaces/cmake/ament_cmake_export_include_directories-extras.cmake
+[1.747s] -- Installing: /workspace/BMI/install/interfaces/share/interfaces/cmake/ament_cmake_export_libraries-extras.cmake
+[1.747s] -- Installing: /workspace/BMI/install/interfaces/share/interfaces/cmake/ament_cmake_export_targets-extras.cmake
+[1.747s] -- Installing: /workspace/BMI/install/interfaces/share/interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[1.747s] -- Installing: /workspace/BMI/install/interfaces/share/interfaces/cmake/ament_cmake_export_dependencies-extras.cmake
+[1.747s] -- Installing: /workspace/BMI/install/interfaces/share/interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[1.747s] -- Installing: /workspace/BMI/install/interfaces/share/interfaces/cmake/interfacesConfig.cmake
+[1.747s] -- Installing: /workspace/BMI/install/interfaces/share/interfaces/cmake/interfacesConfig-version.cmake
+[1.748s] -- Installing: /workspace/BMI/install/interfaces/share/interfaces/package.xml
+[1.749s] Invoked command in '/workspace/BMI/build/interfaces' returned '0': CMAKE_PREFIX_PATH=/workspace/synchronous_BMI/install/neural_data_generator:/opt/ros/humble /usr/bin/cmake --install /workspace/BMI/build/interfaces

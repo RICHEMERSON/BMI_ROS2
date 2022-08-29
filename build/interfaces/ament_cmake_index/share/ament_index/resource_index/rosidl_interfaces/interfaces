@@ -1,0 +1,12 @@
+msg/DecoderElement.idl
+msg/DecoderElement.msg
+msg/Ir.idl
+msg/Ir.msg
+msg/Sample.idl
+msg/Sample.msg
+msg/State.idl
+msg/State.msg
+srv/Decoder.idl
+srv/Decoder.srv
+srv/Decoder_Request.msg
+srv/Decoder_Response.msg

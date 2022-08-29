@@ -1,0 +1,22 @@
+[0.548s] Invoking command in '/workspace/BMI/src/decoder': PYTHONPATH=/workspace/BMI/install/decoder/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/decoder build --build-base /workspace/BMI/build/decoder/build install --prefix /workspace/BMI/install/decoder --record /workspace/BMI/build/decoder/install.log --single-version-externally-managed
+[0.688s] running egg_info
+[0.689s] writing ../../build/decoder/decoder.egg-info/PKG-INFO
+[0.689s] writing dependency_links to ../../build/decoder/decoder.egg-info/dependency_links.txt
+[0.689s] writing entry points to ../../build/decoder/decoder.egg-info/entry_points.txt
+[0.689s] writing requirements to ../../build/decoder/decoder.egg-info/requires.txt
+[0.689s] writing top-level names to ../../build/decoder/decoder.egg-info/top_level.txt
+[0.690s] reading manifest file '../../build/decoder/decoder.egg-info/SOURCES.txt'
+[0.690s] writing manifest file '../../build/decoder/decoder.egg-info/SOURCES.txt'
+[0.690s] running build
+[0.690s] running build_py
+[0.691s] running install
+[0.691s] /usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[0.691s]   warnings.warn(
+[0.691s] running install_lib
+[0.692s] running install_data
+[0.692s] running install_egg_info
+[0.693s] removing '/workspace/BMI/install/decoder/lib/python3.10/site-packages/decoder-0.0.0-py3.10.egg-info' (and everything under it)
+[0.693s] Copying ../../build/decoder/decoder.egg-info to /workspace/BMI/install/decoder/lib/python3.10/site-packages/decoder-0.0.0-py3.10.egg-info
+[0.693s] running install_scripts
+[0.706s] writing list of installed files to '/workspace/BMI/build/decoder/install.log'
+[0.721s] Invoked command in '/workspace/BMI/src/decoder' returned '0': PYTHONPATH=/workspace/BMI/install/decoder/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/decoder build --build-base /workspace/BMI/build/decoder/build install --prefix /workspace/BMI/install/decoder --record /workspace/BMI/build/decoder/install.log --single-version-externally-managed

@@ -1,0 +1,15 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from interfaces/srv/Decoder.srv
+// generated code does not contain a copyright notice
+
+
+module interfaces {
+  module srv {
+    struct Decoder_Request {
+      boolean req;
+    };
+    struct Decoder_Response {
+      sequence<double> res;
+    };
+  };
+};

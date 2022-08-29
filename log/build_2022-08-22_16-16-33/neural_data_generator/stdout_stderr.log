@@ -1,0 +1,21 @@
+running egg_info
+writing ../../build/neural_data_generator/neural_data_generator.egg-info/PKG-INFO
+writing dependency_links to ../../build/neural_data_generator/neural_data_generator.egg-info/dependency_links.txt
+writing entry points to ../../build/neural_data_generator/neural_data_generator.egg-info/entry_points.txt
+writing requirements to ../../build/neural_data_generator/neural_data_generator.egg-info/requires.txt
+writing top-level names to ../../build/neural_data_generator/neural_data_generator.egg-info/top_level.txt
+reading manifest file '../../build/neural_data_generator/neural_data_generator.egg-info/SOURCES.txt'
+writing manifest file '../../build/neural_data_generator/neural_data_generator.egg-info/SOURCES.txt'
+running build
+running build_py
+running install
+running install_lib
+/usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+  warnings.warn(
+running install_data
+running install_egg_info
+removing '/workspace/BMI/install/neural_data_generator/lib/python3.10/site-packages/neural_data_generator-0.0.0-py3.10.egg-info' (and everything under it)
+Copying ../../build/neural_data_generator/neural_data_generator.egg-info to /workspace/BMI/install/neural_data_generator/lib/python3.10/site-packages/neural_data_generator-0.0.0-py3.10.egg-info
+running install_scripts
+Installing br_ir_talker script to /workspace/BMI/install/neural_data_generator/lib/neural_data_generator
+writing list of installed files to '/workspace/BMI/build/neural_data_generator/install.log'
