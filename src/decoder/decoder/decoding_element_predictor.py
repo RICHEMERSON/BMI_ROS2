@@ -17,61 +17,110 @@ from rclpy.node import Node
 import numpy as np
 from cerebus import cbpy
 import time
-from interfaces.msg import DecoderElement, Ir
+from interfaces.msg import DecoderElement, PassiveObservation
 from collections import deque
 from queue import Queue
 from sklearn.linear_model import MultiTaskLasso
 import pickle
 from interfaces.srv import Decoder
 
+def model_inference(observation_q, state_q, decoding_element):
+    while True:
+        if decoding_element is not None:
+            state_q.put(decoding_element.predict(observation_q.get()))
+
+observation_q = Queue()
+state_q = Queue()
+
 class DecodingElementPredictor(Node):
 
     def __init__(self):
-    
-        super().__init__('decoding_element_predictor')
-        self.subscription = self.create_subscription(
-            DecoderElement, 'trained_decoding_element', self.decoding_element_listener_callback, 10
+        
+        #+-----------------------------------------------------------------------
+        # initialize node
+        #+-----------------------------------------------------------------------
+        
+        #%% use super to initialize ros node with 'passive_data_integrator' field
+        super().__init__('/system/group/decoding_element_predictor')
+        
+        #+-----------------------------------------------------------------------
+        # set parameters
+        #+-----------------------------------------------------------------------
+        
+        #%% declare parameters    
+        self.declare_parameter('parameters', json.dumps(parameters))
+        
+        #%% get parameters
+        parameters = json.loads(self.get_parameter('parameters').get_parameter_value().string_value)
+        
+        #%% logging parameters
+        for par in parameters:
+            self.get_logger().info('Parameters: {}: {}'.format(par, str(parameters[par])))
+        
+        #+-----------------------------------------------------------------------
+        # initialize communication module and use callback function
+        #+-----------------------------------------------------------------------
+        
+        #%% initialize subscriber
+        self.subscription_decoding_element = self.create_subscription(
+            DecoderElement, '/system_{}/group_{}/trainer/decoding_element'.format(parameters['system'], parameters['group']), self.decoding_element_listener_callback, 1
             )
-        self.subscription  # prevent unused variable warning
+        self.subscription_decoding_element  # prevent unused variable warning
         
-        self.subscription_neural_data = self.create_subscription(
-            Ir, '/neural_data/ir', self.neural_data_listener_callback, 10
+        self.subscription_observation = self.create_subscription(
+            PassiveObservation, '/system_{}/group_{}/integrator/observation'.format(parameters['system'], parameters['group']), self.neural_data_listener_callback, 1
             )
-        self.subscription_neural_data  # prevent unused variable warning
+        self.subscription_observation  # prevent unused variable warning
         
-        self.decoding_element = None
+        #%% initialize service
+        self.srv = self.create_service(Decoder, '/system_{}/group_{}/predictor/decoding_service'.format(parameters['system'], parameters['group']), self.decoding_element_predict_callback)
         
-        self.srv = self.create_service(Decoder, 'Decoder', self.decoding_element_predict_callback)
+        #%% initialize publisher
+        self.state_publisher = self.create_publisher(
+                State, '/system_{}/group_{}/predictor/state'.format(parameters['system'], parameters['group']), 1
+                )
+       
+        #+-----------------------------------------------------------------------
+        # declare protect/private attribute for callback function
+        #+-----------------------------------------------------------------------    
+        
+        self._decoding_state = None
+        self._decoding_element = None
         self._neural_data = []
+        
+        #%% build sub process for consideration of GIL
+        predictor_process = Process(target=decoding_element_talker_callback, args=(observation_q, state_q, self._decoding_element))
+        predictor_process.daemon = True
+        predictor_process.start()
     
     def decoding_element_listener_callback(self, msg):
     
         self.get_logger().info('Recieving: decoding element: {}'.format(str(msg.de)))
-        self.decoding_element = pickle.loads(bytes(list(msg.de)))
+        self._decoding_element = pickle.loads(bytes(list(msg.de)))
     
     def neural_data_listener_callback(self, msg):
         
-        self.get_logger().info('Recieving: neural data: {}'.format(str(msg.ir)))
-        self._neural_buffer = msg.ir
+        _decoding_state = State()
+        self.get_logger().info('Recieving: neural data: {}'.format(str(msg.y_observation)))
+        observation_q.put(np.array(msg.ir))
+
+        while not state_q.empty():
+            self._decoding_state = list(state_q.get())
+            _decoding_state.x_state = self._decoding_state
+        
+        self.state_publisher.publish(_decoding_state)
     
     def decoding_element_predict_callback(self, request, response):
         
-        if self.decoding_element is None or len(self._neural_data)==0:
-            response.res = [0.0]
-        else:
-            response.res = self.decoding_element.predict(np.array(self._neural_data))
-            
-        self.get_logger().info('Servicing: Decoder: [incoming request : {}, outcoming response : {}]'.format(str(request.req), str(response.res)))
-                
-            
+        response.res = [0.0] if self._decoding_state is None else self._decoding_state           
+        self.get_logger().info('Servicing: decoding element: [incoming request : {}, outcoming response : {}]'.format(str(request.req), str(response.res)))
 
 def main(args=None):
     rclpy.init(args=args)
-    decoding_element_trainer = DecodingElementTrainer()
-    rclpy.spin(decoding_element_trainer)
+    decoding_element_predictor = DecodingElementPredictor()
+    rclpy.spin(decoding_element_predictor)
     decoding_element_trainer.destroy_node()
     rclpy.shutdown()
-
 
 if __name__ == '__main__':
     main()

@@ -149,13 +149,13 @@ class PassiveDataIntegrator(Node):
         self.subscription_observation  # prevent unused variable warning
         
         self.subscription_state = self.create_subscription(
-            State, '/system_{}/group_{}/integrator/state'.format(str(system),str(group)), self.state_listener_callback, 1
+            State, '/system_{}/group_{}/integrator/state'.format(parameters['system'], parameters['group']), self.state_listener_callback, 1
             )
         self.subscription_state  # prevent unused variable warning
         
         #%% initialize publisher
         self.publisher_ = self.create_publisher(
-                Sample, '/system_{}/group_{}/integrator/integrated_data'.format(str(system),str(group)), 1
+                Sample, '/system_{}/group_{}/integrator/integrated_data'.format(parameters['system'], parameters['group']), 1
                 )
         
         #+-----------------------------------------------------------------------
