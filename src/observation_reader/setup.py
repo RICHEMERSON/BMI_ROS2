@@ -1,6 +1,6 @@
 from setuptools import setup
 
-package_name = 'presenter'
+package_name = 'observation_reader'
 
 setup(
     name=package_name,
@@ -14,13 +14,12 @@ setup(
     install_requires=['setuptools'],
     zip_safe=True,
     maintainer='root',
-    maintainer_email='root@todo.todo',
+    maintainer_email='cyli@ion.ac.cn',
     description='TODO: Package description',
     license='TODO: License declaration',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-        'center_out_2D = presenter.psychopy_presenter_2D_center_out:main',
         ],
     },
 )

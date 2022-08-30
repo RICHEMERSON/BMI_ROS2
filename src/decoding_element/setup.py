@@ -1,6 +1,6 @@
 from setuptools import setup
 
-package_name = 'neural_data_generator'
+package_name = 'decoding_element'
 
 setup(
     name=package_name,
@@ -14,13 +14,12 @@ setup(
     install_requires=['setuptools'],
     zip_safe=True,
     maintainer='root',
-    maintainer_email='root@todo.todo',
-    description='read spike count',
-    license='Apache License 2.0',
+    maintainer_email='cyli@ion.ac.cn',
+    description='TODO: Package description',
+    license='TODO: License declaration',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-        	'br_ir_talker = neural_data_generator.blackrock_ir_reader:main',
         ],
     },
 )

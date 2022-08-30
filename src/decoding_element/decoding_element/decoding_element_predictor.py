@@ -24,13 +24,19 @@ from sklearn.linear_model import MultiTaskLasso
 import pickle
 from interfaces.srv import Decoder
 
-def model_inference(observation_q, state_q, decoding_element):
+def model_inference(observation_q, state_q, decoding_element_q):
+    decoding_element = None
     while True:
+        if not decoding_element_q.empty():
+            while not decoding_element_q.empty():
+                decoding_element = decoding_element_q.get()
+    
         if decoding_element is not None:
             state_q.put(decoding_element.predict(observation_q.get()))
 
 observation_q = Queue()
 state_q = Queue()
+decoding_element_q = Queue()
 
 class DecodingElementPredictor(Node):
 
@@ -87,9 +93,10 @@ class DecodingElementPredictor(Node):
         self._decoding_state = None
         self._decoding_element = None
         self._neural_data = []
+        self._wait = parameters['wait']
         
         #%% build sub process for consideration of GIL
-        predictor_process = Process(target=decoding_element_talker_callback, args=(observation_q, state_q, self._decoding_element))
+        predictor_process = Process(target=decoding_element_talker_callback, args=(observation_q, state_q, decoding_element_q))
         predictor_process.daemon = True
         predictor_process.start()
     
@@ -97,17 +104,22 @@ class DecodingElementPredictor(Node):
     
         self.get_logger().info('Recieving: decoding element: {}'.format(str(msg.de)))
         self._decoding_element = pickle.loads(bytes(list(msg.de)))
+        decoding_element_q.put(self._decoding_element)
     
     def neural_data_listener_callback(self, msg):
         
         _decoding_state = State()
         self.get_logger().info('Recieving: neural data: {}'.format(str(msg.y_observation)))
-        observation_q.put(np.array(msg.ir))
+        observation_q.put(np.array(msg.y_observation))
 
         while not state_q.empty():
             self._decoding_state = list(state_q.get())
             _decoding_state.x_state = self._decoding_state
         
+        if self._wait and self._decoding_element is not None:
+            _decoding_state.x_state = list(decoding_element.predict(np.array(msg.y_observation)))
+        
+        self.get_logger().info('Publishing: decoding state: {}'.format(str(msg.y_observation)))
         self.state_publisher.publish(_decoding_state)
     
     def decoding_element_predict_callback(self, request, response):

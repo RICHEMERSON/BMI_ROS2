@@ -56,14 +56,10 @@ subscribe_function_template = """
 def {}_listener_callback(self, msg):
     parameters = json.loads(self.get_parameter('parameters').get_parameter_value().string_value)
     self.get_logger().info('Recieving: {}: '+str(msg))
-    msg_data = msg.y_observation if '{}' == 'observation else msg.x_state
-    selected_msg_data = list(np.array(msg_data)[np.array(parameters['select_index'][{}][{}])])
-    msg = PassiveObservation() if {} == 'observation' else State()
-    if {} == 'observation':
-        msg.y_observation = selected_msg_data
-    else:
-        msg.x_state = selected_msg_data
-    self.publisher_{}.publish(msg)"""
+    msg_data = msg.y_observation if '{}' == 'observation' else msg.state
+    self._shared_{}_buffer.append(msg_data)
+    _synchro_concatenation_subscriber(self, parameters, self._shared_{}_buffer, {}, {})   
+    """
 
 def _declare_subscriber(index, data_type):
     
@@ -77,8 +73,36 @@ def _declare_subscriber_callback(index, data_type):
     
     group_name = data_type+str(index)
     return subscribe_function_template.format(
-           group_name, group_name, data_type, data_type, index, data_type, data_type, group_name
+           group_name, group_name, data_type, data_type, 
+           data_type, group_name, data_type
            )
+
+def _synchro_concatenation_subscriber(self, parameters, shared_buffer, group_name, data_type):
+    
+    concatenate_buffer = []
+    po_msg = interface_dict[data_type]
+    
+    for index, i in enumerate(shared_buffer):
+        if len(i)==0:
+            concatenate_buffer.clear()
+            break
+        else:
+            group_index_key = 'entry_{}_group_index'.format(data_type)
+            concatenate_buffer = concatenate_buffer + \
+                       np.array(i[-1])[parameters[group_index_key]] \
+                            if group_index_key in parameters else np.array(i[-1])
+            
+    if len(concatenate_buffer)!=0:
+    
+        if data_type is 'observation':
+            po_msg.y_observation = list(concatenate_buffer)
+            po_msg.y_shape = [len(concatenate_buffer),1]
+        else:
+            po_msg.state = list(concatenate_buffer)
+            
+        exec('self.{}_publisher_.publish(po_msg)'.format(data_type))
+        self.get_logger().info('Recieving: grouped {}: {}'.format(group_name, str(po_msg)))
+        for i in concatenate_buffer: i.clear()
 
 class PassiveDataIntegrator(Node):
 
@@ -107,13 +131,9 @@ class PassiveDataIntegrator(Node):
         
         #%% logging parameters
         for par in parameters:
-            self.get_logger().info('Parameters: {}: {}'.format(par, str(parameters[par])))
-        
-        for groups in entry_observation_groups:
-            self.get_logger().info('Parameters: entry observation group: {}'.format(groups))
-        
-        for groups in entry_state_groups:
-            self.get_logger().info('Parameters: entry state group: {}'.format(groups))
+            self.get_logger().info('Parameters: {}: {}'.format(par, str(parameters[par])))    
+        self.get_logger().info('Parameters: entry observation group: {}'.format(entry_observation_groups))
+        self.get_logger().info('Parameters: entry state group: {}'.format(entry_state_groups))
         
         #+-----------------------------------------------------------------------
         # initialize communication module and use callback function
@@ -123,11 +143,9 @@ class PassiveDataIntegrator(Node):
         
         for index in range(len(entry_observation_groups)):
             exec(_declare_subscriber(index, 'observation'))
-        self._shared_observation_buffer = [[] for _ in range(len(entry_observation_groups))]
         
         for index in range(len(entry_state_groups)):
             exec(_declare_subscriber(index, 'state'))
-        self._shared_state_buffer = [[] for _ in range(len(entry_state_groups))]
         
         #%% initialize publisher
         
@@ -164,6 +182,8 @@ class PassiveDataIntegrator(Node):
         
         self._neural_buffer = None # share recieved neural data
         self._sample = Sample() # construct msg for publisher
+        self._shared_observation_buffer = [[] for _ in range(len(entry_observation_groups))]
+        self._shared_state_buffer = [[] for _ in range(len(entry_state_groups))]
 
     def neural_data_listener_callback(self, msg):
         
