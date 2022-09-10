@@ -7,6 +7,8 @@ file(REMOVE_RECURSE
   "../rosidl_generator_py/interfaces/msg/_decoder_element_s.c"
   "../rosidl_generator_py/interfaces/msg/_ir.py"
   "../rosidl_generator_py/interfaces/msg/_ir_s.c"
+  "../rosidl_generator_py/interfaces/msg/_passive_observation.py"
+  "../rosidl_generator_py/interfaces/msg/_passive_observation_s.c"
   "../rosidl_generator_py/interfaces/msg/_sample.py"
   "../rosidl_generator_py/interfaces/msg/_sample_s.c"
   "../rosidl_generator_py/interfaces/msg/_state.py"

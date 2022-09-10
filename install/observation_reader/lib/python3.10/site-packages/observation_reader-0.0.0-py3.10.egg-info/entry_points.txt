@@ -1,0 +1,3 @@
+[console_scripts]
+blackrock_ir_talker = observation_reader.blackrock_passive_ir_publisher:main
+

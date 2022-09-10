@@ -125,10 +125,24 @@ CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/ms
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/msg/_decoder_element_s.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /workspace/BMI/build/interfaces/rosidl_generator_py/interfaces/msg/_decoder_element_s.c -o CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/msg/_decoder_element_s.c.s
 
+CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/msg/_passive_observation_s.c.o: CMakeFiles/interfaces__rosidl_generator_py.dir/flags.make
+CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/msg/_passive_observation_s.c.o: rosidl_generator_py/interfaces/msg/_passive_observation_s.c
+CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/msg/_passive_observation_s.c.o: CMakeFiles/interfaces__rosidl_generator_py.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspace/BMI/build/interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/msg/_passive_observation_s.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/msg/_passive_observation_s.c.o -MF CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/msg/_passive_observation_s.c.o.d -o CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/msg/_passive_observation_s.c.o -c /workspace/BMI/build/interfaces/rosidl_generator_py/interfaces/msg/_passive_observation_s.c
+
+CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/msg/_passive_observation_s.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/msg/_passive_observation_s.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /workspace/BMI/build/interfaces/rosidl_generator_py/interfaces/msg/_passive_observation_s.c > CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/msg/_passive_observation_s.c.i
+
+CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/msg/_passive_observation_s.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/msg/_passive_observation_s.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /workspace/BMI/build/interfaces/rosidl_generator_py/interfaces/msg/_passive_observation_s.c -o CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/msg/_passive_observation_s.c.s
+
 CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/srv/_decoder_s.c.o: CMakeFiles/interfaces__rosidl_generator_py.dir/flags.make
 CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/srv/_decoder_s.c.o: rosidl_generator_py/interfaces/srv/_decoder_s.c
 CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/srv/_decoder_s.c.o: CMakeFiles/interfaces__rosidl_generator_py.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspace/BMI/build/interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/srv/_decoder_s.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspace/BMI/build/interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/srv/_decoder_s.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/srv/_decoder_s.c.o -MF CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/srv/_decoder_s.c.o.d -o CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/srv/_decoder_s.c.o -c /workspace/BMI/build/interfaces/rosidl_generator_py/interfaces/srv/_decoder_s.c
 
 CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/srv/_decoder_s.c.i: cmake_force
@@ -145,6 +159,7 @@ interfaces__rosidl_generator_py_OBJECTS = \
 "CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/msg/_sample_s.c.o" \
 "CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/msg/_state_s.c.o" \
 "CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/msg/_decoder_element_s.c.o" \
+"CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/msg/_passive_observation_s.c.o" \
 "CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/srv/_decoder_s.c.o"
 
 # External object files for target interfaces__rosidl_generator_py
@@ -154,6 +169,7 @@ rosidl_generator_py/interfaces/libinterfaces__rosidl_generator_py.so: CMakeFiles
 rosidl_generator_py/interfaces/libinterfaces__rosidl_generator_py.so: CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/msg/_sample_s.c.o
 rosidl_generator_py/interfaces/libinterfaces__rosidl_generator_py.so: CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/msg/_state_s.c.o
 rosidl_generator_py/interfaces/libinterfaces__rosidl_generator_py.so: CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/msg/_decoder_element_s.c.o
+rosidl_generator_py/interfaces/libinterfaces__rosidl_generator_py.so: CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/msg/_passive_observation_s.c.o
 rosidl_generator_py/interfaces/libinterfaces__rosidl_generator_py.so: CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/srv/_decoder_s.c.o
 rosidl_generator_py/interfaces/libinterfaces__rosidl_generator_py.so: CMakeFiles/interfaces__rosidl_generator_py.dir/build.make
 rosidl_generator_py/interfaces/libinterfaces__rosidl_generator_py.so: /usr/lib/x86_64-linux-gnu/libpython3.10.so
@@ -162,7 +178,7 @@ rosidl_generator_py/interfaces/libinterfaces__rosidl_generator_py.so: libinterfa
 rosidl_generator_py/interfaces/libinterfaces__rosidl_generator_py.so: /opt/ros/humble/lib/librosidl_runtime_c.so
 rosidl_generator_py/interfaces/libinterfaces__rosidl_generator_py.so: /opt/ros/humble/lib/librcutils.so
 rosidl_generator_py/interfaces/libinterfaces__rosidl_generator_py.so: CMakeFiles/interfaces__rosidl_generator_py.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/workspace/BMI/build/interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking C shared library rosidl_generator_py/interfaces/libinterfaces__rosidl_generator_py.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/workspace/BMI/build/interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking C shared library rosidl_generator_py/interfaces/libinterfaces__rosidl_generator_py.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/interfaces__rosidl_generator_py.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

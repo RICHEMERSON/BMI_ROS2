@@ -2,6 +2,8 @@ msg/DecoderElement.idl
 msg/DecoderElement.msg
 msg/Ir.idl
 msg/Ir.msg
+msg/PassiveObservation.idl
+msg/PassiveObservation.msg
 msg/Sample.idl
 msg/Sample.msg
 msg/State.idl

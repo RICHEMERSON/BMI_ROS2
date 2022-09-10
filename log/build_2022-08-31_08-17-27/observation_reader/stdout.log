@@ -1,0 +1,31 @@
+running egg_info
+creating ../../build/observation_reader/observation_reader.egg-info
+writing ../../build/observation_reader/observation_reader.egg-info/PKG-INFO
+writing dependency_links to ../../build/observation_reader/observation_reader.egg-info/dependency_links.txt
+writing entry points to ../../build/observation_reader/observation_reader.egg-info/entry_points.txt
+writing requirements to ../../build/observation_reader/observation_reader.egg-info/requires.txt
+writing top-level names to ../../build/observation_reader/observation_reader.egg-info/top_level.txt
+writing manifest file '../../build/observation_reader/observation_reader.egg-info/SOURCES.txt'
+reading manifest file '../../build/observation_reader/observation_reader.egg-info/SOURCES.txt'
+writing manifest file '../../build/observation_reader/observation_reader.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /workspace/BMI/build/observation_reader/build
+creating /workspace/BMI/build/observation_reader/build/lib
+creating /workspace/BMI/build/observation_reader/build/lib/observation_reader
+copying observation_reader/__init__.py -> /workspace/BMI/build/observation_reader/build/lib/observation_reader
+running install
+running install_lib
+creating /workspace/BMI/install/observation_reader/lib/python3.10/site-packages/observation_reader
+copying /workspace/BMI/build/observation_reader/build/lib/observation_reader/__init__.py -> /workspace/BMI/install/observation_reader/lib/python3.10/site-packages/observation_reader
+byte-compiling /workspace/BMI/install/observation_reader/lib/python3.10/site-packages/observation_reader/__init__.py to __init__.cpython-310.pyc
+running install_data
+creating /workspace/BMI/install/observation_reader/share/ament_index
+creating /workspace/BMI/install/observation_reader/share/ament_index/resource_index
+creating /workspace/BMI/install/observation_reader/share/ament_index/resource_index/packages
+copying resource/observation_reader -> /workspace/BMI/install/observation_reader/share/ament_index/resource_index/packages
+copying package.xml -> /workspace/BMI/install/observation_reader/share/observation_reader
+running install_egg_info
+Copying ../../build/observation_reader/observation_reader.egg-info to /workspace/BMI/install/observation_reader/lib/python3.10/site-packages/observation_reader-0.0.0-py3.10.egg-info
+running install_scripts
+writing list of installed files to '/workspace/BMI/build/observation_reader/install.log'

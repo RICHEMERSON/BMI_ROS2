@@ -19,6 +19,8 @@ set(CMAKE_MULTIPLE_OUTPUT_PAIRS
   "/workspace/BMI/build/interfaces/rosidl_generator_py/interfaces/msg/_decoder_element_s.c" "/workspace/BMI/build/interfaces/rosidl_generator_py/interfaces/_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c"
   "/workspace/BMI/build/interfaces/rosidl_generator_py/interfaces/msg/_ir.py" "/workspace/BMI/build/interfaces/rosidl_generator_py/interfaces/_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c"
   "/workspace/BMI/build/interfaces/rosidl_generator_py/interfaces/msg/_ir_s.c" "/workspace/BMI/build/interfaces/rosidl_generator_py/interfaces/_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c"
+  "/workspace/BMI/build/interfaces/rosidl_generator_py/interfaces/msg/_passive_observation.py" "/workspace/BMI/build/interfaces/rosidl_generator_py/interfaces/_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c"
+  "/workspace/BMI/build/interfaces/rosidl_generator_py/interfaces/msg/_passive_observation_s.c" "/workspace/BMI/build/interfaces/rosidl_generator_py/interfaces/_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c"
   "/workspace/BMI/build/interfaces/rosidl_generator_py/interfaces/msg/_sample.py" "/workspace/BMI/build/interfaces/rosidl_generator_py/interfaces/_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c"
   "/workspace/BMI/build/interfaces/rosidl_generator_py/interfaces/msg/_sample_s.c" "/workspace/BMI/build/interfaces/rosidl_generator_py/interfaces/_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c"
   "/workspace/BMI/build/interfaces/rosidl_generator_py/interfaces/msg/_state.py" "/workspace/BMI/build/interfaces/rosidl_generator_py/interfaces/_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c"

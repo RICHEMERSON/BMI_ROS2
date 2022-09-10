@@ -1,0 +1,40 @@
+running egg_info
+creating ../../build/decoding_element/decoding_element.egg-info
+writing ../../build/decoding_element/decoding_element.egg-info/PKG-INFO
+writing dependency_links to ../../build/decoding_element/decoding_element.egg-info/dependency_links.txt
+writing entry points to ../../build/decoding_element/decoding_element.egg-info/entry_points.txt
+writing requirements to ../../build/decoding_element/decoding_element.egg-info/requires.txt
+writing top-level names to ../../build/decoding_element/decoding_element.egg-info/top_level.txt
+writing manifest file '../../build/decoding_element/decoding_element.egg-info/SOURCES.txt'
+reading manifest file '../../build/decoding_element/decoding_element.egg-info/SOURCES.txt'
+writing manifest file '../../build/decoding_element/decoding_element.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /workspace/BMI/build/decoding_element/build
+creating /workspace/BMI/build/decoding_element/build/lib
+creating /workspace/BMI/build/decoding_element/build/lib/decoding_element
+copying decoding_element/decoding_element_trainer.py -> /workspace/BMI/build/decoding_element/build/lib/decoding_element
+copying decoding_element/__init__.py -> /workspace/BMI/build/decoding_element/build/lib/decoding_element
+copying decoding_element/decoding_element_predictor.py -> /workspace/BMI/build/decoding_element/build/lib/decoding_element
+copying decoding_element/data_integrator.py -> /workspace/BMI/build/decoding_element/build/lib/decoding_element
+running install
+running install_lib
+creating /workspace/BMI/install/decoding_element/lib/python3.10/site-packages/decoding_element
+copying /workspace/BMI/build/decoding_element/build/lib/decoding_element/decoding_element_trainer.py -> /workspace/BMI/install/decoding_element/lib/python3.10/site-packages/decoding_element
+copying /workspace/BMI/build/decoding_element/build/lib/decoding_element/__init__.py -> /workspace/BMI/install/decoding_element/lib/python3.10/site-packages/decoding_element
+copying /workspace/BMI/build/decoding_element/build/lib/decoding_element/decoding_element_predictor.py -> /workspace/BMI/install/decoding_element/lib/python3.10/site-packages/decoding_element
+copying /workspace/BMI/build/decoding_element/build/lib/decoding_element/data_integrator.py -> /workspace/BMI/install/decoding_element/lib/python3.10/site-packages/decoding_element
+byte-compiling /workspace/BMI/install/decoding_element/lib/python3.10/site-packages/decoding_element/decoding_element_trainer.py to decoding_element_trainer.cpython-310.pyc
+byte-compiling /workspace/BMI/install/decoding_element/lib/python3.10/site-packages/decoding_element/__init__.py to __init__.cpython-310.pyc
+byte-compiling /workspace/BMI/install/decoding_element/lib/python3.10/site-packages/decoding_element/decoding_element_predictor.py to decoding_element_predictor.cpython-310.pyc
+byte-compiling /workspace/BMI/install/decoding_element/lib/python3.10/site-packages/decoding_element/data_integrator.py to data_integrator.cpython-310.pyc
+running install_data
+creating /workspace/BMI/install/decoding_element/share/ament_index
+creating /workspace/BMI/install/decoding_element/share/ament_index/resource_index
+creating /workspace/BMI/install/decoding_element/share/ament_index/resource_index/packages
+copying resource/decoding_element -> /workspace/BMI/install/decoding_element/share/ament_index/resource_index/packages
+copying package.xml -> /workspace/BMI/install/decoding_element/share/decoding_element
+running install_egg_info
+Copying ../../build/decoding_element/decoding_element.egg-info to /workspace/BMI/install/decoding_element/lib/python3.10/site-packages/decoding_element-0.0.0-py3.10.egg-info
+running install_scripts
+writing list of installed files to '/workspace/BMI/build/decoding_element/install.log'

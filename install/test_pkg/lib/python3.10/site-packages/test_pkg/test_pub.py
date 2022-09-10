@@ -20,7 +20,8 @@ class MinimalPublisher(Node):
         super().__init__('minimal_publisher')
         
         self.declare_parameter('parameters', 'asd')
-        parameters = self.get_parameter('parameters').get_parameter_value().string_value
+        parameters = self.get_parameter('parameters').get_parameter_value()
+        print(parameters)
         
         self.__node = 'node_2'
         

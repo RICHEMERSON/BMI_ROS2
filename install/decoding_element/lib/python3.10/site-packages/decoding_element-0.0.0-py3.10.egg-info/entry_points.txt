@@ -1,0 +1,3 @@
+[console_scripts]
+integrator = decoding_element.data_integrator:main
+

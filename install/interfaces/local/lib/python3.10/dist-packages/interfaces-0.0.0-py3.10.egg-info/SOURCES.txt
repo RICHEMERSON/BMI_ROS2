@@ -8,6 +8,7 @@ interfaces/msg/__init__.py
 interfaces/msg/_decoder_element.py
 interfaces/msg/_ir.py
 interfaces/msg/_num.py
+interfaces/msg/_passive_observation.py
 interfaces/msg/_sample.py
 interfaces/msg/_state.py
 interfaces/srv/__init__.py

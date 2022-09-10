@@ -256,10 +256,17 @@ CMakeFiles/interfaces__rosidl_typesupport_introspection_c__pyext.dir/rosidl_gene
   rosidl_generator_c/interfaces/msg/detail/decoder_element__type_support.h \
   rosidl_generator_c/interfaces/msg/detail/decoder_element__struct.h \
   rosidl_generator_c/interfaces/msg/detail/decoder_element__functions.h \
+  rosidl_generator_c/interfaces/msg/detail/passive_observation__type_support.h \
+  rosidl_generator_c/interfaces/msg/detail/passive_observation__struct.h \
+  rosidl_generator_c/interfaces/msg/detail/passive_observation__functions.h \
   rosidl_generator_c/interfaces/srv/detail/decoder__type_support.h \
   rosidl_generator_c/interfaces/srv/detail/decoder__struct.h \
   rosidl_generator_c/interfaces/srv/detail/decoder__functions.h
 
+
+rosidl_generator_c/interfaces/srv/detail/decoder__type_support.h:
+
+rosidl_generator_c/interfaces/msg/detail/passive_observation__functions.h:
 
 /usr/include/asm-generic/errno-base.h:
 
@@ -356,8 +363,6 @@ rosidl_generator_c/interfaces/msg/detail/ir__type_support.h:
 /usr/include/python3.10/cpython/compile.h:
 
 /usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
-
-rosidl_generator_c/interfaces/srv/detail/decoder__type_support.h:
 
 /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
 
@@ -498,6 +503,8 @@ rosidl_generator_c/interfaces/msg/detail/sample__functions.h:
 /usr/include/stdc-predef.h:
 
 /usr/include/asm-generic/posix_types.h:
+
+rosidl_generator_c/interfaces/msg/detail/passive_observation__struct.h:
 
 /usr/include/asm-generic/int-ll64.h:
 
@@ -715,9 +722,9 @@ rosidl_generator_c/interfaces/msg/detail/state__functions.h:
 
 /usr/include/sched.h:
 
-/usr/include/python3.10/pythread.h:
-
 rosidl_generator_c/interfaces/srv/detail/decoder__struct.h:
+
+/usr/include/python3.10/pythread.h:
 
 /usr/include/x86_64-linux-gnu/bits/sched.h:
 
@@ -776,3 +783,5 @@ rosidl_generator_c/interfaces/msg/detail/state__struct.h:
 rosidl_generator_c/interfaces/msg/detail/decoder_element__type_support.h:
 
 rosidl_generator_c/interfaces/msg/detail/decoder_element__struct.h:
+
+rosidl_generator_c/interfaces/msg/detail/passive_observation__type_support.h:
