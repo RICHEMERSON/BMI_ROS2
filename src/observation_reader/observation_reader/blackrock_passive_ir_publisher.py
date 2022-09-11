@@ -66,7 +66,7 @@ class BlackrockPassiveIrPublisher(Node):
 
         print('set callback')
         self.publisher_ = self.create_publisher(
-                PassiveObservation, '/system{}/passive_observation'.format(str(parameters['system'])), 1
+                PassiveObservation, '/system_{}/passive_observation'.format(str(parameters['system'])), 1
                 )
         self.timer = self.create_timer(parameters['timer_period'], self.neural_array_callback)
         self.msg = PassiveObservation()
