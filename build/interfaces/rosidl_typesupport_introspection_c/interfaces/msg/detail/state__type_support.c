@@ -13,7 +13,7 @@
 
 
 // Include directives for member types
-// Member `state`
+// Member `x_state`
 #include "rosidl_runtime_c/primitives_sequence_functions.h"
 
 #ifdef __cplusplus
@@ -35,7 +35,7 @@ void interfaces__msg__State__rosidl_typesupport_introspection_c__State_fini_func
   interfaces__msg__State__fini(message_memory);
 }
 
-size_t interfaces__msg__State__rosidl_typesupport_introspection_c__size_function__State__state(
+size_t interfaces__msg__State__rosidl_typesupport_introspection_c__size_function__State__x_state(
   const void * untyped_member)
 {
   const rosidl_runtime_c__double__Sequence * member =
@@ -43,7 +43,7 @@ size_t interfaces__msg__State__rosidl_typesupport_introspection_c__size_function
   return member->size;
 }
 
-const void * interfaces__msg__State__rosidl_typesupport_introspection_c__get_const_function__State__state(
+const void * interfaces__msg__State__rosidl_typesupport_introspection_c__get_const_function__State__x_state(
   const void * untyped_member, size_t index)
 {
   const rosidl_runtime_c__double__Sequence * member =
@@ -51,7 +51,7 @@ const void * interfaces__msg__State__rosidl_typesupport_introspection_c__get_con
   return &member->data[index];
 }
 
-void * interfaces__msg__State__rosidl_typesupport_introspection_c__get_function__State__state(
+void * interfaces__msg__State__rosidl_typesupport_introspection_c__get_function__State__x_state(
   void * untyped_member, size_t index)
 {
   rosidl_runtime_c__double__Sequence * member =
@@ -59,29 +59,29 @@ void * interfaces__msg__State__rosidl_typesupport_introspection_c__get_function_
   return &member->data[index];
 }
 
-void interfaces__msg__State__rosidl_typesupport_introspection_c__fetch_function__State__state(
+void interfaces__msg__State__rosidl_typesupport_introspection_c__fetch_function__State__x_state(
   const void * untyped_member, size_t index, void * untyped_value)
 {
   const double * item =
     ((const double *)
-    interfaces__msg__State__rosidl_typesupport_introspection_c__get_const_function__State__state(untyped_member, index));
+    interfaces__msg__State__rosidl_typesupport_introspection_c__get_const_function__State__x_state(untyped_member, index));
   double * value =
     (double *)(untyped_value);
   *value = *item;
 }
 
-void interfaces__msg__State__rosidl_typesupport_introspection_c__assign_function__State__state(
+void interfaces__msg__State__rosidl_typesupport_introspection_c__assign_function__State__x_state(
   void * untyped_member, size_t index, const void * untyped_value)
 {
   double * item =
     ((double *)
-    interfaces__msg__State__rosidl_typesupport_introspection_c__get_function__State__state(untyped_member, index));
+    interfaces__msg__State__rosidl_typesupport_introspection_c__get_function__State__x_state(untyped_member, index));
   const double * value =
     (const double *)(untyped_value);
   *item = *value;
 }
 
-bool interfaces__msg__State__rosidl_typesupport_introspection_c__resize_function__State__state(
+bool interfaces__msg__State__rosidl_typesupport_introspection_c__resize_function__State__x_state(
   void * untyped_member, size_t size)
 {
   rosidl_runtime_c__double__Sequence * member =
@@ -92,21 +92,21 @@ bool interfaces__msg__State__rosidl_typesupport_introspection_c__resize_function
 
 static rosidl_typesupport_introspection_c__MessageMember interfaces__msg__State__rosidl_typesupport_introspection_c__State_message_member_array[1] = {
   {
-    "state",  // name
+    "x_state",  // name
     rosidl_typesupport_introspection_c__ROS_TYPE_DOUBLE,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
     true,  // is array
     0,  // array size
     false,  // is upper bound
-    offsetof(interfaces__msg__State, state),  // bytes offset in struct
+    offsetof(interfaces__msg__State, x_state),  // bytes offset in struct
     NULL,  // default value
-    interfaces__msg__State__rosidl_typesupport_introspection_c__size_function__State__state,  // size() function pointer
-    interfaces__msg__State__rosidl_typesupport_introspection_c__get_const_function__State__state,  // get_const(index) function pointer
-    interfaces__msg__State__rosidl_typesupport_introspection_c__get_function__State__state,  // get(index) function pointer
-    interfaces__msg__State__rosidl_typesupport_introspection_c__fetch_function__State__state,  // fetch(index, &value) function pointer
-    interfaces__msg__State__rosidl_typesupport_introspection_c__assign_function__State__state,  // assign(index, value) function pointer
-    interfaces__msg__State__rosidl_typesupport_introspection_c__resize_function__State__state  // resize(index) function pointer
+    interfaces__msg__State__rosidl_typesupport_introspection_c__size_function__State__x_state,  // size() function pointer
+    interfaces__msg__State__rosidl_typesupport_introspection_c__get_const_function__State__x_state,  // get_const(index) function pointer
+    interfaces__msg__State__rosidl_typesupport_introspection_c__get_function__State__x_state,  // get(index) function pointer
+    interfaces__msg__State__rosidl_typesupport_introspection_c__fetch_function__State__x_state,  // fetch(index, &value) function pointer
+    interfaces__msg__State__rosidl_typesupport_introspection_c__assign_function__State__x_state,  // assign(index, value) function pointer
+    interfaces__msg__State__rosidl_typesupport_introspection_c__resize_function__State__x_state  // resize(index) function pointer
   }
 };
 

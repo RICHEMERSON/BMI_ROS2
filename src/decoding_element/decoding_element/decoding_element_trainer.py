@@ -17,37 +17,34 @@ from rclpy.node import Node
 import numpy as np
 from cerebus import cbpy
 import time
-from interfaces.msg import DecoderElement
+import json
+from interfaces.msg import Sample, DecoderElement
 from collections import deque
 from multiprocessing import Queue
-from sklearn.linear_model import MultiTaskLasso
+from sklearn.linear_model import LinearRegression
 from multiprocessing import Process
+import pickle
 
-#%% default parameters
-parameters = {}
-parameters['system'] = 0
-parameters['group'] = 0
-parameters['decoding_element'] = 'decoder'
-parameters['algorithm'] = 'wiener_filter'
-
-def decoding_element_talker_callback(decoding_element, sample_buffer, de_buffer):
+def trainer(decoding_element, sample_buffer, de_buffer):
 
       _x_state = deque(maxlen = 100000)
       _y_observation = deque(maxlen = 100000)
       
       while True: 
          
-         if not self._sample_buffer.empty():
+         if not sample_buffer.empty():
              
-             while not self._sample_buffer.empty():
-                 sample = _sample_buffer.get()
+             while not sample_buffer.empty():
+                 sample = sample_buffer.get()
                  _x_state.append(sample.x_state)
                  _y_observation.append(sample.y_observation)
-         
-             _decoding_element_msg = DecoderElement()
-             decoding_element.fit(np.array(self._y_observation), np.array(self._x_state))
-             _decoding_element_msg.de = list(pickle.dumps(self._decoding_element))
-             de_buffer.put(_decoding_element_msg.de)
+             
+             if len(_y_observation)<10:
+                 continue
+             
+             decoding_element.fit(np.array(_y_observation), np.array(_x_state))
+             _decoding_element_msg = list(pickle.dumps(decoding_element))
+             de_buffer.put(_decoding_element_msg)
          
 
 class DecodingElementTrainer(Node):
@@ -59,11 +56,18 @@ class DecodingElementTrainer(Node):
         #+-----------------------------------------------------------------------
         
         #%% use super to initialize ros node with 'passive_data_integrator' field
-        super().__init__('/system/group/decoding_element_trainer')
+        super().__init__('decoding_element_trainer')
         
         #+-----------------------------------------------------------------------
         # set parameters
         #+-----------------------------------------------------------------------
+        
+        #%% default parameters
+        parameters = {}
+        parameters['system'] = 0
+        parameters['group'] = 0
+        parameters['decoding_element'] = 'decoder'
+        parameters['algorithm'] = 'wiener_filter'
         
         #%% declare parameters    
         self.declare_parameter('parameters', json.dumps(parameters))
@@ -94,25 +98,24 @@ class DecodingElementTrainer(Node):
         # declare protect/private attribute for callback function
         #+-----------------------------------------------------------------------    
         
-        self._decoding_element = MultiTaskLasso()
+        self._decoding_element = LinearRegression()
         self._sample_buffer = Queue()
         self._de_buffer = Queue()
         
         #%% build sub process for consideration of GIL
-        trainer_process = Process(target=decoding_element_talker_callback, args=(self._decoding_element, self._sample_buffer, self._de_buffer))
+        trainer_process = Process(target=trainer, args=(self._decoding_element, self._sample_buffer, self._de_buffer))
         trainer_process.daemon = True
         trainer_process.start()
         
-    def decoding_element_talker_callback(self)
-
+    def decoding_element_talker_callback(self):
+        _decoding_element_msg = DecoderElement()
         while not self._de_buffer.empty():
-            _decoding_element_msg = self._de_buffer.get()
+            _decoding_element_msg.de = self._de_buffer.get()
             self.publisher_.publish(_decoding_element_msg)
             self.get_logger().info('Publishing: decoding element: {}'.format(str(_decoding_element_msg.de)))
 
     def sample_listener_callback(self, msg):
-    
-        self.get_logger().info('Recieving: integrated data: [x_state : {}, y_observation : {}]'.format(str(msg.x_state), str(msg.y_observation)))
+        # self.get_logger().info('Recieving: integrated data: [x_state : {}, y_observation : {}]'.format(str(msg.x_state), str(msg.y_observation)))
         self._sample_buffer.put(msg)            
 
 def main(args=None):

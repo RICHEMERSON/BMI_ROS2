@@ -6,7 +6,7 @@
 module interfaces {
   module msg {
     struct State {
-      sequence<double> state;
+      sequence<double> x_state;
     };
   };
 };

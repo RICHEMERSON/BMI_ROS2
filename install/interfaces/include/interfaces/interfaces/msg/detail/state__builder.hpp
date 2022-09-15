@@ -21,15 +21,15 @@ namespace msg
 namespace builder
 {
 
-class Init_State_state
+class Init_State_x_state
 {
 public:
-  Init_State_state()
+  Init_State_x_state()
   : msg_(::rosidl_runtime_cpp::MessageInitialization::SKIP)
   {}
-  ::interfaces::msg::State state(::interfaces::msg::State::_state_type arg)
+  ::interfaces::msg::State x_state(::interfaces::msg::State::_x_state_type arg)
   {
-    msg_.state = std::move(arg);
+    msg_.x_state = std::move(arg);
     return std::move(msg_);
   }
 
@@ -48,7 +48,7 @@ template<>
 inline
 auto build<::interfaces::msg::State>()
 {
-  return interfaces::msg::builder::Init_State_state();
+  return interfaces::msg::builder::Init_State_x_state();
 }
 
 }  // namespace interfaces

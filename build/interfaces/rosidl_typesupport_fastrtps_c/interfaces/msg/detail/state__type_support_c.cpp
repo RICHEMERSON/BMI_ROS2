@@ -34,8 +34,8 @@ extern "C"
 {
 #endif
 
-#include "rosidl_runtime_c/primitives_sequence.h"  // state
-#include "rosidl_runtime_c/primitives_sequence_functions.h"  // state
+#include "rosidl_runtime_c/primitives_sequence.h"  // x_state
+#include "rosidl_runtime_c/primitives_sequence_functions.h"  // x_state
 
 // forward declare type support functions
 
@@ -51,10 +51,10 @@ static bool _State__cdr_serialize(
     return false;
   }
   const _State__ros_msg_type * ros_message = static_cast<const _State__ros_msg_type *>(untyped_ros_message);
-  // Field name: state
+  // Field name: x_state
   {
-    size_t size = ros_message->state.size;
-    auto array_ptr = ros_message->state.data;
+    size_t size = ros_message->x_state.size;
+    auto array_ptr = ros_message->x_state.data;
     cdr << static_cast<uint32_t>(size);
     cdr.serializeArray(array_ptr, size);
   }
@@ -71,19 +71,19 @@ static bool _State__cdr_deserialize(
     return false;
   }
   _State__ros_msg_type * ros_message = static_cast<_State__ros_msg_type *>(untyped_ros_message);
-  // Field name: state
+  // Field name: x_state
   {
     uint32_t cdrSize;
     cdr >> cdrSize;
     size_t size = static_cast<size_t>(cdrSize);
-    if (ros_message->state.data) {
-      rosidl_runtime_c__double__Sequence__fini(&ros_message->state);
+    if (ros_message->x_state.data) {
+      rosidl_runtime_c__double__Sequence__fini(&ros_message->x_state);
     }
-    if (!rosidl_runtime_c__double__Sequence__init(&ros_message->state, size)) {
-      fprintf(stderr, "failed to create array for field 'state'");
+    if (!rosidl_runtime_c__double__Sequence__init(&ros_message->x_state, size)) {
+      fprintf(stderr, "failed to create array for field 'x_state'");
       return false;
     }
-    auto array_ptr = ros_message->state.data;
+    auto array_ptr = ros_message->x_state.data;
     cdr.deserializeArray(array_ptr, size);
   }
 
@@ -104,10 +104,10 @@ size_t get_serialized_size_interfaces__msg__State(
   (void)padding;
   (void)wchar_size;
 
-  // field.name state
+  // field.name x_state
   {
-    size_t array_size = ros_message->state.size;
-    auto array_ptr = ros_message->state.data;
+    size_t array_size = ros_message->x_state.size;
+    auto array_ptr = ros_message->x_state.data;
     current_alignment += padding +
       eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
     (void)array_ptr;
@@ -142,7 +142,7 @@ size_t max_serialized_size_interfaces__msg__State(
   full_bounded = true;
   is_plain = true;
 
-  // member: state
+  // member: x_state
   {
     size_t array_size = 0;
     full_bounded = false;

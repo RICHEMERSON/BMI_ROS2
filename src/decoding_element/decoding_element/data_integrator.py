@@ -51,8 +51,8 @@ def _declare_subscriber_callback(index, data_type):
     subscribe_function_template = f"""
 
 def {group_name}_listener_callback(self, msg):
-    self.get_logger().info('Recieving: {group_name}: '+str(msg))
-    msg_data = msg.y_observation if '{data_type}' == 'observation' else msg.state
+    # self.get_logger().info('Recieving: {group_name}: '+str(msg))
+    msg_data = msg.y_observation if '{data_type}' == 'observation' else msg.x_state
     self._shared_{data_type}_buffer[{index}].append(msg_data)
     
     concatenate_buffer = []
@@ -63,7 +63,6 @@ def {group_name}_listener_callback(self, msg):
             concatenate_buffer.clear()
             break
         else:
-            group_index_key = 'entry_group_index'
             concatenate_buffer = concatenate_buffer + \
                        list(np.array(i[-1])[self._parameters['entry_group_index'][index]]) \
                             if 'entry_group_index' in self._parameters else list(np.array(i[-1]))
@@ -74,10 +73,10 @@ def {group_name}_listener_callback(self, msg):
             po_msg.y_observation = list(concatenate_buffer)
             po_msg.y_shape = [len(concatenate_buffer),1]
         else:
-            po_msg.state = list(concatenate_buffer)
+            po_msg.x_state = list(concatenate_buffer)
             
         self.{data_type}_publisher_.publish(po_msg)
-        self.get_logger().info('Recieving: grouped {group_name}: '+str(po_msg))
+        # self.get_logger().info('Recieving: grouped {group_name}: '+str(po_msg))
         for i in self._shared_{data_type}_buffer: 
             i.clear()  
     """
@@ -106,7 +105,7 @@ def _synchro_concatenation_subscriber(self, parameters, shared_buffer, group_nam
             po_msg.y_observation = list(concatenate_buffer)
             po_msg.y_shape = [len(concatenate_buffer),1]
         else:
-            po_msg.state = list(concatenate_buffer)
+            po_msg.x_state = list(concatenate_buffer)
             
         exec('self.{}_publisher_.publish(po_msg)'.format(group_name))
         self.get_logger().info('Recieving: grouped {}: {}'.format(group_name, str(po_msg)))
@@ -131,13 +130,14 @@ class PassiveDataIntegrator(Node):
         parameters = {}
         parameters['system'] = 0
         parameters['group'] = 0
+        parameters['state'] = 0
         parameters['AlignedData'] = 'observation'
 
         #%% default entry group topic
         entry_observation_groups = ['/system_{}/passive_observation'.format(str(parameters['system']))]
 
         #%% default entry state topic
-        entry_state_groups = ['/system_{}/group_{}/state'.format(str(parameters['system']),str(parameters['group']))]
+        entry_state_groups = ['/system_{}/group_{}/state_{}/desired_state'.format(parameters['system'], parameters['group'], parameters['state'])]
         
         #%% declare parameters    
         self.declare_parameter('parameters', list(pickle.dumps(parameters)))
@@ -208,26 +208,26 @@ class PassiveDataIntegrator(Node):
 
     def neural_data_listener_callback(self, msg):
         
-        self.get_logger().info('Recieving: integrator observation: {}'.format(str(msg)))
+        # self.get_logger().info('Recieving: integrator observation: {}'.format(str(msg)))
         self._observation = msg.y_observation
         
         # send integrated data to decoding element trainer
         if self._parameters['AlignedData']=='observation':
                 if self._state is not None:
-                        self._sample.x_state = msg.x_state
+                        self._sample.x_state = self._state
                         self._sample.y_observation = self._observation
                         self.publisher_.publish(self._sample)
                         self.get_logger().info('Publishing: integrated data: [x_state : {}, y_observation : {}]'.format(str(self._sample.x_state), str(self._sample.y_observation)))
 
     def state_listener_callback(self, msg):
         
-        self.get_logger().info('Recieving: integrator state data: {}'.format(str(msg)))
+        # self.get_logger().info('Recieving: integrator state data: {}'.format(str(msg)))
         self._state = msg.x_state
         
         # send integrated data to decoding element trainer
         if self._parameters['AlignedData']=='state':
                 if self._observation is not None:
-                        self._sample.x_state = msg.x_state
+                        self._sample.x_state = self._state
                         self._sample.y_observation = self._observation
                         self.publisher_.publish(self._sample)
                         self.get_logger().info('Publishing: integrated data: [x_state : {}, y_observation : {}]'.format(str(self._sample.x_state), str(self._sample.y_observation)))

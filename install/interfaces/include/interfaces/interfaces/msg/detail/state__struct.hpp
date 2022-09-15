@@ -45,15 +45,15 @@ struct State_
   }
 
   // field types and members
-  using _state_type =
+  using _x_state_type =
     std::vector<double, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<double>>;
-  _state_type state;
+  _x_state_type x_state;
 
   // setters for named parameter idiom
-  Type & set__state(
+  Type & set__x_state(
     const std::vector<double, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<double>> & _arg)
   {
-    this->state = _arg;
+    this->x_state = _arg;
     return *this;
   }
 
@@ -99,7 +99,7 @@ struct State_
   // comparison operators
   bool operator==(const State_ & other) const
   {
-    if (this->state != other.state) {
+    if (this->x_state != other.x_state) {
       return false;
     }
     return true;

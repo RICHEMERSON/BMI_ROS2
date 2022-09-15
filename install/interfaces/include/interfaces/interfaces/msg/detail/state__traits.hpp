@@ -25,14 +25,14 @@ inline void to_flow_style_yaml(
   std::ostream & out)
 {
   out << "{";
-  // member: state
+  // member: x_state
   {
-    if (msg.state.size() == 0) {
-      out << "state: []";
+    if (msg.x_state.size() == 0) {
+      out << "x_state: []";
     } else {
-      out << "state: [";
-      size_t pending_items = msg.state.size();
-      for (auto item : msg.state) {
+      out << "x_state: [";
+      size_t pending_items = msg.x_state.size();
+      for (auto item : msg.x_state) {
         rosidl_generator_traits::value_to_yaml(item, out);
         if (--pending_items > 0) {
           out << ", ";
@@ -48,16 +48,16 @@ inline void to_block_style_yaml(
   const State & msg,
   std::ostream & out, size_t indentation = 0)
 {
-  // member: state
+  // member: x_state
   {
     if (indentation > 0) {
       out << std::string(indentation, ' ');
     }
-    if (msg.state.size() == 0) {
-      out << "state: []\n";
+    if (msg.x_state.size() == 0) {
+      out << "x_state: []\n";
     } else {
-      out << "state:\n";
-      for (auto item : msg.state) {
+      out << "x_state:\n";
+      for (auto item : msg.x_state) {
         if (indentation > 0) {
           out << std::string(indentation, ' ');
         }

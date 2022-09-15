@@ -53,8 +53,8 @@ bool interfaces__msg__state__convert_from_py(PyObject * _pymsg, void * _ros_mess
     assert(strncmp("interfaces.msg._state.State", full_classname_dest, 27) == 0);
   }
   interfaces__msg__State * ros_message = _ros_message;
-  {  // state
-    PyObject * field = PyObject_GetAttrString(_pymsg, "state");
+  {  // x_state
+    PyObject * field = PyObject_GetAttrString(_pymsg, "x_state");
     if (!field) {
       return false;
     }
@@ -67,13 +67,13 @@ bool interfaces__msg__state__convert_from_py(PyObject * _pymsg, void * _ros_mess
         return false;
       }
       Py_ssize_t size = view.len / sizeof(double);
-      if (!rosidl_runtime_c__double__Sequence__init(&(ros_message->state), size)) {
+      if (!rosidl_runtime_c__double__Sequence__init(&(ros_message->x_state), size)) {
         PyErr_SetString(PyExc_RuntimeError, "unable to create double__Sequence ros_message");
         PyBuffer_Release(&view);
         Py_DECREF(field);
         return false;
       }
-      double * dest = ros_message->state.data;
+      double * dest = ros_message->x_state.data;
       rc = PyBuffer_ToContiguous(dest, &view, view.len, 'C');
       if (rc < 0) {
         PyBuffer_Release(&view);
@@ -82,7 +82,7 @@ bool interfaces__msg__state__convert_from_py(PyObject * _pymsg, void * _ros_mess
       }
       PyBuffer_Release(&view);
     } else {
-      PyObject * seq_field = PySequence_Fast(field, "expected a sequence in 'state'");
+      PyObject * seq_field = PySequence_Fast(field, "expected a sequence in 'x_state'");
       if (!seq_field) {
         Py_DECREF(field);
         return false;
@@ -93,13 +93,13 @@ bool interfaces__msg__state__convert_from_py(PyObject * _pymsg, void * _ros_mess
         Py_DECREF(field);
         return false;
       }
-      if (!rosidl_runtime_c__double__Sequence__init(&(ros_message->state), size)) {
+      if (!rosidl_runtime_c__double__Sequence__init(&(ros_message->x_state), size)) {
         PyErr_SetString(PyExc_RuntimeError, "unable to create double__Sequence ros_message");
         Py_DECREF(seq_field);
         Py_DECREF(field);
         return false;
       }
-      double * dest = ros_message->state.data;
+      double * dest = ros_message->x_state.data;
       for (Py_ssize_t i = 0; i < size; ++i) {
         PyObject * item = PySequence_Fast_GET_ITEM(seq_field, i);
         if (!item) {
@@ -137,9 +137,9 @@ PyObject * interfaces__msg__state__convert_to_py(void * raw_ros_message)
     }
   }
   interfaces__msg__State * ros_message = (interfaces__msg__State *)raw_ros_message;
-  {  // state
+  {  // x_state
     PyObject * field = NULL;
-    field = PyObject_GetAttrString(_pymessage, "state");
+    field = PyObject_GetAttrString(_pymessage, "x_state");
     if (!field) {
       return NULL;
     }
@@ -176,12 +176,12 @@ PyObject * interfaces__msg__state__convert_to_py(void * raw_ros_message)
       }
       Py_DECREF(pop);
     }
-    if (ros_message->state.size > 0) {
+    if (ros_message->x_state.size > 0) {
       // populating the array.array using the frombytes method
       PyObject * frombytes = PyObject_GetAttrString(field, "frombytes");
       assert(frombytes != NULL);
-      double * src = &(ros_message->state.data[0]);
-      PyObject * data = PyBytes_FromStringAndSize((const char *)src, ros_message->state.size * sizeof(double));
+      double * src = &(ros_message->x_state.data[0]);
+      PyObject * data = PyBytes_FromStringAndSize((const char *)src, ros_message->x_state.size * sizeof(double));
       assert(data != NULL);
       PyObject * ret = PyObject_CallFunctionObjArgs(frombytes, data, NULL);
       Py_DECREF(data);

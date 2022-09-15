@@ -32,9 +32,9 @@ cdr_serialize(
   const interfaces::msg::State & ros_message,
   eprosima::fastcdr::Cdr & cdr)
 {
-  // Member: state
+  // Member: x_state
   {
-    cdr << ros_message.state;
+    cdr << ros_message.x_state;
   }
   return true;
 }
@@ -45,9 +45,9 @@ cdr_deserialize(
   eprosima::fastcdr::Cdr & cdr,
   interfaces::msg::State & ros_message)
 {
-  // Member: state
+  // Member: x_state
   {
-    cdr >> ros_message.state;
+    cdr >> ros_message.x_state;
   }
 
   return true;
@@ -66,13 +66,13 @@ get_serialized_size(
   (void)padding;
   (void)wchar_size;
 
-  // Member: state
+  // Member: x_state
   {
-    size_t array_size = ros_message.state.size();
+    size_t array_size = ros_message.x_state.size();
 
     current_alignment += padding +
       eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
-    size_t item_size = sizeof(ros_message.state[0]);
+    size_t item_size = sizeof(ros_message.x_state[0]);
     current_alignment += array_size * item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -98,7 +98,7 @@ max_serialized_size_State(
   is_plain = true;
 
 
-  // Member: state
+  // Member: x_state
   {
     size_t array_size = 0;
     full_bounded = false;

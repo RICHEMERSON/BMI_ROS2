@@ -5,7 +5,7 @@
 
 # Import statements for member types
 
-# Member 'state'
+# Member 'x_state'
 import array  # noqa: E402, I100
 
 import builtins  # noqa: E402, I100
@@ -58,11 +58,11 @@ class State(metaclass=Metaclass_State):
     """Message class 'State'."""
 
     __slots__ = [
-        '_state',
+        '_x_state',
     ]
 
     _fields_and_field_types = {
-        'state': 'sequence<double>',
+        'x_state': 'sequence<double>',
     }
 
     SLOT_TYPES = (
@@ -73,7 +73,7 @@ class State(metaclass=Metaclass_State):
         assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
             'Invalid arguments passed to constructor: %s' % \
             ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
-        self.state = array.array('d', kwargs.get('state', []))
+        self.x_state = array.array('d', kwargs.get('x_state', []))
 
     def __repr__(self):
         typename = self.__class__.__module__.split('.')
@@ -104,7 +104,7 @@ class State(metaclass=Metaclass_State):
     def __eq__(self, other):
         if not isinstance(other, self.__class__):
             return False
-        if self.state != other.state:
+        if self.x_state != other.x_state:
             return False
         return True
 
@@ -114,16 +114,16 @@ class State(metaclass=Metaclass_State):
         return copy(cls._fields_and_field_types)
 
     @builtins.property
-    def state(self):
-        """Message field 'state'."""
-        return self._state
+    def x_state(self):
+        """Message field 'x_state'."""
+        return self._x_state
 
-    @state.setter
-    def state(self, value):
+    @x_state.setter
+    def x_state(self, value):
         if isinstance(value, array.array):
             assert value.typecode == 'd', \
-                "The 'state' array.array() must have the type code of 'd'"
-            self._state = value
+                "The 'x_state' array.array() must have the type code of 'd'"
+            self._x_state = value
             return
         if __debug__:
             from collections.abc import Sequence
@@ -138,5 +138,5 @@ class State(metaclass=Metaclass_State):
                  not isinstance(value, UserString) and
                  all(isinstance(v, float) for v in value) and
                  all(val >= -1.7976931348623157e+308 and val <= 1.7976931348623157e+308 for val in value)), \
-                "The 'state' field must be a set or sequence and each value of type 'float' and each double in [-179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368.000000, 179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368.000000]"
-        self._state = array.array('d', value)
+                "The 'x_state' field must be a set or sequence and each value of type 'float' and each double in [-179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368.000000, 179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368.000000]"
+        self._x_state = array.array('d', value)

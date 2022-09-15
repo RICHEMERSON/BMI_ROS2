@@ -18,13 +18,13 @@ extern "C"
 // Constants defined in the message
 
 // Include directives for member types
-// Member 'state'
+// Member 'x_state'
 #include "rosidl_runtime_c/primitives_sequence.h"
 
 /// Struct defined in msg/State in the package interfaces.
 typedef struct interfaces__msg__State
 {
-  rosidl_runtime_c__double__Sequence state;
+  rosidl_runtime_c__double__Sequence x_state;
 } interfaces__msg__State;
 
 // Struct for a sequence of interfaces__msg__State.

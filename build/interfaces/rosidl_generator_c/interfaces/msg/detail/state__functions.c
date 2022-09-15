@@ -12,7 +12,7 @@
 
 
 // Include directives for member types
-// Member `state`
+// Member `x_state`
 #include "rosidl_runtime_c/primitives_sequence_functions.h"
 
 bool
@@ -21,8 +21,8 @@ interfaces__msg__State__init(interfaces__msg__State * msg)
   if (!msg) {
     return false;
   }
-  // state
-  if (!rosidl_runtime_c__double__Sequence__init(&msg->state, 0)) {
+  // x_state
+  if (!rosidl_runtime_c__double__Sequence__init(&msg->x_state, 0)) {
     interfaces__msg__State__fini(msg);
     return false;
   }
@@ -35,8 +35,8 @@ interfaces__msg__State__fini(interfaces__msg__State * msg)
   if (!msg) {
     return;
   }
-  // state
-  rosidl_runtime_c__double__Sequence__fini(&msg->state);
+  // x_state
+  rosidl_runtime_c__double__Sequence__fini(&msg->x_state);
 }
 
 bool
@@ -45,9 +45,9 @@ interfaces__msg__State__are_equal(const interfaces__msg__State * lhs, const inte
   if (!lhs || !rhs) {
     return false;
   }
-  // state
+  // x_state
   if (!rosidl_runtime_c__double__Sequence__are_equal(
-      &(lhs->state), &(rhs->state)))
+      &(lhs->x_state), &(rhs->x_state)))
   {
     return false;
   }
@@ -62,9 +62,9 @@ interfaces__msg__State__copy(
   if (!input || !output) {
     return false;
   }
-  // state
+  // x_state
   if (!rosidl_runtime_c__double__Sequence__copy(
-      &(input->state), &(output->state)))
+      &(input->x_state), &(output->x_state)))
   {
     return false;
   }
