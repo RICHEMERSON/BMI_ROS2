@@ -21,6 +21,7 @@ setup(
     entry_points={
         'console_scripts': [
         'psychopy_1D_center_out = state_reader.psychopy_presenter_1D_center_out:main',
+        'monkeylogic_server = state_reader.monkeylogic_interception:main',
         ],
     },
 )

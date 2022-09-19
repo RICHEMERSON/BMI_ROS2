@@ -71,9 +71,9 @@ CMakeFiles/interfaces: /workspace/BMI/src/interfaces/msg/Sample.msg
 CMakeFiles/interfaces: /workspace/BMI/src/interfaces/msg/State.msg
 CMakeFiles/interfaces: /workspace/BMI/src/interfaces/msg/DecoderElement.msg
 CMakeFiles/interfaces: /workspace/BMI/src/interfaces/msg/PassiveObservation.msg
-CMakeFiles/interfaces: /workspace/BMI/src/interfaces/srv/Decoder.srv
-CMakeFiles/interfaces: rosidl_cmake/srv/Decoder_Request.msg
-CMakeFiles/interfaces: rosidl_cmake/srv/Decoder_Response.msg
+CMakeFiles/interfaces: /workspace/BMI/src/interfaces/srv/DecodingService.srv
+CMakeFiles/interfaces: rosidl_cmake/srv/DecodingService_Request.msg
+CMakeFiles/interfaces: rosidl_cmake/srv/DecodingService_Response.msg
 
 interfaces: CMakeFiles/interfaces
 interfaces: CMakeFiles/interfaces.dir/build.make

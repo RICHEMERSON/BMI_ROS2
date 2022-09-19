@@ -1136,9 +1136,9 @@ CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fast
   rosidl_generator_c/interfaces/msg/rosidl_generator_c__visibility_control.h \
   /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/primitives_sequence_functions.h
 
-CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/srv/detail/decoder__type_support_c.cpp.o: rosidl_typesupport_fastrtps_c/interfaces/srv/detail/decoder__type_support_c.cpp \
+CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/srv/detail/decoding_service__type_support_c.cpp.o: rosidl_typesupport_fastrtps_c/interfaces/srv/detail/decoding_service__type_support_c.cpp \
   /usr/include/stdc-predef.h \
-  rosidl_typesupport_fastrtps_c/interfaces/srv/detail/decoder__rosidl_typesupport_fastrtps_c.h \
+  rosidl_typesupport_fastrtps_c/interfaces/srv/detail/decoding_service__rosidl_typesupport_fastrtps_c.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h \
   /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/message_type_support_struct.h \
   /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/visibility_control.h \
@@ -1358,8 +1358,8 @@ CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fast
   /usr/include/c++/11/istream \
   /usr/include/c++/11/bits/istream.tcc \
   /usr/include/malloc.h \
-  rosidl_generator_c/interfaces/srv/detail/decoder__struct.h \
-  rosidl_generator_c/interfaces/srv/detail/decoder__functions.h \
+  rosidl_generator_c/interfaces/srv/detail/decoding_service__struct.h \
+  rosidl_generator_c/interfaces/srv/detail/decoding_service__functions.h \
   /usr/include/c++/11/stdlib.h \
   rosidl_generator_c/interfaces/msg/rosidl_generator_c__visibility_control.h \
   /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/primitives_sequence_functions.h \
@@ -1403,13 +1403,9 @@ CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fast
   /opt/ros/humble/include/rmw/rmw/subscription_content_filter_options.h \
   /opt/ros/humble/include/rmw/rmw/time.h \
   /opt/ros/humble/include/rosidl_runtime_cpp/rosidl_typesupport_cpp/service_type_support.hpp \
-  rosidl_generator_c/interfaces/srv/decoder.h \
-  rosidl_generator_c/interfaces/srv/detail/decoder__type_support.h
+  rosidl_generator_c/interfaces/srv/decoding_service.h \
+  rosidl_generator_c/interfaces/srv/detail/decoding_service__type_support.h
 
-
-rosidl_generator_c/interfaces/srv/detail/decoder__type_support.h:
-
-rosidl_generator_c/interfaces/srv/decoder.h:
 
 /opt/ros/humble/include/rmw/rmw/serialized_message.h:
 
@@ -1485,6 +1481,8 @@ rosidl_generator_c/interfaces/msg/detail/ir__struct.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/timer_t.h:
 
+rosidl_generator_c/interfaces/srv/detail/decoding_service__type_support.h:
+
 /usr/include/c++/11/ext/atomicity.h:
 
 /usr/include/c++/11/bits/stl_pair.h:
@@ -1525,8 +1523,6 @@ rosidl_generator_c/interfaces/msg/detail/ir__struct.h:
 
 /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h:
 
-rosidl_generator_c/interfaces/srv/detail/decoder__functions.h:
-
 /usr/include/c++/11/bits/postypes.h:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/gthr.h:
@@ -1538,6 +1534,8 @@ rosidl_generator_c/interfaces/srv/detail/decoder__functions.h:
 /usr/include/c++/11/iosfwd:
 
 /usr/include/c++/11/initializer_list:
+
+rosidl_generator_c/interfaces/srv/detail/decoding_service__struct.h:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/c++locale.h:
 
@@ -1565,8 +1563,6 @@ rosidl_generator_c/interfaces/srv/detail/decoder__functions.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h:
 
-/usr/include/c++/11/limits:
-
 /usr/include/x86_64-linux-gnu/c++/11/bits/cpu_defines.h:
 
 /usr/include/x86_64-linux-gnu/bits/timesize.h:
@@ -1580,8 +1576,6 @@ rosidl_generator_c/interfaces/srv/detail/decoder__functions.h:
 /usr/include/x86_64-linux-gnu/asm/errno.h:
 
 rosidl_typesupport_fastrtps_c/interfaces/msg/detail/decoder_element__type_support_c.cpp:
-
-rosidl_typesupport_fastrtps_c/interfaces/srv/detail/decoder__type_support_c.cpp:
 
 /opt/ros/humble/include/fastcdr/fastcdr/exceptions/Exception.h:
 
@@ -1665,6 +1659,8 @@ rosidl_typesupport_fastrtps_c/interfaces/msg/rosidl_typesupport_fastrtps_c__visi
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/c++allocator.h:
 
+rosidl_typesupport_fastrtps_c/interfaces/srv/detail/decoding_service__rosidl_typesupport_fastrtps_c.h:
+
 /opt/ros/humble/include/rosidl_typesupport_interface/rosidl_typesupport_interface/macros.h:
 
 /usr/include/stdio.h:
@@ -1703,6 +1699,10 @@ rosidl_generator_c/interfaces/msg/detail/sample__struct.h:
 
 /usr/include/c++/11/bits/stl_iterator_base_funcs.h:
 
+/usr/include/c++/11/ext/alloc_traits.h:
+
+/usr/include/x86_64-linux-gnu/bits/sched.h:
+
 /usr/include/x86_64-linux-gnu/bits/waitstatus.h:
 
 /usr/include/c++/11/cstdint:
@@ -1716,6 +1716,10 @@ rosidl_generator_c/interfaces/msg/detail/sample__struct.h:
 /opt/ros/humble/include/rcutils/rcutils/error_handling.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
+
+/usr/include/c++/11/limits:
+
+rosidl_typesupport_fastrtps_c/interfaces/srv/detail/decoding_service__type_support_c.cpp:
 
 /usr/include/c++/11/new:
 
@@ -1947,6 +1951,8 @@ rosidl_generator_c/interfaces/msg/rosidl_generator_c__visibility_control.h:
 
 /usr/include/c++/11/istream:
 
+rosidl_generator_c/interfaces/srv/decoding_service.h:
+
 /usr/include/c++/11/bits/istream.tcc:
 
 /usr/include/c++/11/stdlib.h:
@@ -1965,20 +1971,14 @@ rosidl_typesupport_fastrtps_c/interfaces/msg/detail/state__rosidl_typesupport_fa
 
 rosidl_generator_c/interfaces/msg/detail/state__functions.h:
 
-rosidl_typesupport_fastrtps_c/interfaces/srv/detail/decoder__rosidl_typesupport_fastrtps_c.h:
-
-/usr/include/c++/11/ext/alloc_traits.h:
-
-/usr/include/x86_64-linux-gnu/bits/sched.h:
-
-rosidl_generator_c/interfaces/srv/detail/decoder__struct.h:
-
-rosidl_typesupport_fastrtps_c/interfaces/msg/detail/sample__type_support_c.cpp:
-
-/opt/ros/humble/include/rmw/rmw/types.h:
+rosidl_generator_c/interfaces/srv/detail/decoding_service__functions.h:
 
 /usr/include/c++/11/bits/stl_tree.h:
 
 /opt/ros/humble/include/rcutils/rcutils/visibility_control.h:
+
+rosidl_typesupport_fastrtps_c/interfaces/msg/detail/sample__type_support_c.cpp:
+
+/opt/ros/humble/include/rmw/rmw/types.h:
 
 /opt/ros/humble/include/rcutils/rcutils/visibility_control_macros.h:

@@ -15,16 +15,17 @@
 import rclpy
 from rclpy.node import Node
 import numpy as np
-from cerebus import cbpy
 import time
-from interfaces.msg import DecoderElement, PassiveObservation
+from interfaces.msg import State, DecoderElement, PassiveObservation
 from collections import deque
-from queue import Queue
+from multiprocessing import Queue
 from sklearn.linear_model import MultiTaskLasso
 import pickle
-from interfaces.srv import Decoder
+from interfaces.srv import DecodingService
+import json
+from multiprocessing import Process
 
-def model_inference(self, observation_q, state_q, decoding_element_q):
+def model_inference(observation_q, state_q, decoding_element_q):
     decoding_element = None
     while True:
         if not decoding_element_q.empty():
@@ -34,11 +35,6 @@ def model_inference(self, observation_q, state_q, decoding_element_q):
         if decoding_element is not None:
             decoding_state = list(decoding_element.predict(observation_q.get()))
             state_q.put(decoding_state)
-            self.get_logger().info('Publishing: passive decoding state: {}'.format(str(decoding_state)))
-
-observation_q = Queue()
-state_q = Queue()
-decoding_element_q = Queue()
 
 class DecodingElementPredictor(Node):
 
@@ -49,11 +45,17 @@ class DecodingElementPredictor(Node):
         #+-----------------------------------------------------------------------
         
         #%% use super to initialize ros node with 'passive_data_integrator' field
-        super().__init__('/system/group/decoding_element_predictor')
+        super().__init__('decoding_element_predictor')
         
         #+-----------------------------------------------------------------------
         # set parameters
         #+-----------------------------------------------------------------------
+        
+        #%% default parameters
+        parameters = {}
+        parameters['system'] = 0
+        parameters['group'] = 0
+        parameters['wait'] = False
         
         #%% declare parameters    
         self.declare_parameter('parameters', json.dumps(parameters))
@@ -82,14 +84,8 @@ class DecodingElementPredictor(Node):
         
         #%% initialize service
         self.srv = self.create_service(
-                DecoderElement, '/system_{}/group_{}/predictor/decoding_service'.format(parameters['system'], parameters['group']), self.decoding_element_predict_callback
+                DecodingService, '/system_{}/group_{}/predictor/decoding_service'.format(parameters['system'], parameters['group']), self.decoding_element_predict_callback
                 )
-        
-        #%% initialize publisher
-        self.state_publisher = self.create_publisher(
-                State, '/system_{}/group_{}/predictor/state'.format(parameters['system'], parameters['group']), 1
-                )
-       
         #+-----------------------------------------------------------------------
         # declare protect/private attribute for callback function
         #+-----------------------------------------------------------------------    
@@ -99,36 +95,39 @@ class DecodingElementPredictor(Node):
         self._neural_data = []
         self._wait = parameters['wait']
         
+        self._observation_q = Queue()
+        self._state_q = Queue()
+        self._decoding_element_q = Queue()
+        
         #%% build sub process for consideration of GIL
-        predictor_process = Process(target=decoding_element_talker_callback, args=(self, observation_q, state_q, decoding_element_q))
+        predictor_process = Process(target=model_inference, args=(self._observation_q, self._state_q, self._decoding_element_q))
         predictor_process.daemon = True
         predictor_process.start()
     
     def decoding_element_listener_callback(self, msg):
     
-        self.get_logger().info('Recieving: decoding element: {}'.format(str(msg.de)))
+        # self.get_logger().info('Recieving: decoding element: {}'.format(str(msg.de)))
         self._decoding_element = pickle.loads(bytes(list(msg.de)))
-        decoding_element_q.put(self._decoding_element)
+        self._decoding_element_q.put(self._decoding_element)
     
     def neural_data_listener_callback(self, msg):
         
         _decoding_state = State()
-        self.get_logger().info('Recieving: neural data: {}'.format(str(msg.y_observation)))
-        observation_q.put(np.array(msg.y_observation))
+        # self.get_logger().info('Recieving: neural data: {}'.format(str(msg.y_observation)))
+        self._observation_q.put(np.array(msg.y_observation)[np.newaxis,:])
 
-        while not state_q.empty():
-            self._decoding_state = state_q.get()
-            _decoding_state.x_state = self._decoding_state
+        while not self._state_q.empty():
+            self._decoding_state = self._state_q.get()
         
-        if self._wait and self._decoding_element is not None:
-            _decoding_state.x_state = list(decoding_element.predict(np.array(msg.y_observation)))
-        
-        self.get_logger().info('Publishing: decoding state: {}'.format(str(msg.y_observation)))
-        self.state_publisher.publish(_decoding_state)
+        self.get_logger().info('Publishing: decoding state: {}'.format(str(self._decoding_state)))
     
     def decoding_element_predict_callback(self, request, response):
         
-        response.res = [0.0] if self._decoding_state is None else self._decoding_state           
+        response.res = [0.0] if self._decoding_state is None else self._decoding_state  
+        
+        if self._wait and self._decoding_element is not None:
+            response.res = list(self._decoding_element.predict(np.array(msg.y_observation)[np.newaxis,:]))
+                  
         self.get_logger().info('Servicing: decoding element: [incoming request : {}, outcoming response : {}]'.format(str(request.req), str(response.res)))
 
 def main(args=None):

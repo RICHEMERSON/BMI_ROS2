@@ -86,10 +86,10 @@ CMakeFiles/interfaces__cpp: rosidl_generator_cpp/interfaces/msg/passive_observat
 CMakeFiles/interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/passive_observation__builder.hpp
 CMakeFiles/interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/passive_observation__struct.hpp
 CMakeFiles/interfaces__cpp: rosidl_generator_cpp/interfaces/msg/detail/passive_observation__traits.hpp
-CMakeFiles/interfaces__cpp: rosidl_generator_cpp/interfaces/srv/decoder.hpp
-CMakeFiles/interfaces__cpp: rosidl_generator_cpp/interfaces/srv/detail/decoder__builder.hpp
-CMakeFiles/interfaces__cpp: rosidl_generator_cpp/interfaces/srv/detail/decoder__struct.hpp
-CMakeFiles/interfaces__cpp: rosidl_generator_cpp/interfaces/srv/detail/decoder__traits.hpp
+CMakeFiles/interfaces__cpp: rosidl_generator_cpp/interfaces/srv/decoding_service.hpp
+CMakeFiles/interfaces__cpp: rosidl_generator_cpp/interfaces/srv/detail/decoding_service__builder.hpp
+CMakeFiles/interfaces__cpp: rosidl_generator_cpp/interfaces/srv/detail/decoding_service__struct.hpp
+CMakeFiles/interfaces__cpp: rosidl_generator_cpp/interfaces/srv/detail/decoding_service__traits.hpp
 
 rosidl_generator_cpp/interfaces/msg/ir.hpp: /opt/ros/humble/lib/rosidl_generator_cpp/rosidl_generator_cpp
 rosidl_generator_cpp/interfaces/msg/ir.hpp: /opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_generator_cpp/__init__.py
@@ -111,7 +111,7 @@ rosidl_generator_cpp/interfaces/msg/ir.hpp: rosidl_adapter/interfaces/msg/Sample
 rosidl_generator_cpp/interfaces/msg/ir.hpp: rosidl_adapter/interfaces/msg/State.idl
 rosidl_generator_cpp/interfaces/msg/ir.hpp: rosidl_adapter/interfaces/msg/DecoderElement.idl
 rosidl_generator_cpp/interfaces/msg/ir.hpp: rosidl_adapter/interfaces/msg/PassiveObservation.idl
-rosidl_generator_cpp/interfaces/msg/ir.hpp: rosidl_adapter/interfaces/srv/Decoder.idl
+rosidl_generator_cpp/interfaces/msg/ir.hpp: rosidl_adapter/interfaces/srv/DecodingService.idl
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/workspace/BMI/build/interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code for ROS interfaces"
 	/usr/bin/python3.10 /opt/ros/humble/share/rosidl_generator_cpp/cmake/../../../lib/rosidl_generator_cpp/rosidl_generator_cpp --generator-arguments-file /workspace/BMI/build/interfaces/rosidl_generator_cpp__arguments.json
 
@@ -172,17 +172,17 @@ rosidl_generator_cpp/interfaces/msg/detail/passive_observation__struct.hpp: rosi
 rosidl_generator_cpp/interfaces/msg/detail/passive_observation__traits.hpp: rosidl_generator_cpp/interfaces/msg/ir.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/interfaces/msg/detail/passive_observation__traits.hpp
 
-rosidl_generator_cpp/interfaces/srv/decoder.hpp: rosidl_generator_cpp/interfaces/msg/ir.hpp
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/interfaces/srv/decoder.hpp
+rosidl_generator_cpp/interfaces/srv/decoding_service.hpp: rosidl_generator_cpp/interfaces/msg/ir.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/interfaces/srv/decoding_service.hpp
 
-rosidl_generator_cpp/interfaces/srv/detail/decoder__builder.hpp: rosidl_generator_cpp/interfaces/msg/ir.hpp
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/interfaces/srv/detail/decoder__builder.hpp
+rosidl_generator_cpp/interfaces/srv/detail/decoding_service__builder.hpp: rosidl_generator_cpp/interfaces/msg/ir.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/interfaces/srv/detail/decoding_service__builder.hpp
 
-rosidl_generator_cpp/interfaces/srv/detail/decoder__struct.hpp: rosidl_generator_cpp/interfaces/msg/ir.hpp
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/interfaces/srv/detail/decoder__struct.hpp
+rosidl_generator_cpp/interfaces/srv/detail/decoding_service__struct.hpp: rosidl_generator_cpp/interfaces/msg/ir.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/interfaces/srv/detail/decoding_service__struct.hpp
 
-rosidl_generator_cpp/interfaces/srv/detail/decoder__traits.hpp: rosidl_generator_cpp/interfaces/msg/ir.hpp
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/interfaces/srv/detail/decoder__traits.hpp
+rosidl_generator_cpp/interfaces/srv/detail/decoding_service__traits.hpp: rosidl_generator_cpp/interfaces/msg/ir.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/interfaces/srv/detail/decoding_service__traits.hpp
 
 interfaces__cpp: CMakeFiles/interfaces__cpp
 interfaces__cpp: rosidl_generator_cpp/interfaces/msg/decoder_element.hpp
@@ -205,10 +205,10 @@ interfaces__cpp: rosidl_generator_cpp/interfaces/msg/ir.hpp
 interfaces__cpp: rosidl_generator_cpp/interfaces/msg/passive_observation.hpp
 interfaces__cpp: rosidl_generator_cpp/interfaces/msg/sample.hpp
 interfaces__cpp: rosidl_generator_cpp/interfaces/msg/state.hpp
-interfaces__cpp: rosidl_generator_cpp/interfaces/srv/decoder.hpp
-interfaces__cpp: rosidl_generator_cpp/interfaces/srv/detail/decoder__builder.hpp
-interfaces__cpp: rosidl_generator_cpp/interfaces/srv/detail/decoder__struct.hpp
-interfaces__cpp: rosidl_generator_cpp/interfaces/srv/detail/decoder__traits.hpp
+interfaces__cpp: rosidl_generator_cpp/interfaces/srv/decoding_service.hpp
+interfaces__cpp: rosidl_generator_cpp/interfaces/srv/detail/decoding_service__builder.hpp
+interfaces__cpp: rosidl_generator_cpp/interfaces/srv/detail/decoding_service__struct.hpp
+interfaces__cpp: rosidl_generator_cpp/interfaces/srv/detail/decoding_service__traits.hpp
 interfaces__cpp: CMakeFiles/interfaces__cpp.dir/build.make
 .PHONY : interfaces__cpp
 

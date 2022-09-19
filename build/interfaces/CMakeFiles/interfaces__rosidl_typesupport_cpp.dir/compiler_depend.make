@@ -1001,7 +1001,7 @@ CMakeFiles/interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/interfa
   /opt/ros/humble/include/rosidl_typesupport_c/rosidl_typesupport_c/type_support_map.h \
   /opt/ros/humble/include/rosidl_typesupport_cpp/rosidl_typesupport_cpp/message_type_support_dispatch.hpp
 
-CMakeFiles/interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/interfaces/srv/decoder__type_support.cpp.o: rosidl_typesupport_cpp/interfaces/srv/decoder__type_support.cpp \
+CMakeFiles/interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/interfaces/srv/decoding_service__type_support.cpp.o: rosidl_typesupport_cpp/interfaces/srv/decoding_service__type_support.cpp \
   /usr/include/stdc-predef.h \
   /usr/include/c++/11/cstddef \
   /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
@@ -1019,7 +1019,7 @@ CMakeFiles/interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/interfa
   /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/message_type_support_struct.h \
   /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/visibility_control.h \
   /opt/ros/humble/include/rosidl_typesupport_interface/rosidl_typesupport_interface/macros.h \
-  rosidl_generator_cpp/interfaces/srv/detail/decoder__struct.hpp \
+  rosidl_generator_cpp/interfaces/srv/detail/decoding_service__struct.hpp \
   /usr/include/c++/11/algorithm \
   /usr/include/c++/11/utility \
   /usr/include/c++/11/bits/stl_relops.h \
@@ -1207,11 +1207,13 @@ CMakeFiles/interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/interfa
 
 /opt/ros/humble/include/rosidl_typesupport_cpp/rosidl_typesupport_cpp/service_type_support_dispatch.hpp:
 
-/opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/service_type_support_struct.h:
-
 /opt/ros/humble/include/rosidl_runtime_cpp/rosidl_typesupport_cpp/service_type_support.hpp:
 
-rosidl_typesupport_cpp/interfaces/srv/decoder__type_support.cpp:
+/opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/service_type_support_struct.h:
+
+rosidl_generator_cpp/interfaces/srv/detail/decoding_service__struct.hpp:
+
+rosidl_typesupport_cpp/interfaces/srv/decoding_service__type_support.cpp:
 
 rosidl_generator_cpp/interfaces/msg/detail/sample__struct.hpp:
 
@@ -1414,8 +1416,6 @@ rosidl_generator_cpp/interfaces/msg/detail/state__struct.hpp:
 /usr/include/x86_64-linux-gnu/c++/11/bits/c++allocator.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/timer_t.h:
-
-rosidl_generator_cpp/interfaces/srv/detail/decoder__struct.hpp:
 
 /usr/include/c++/11/ext/aligned_buffer.h:
 

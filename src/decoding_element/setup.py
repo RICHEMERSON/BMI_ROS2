@@ -21,7 +21,9 @@ setup(
     entry_points={
         'console_scripts': [
         'integrator = decoding_element.data_integrator:main',
-        'trainer = decoding_element.decoding_element_trainer:main'
+        'trainer = decoding_element.decoding_element_trainer:main',
+        'predictor = decoding_element.decoding_element_predictor:main'
+        
         ],
     },
 )

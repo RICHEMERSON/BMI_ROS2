@@ -14,8 +14,8 @@ file(REMOVE_RECURSE
   "../rosidl_generator_py/interfaces/msg/_state.py"
   "../rosidl_generator_py/interfaces/msg/_state_s.c"
   "../rosidl_generator_py/interfaces/srv/__init__.py"
-  "../rosidl_generator_py/interfaces/srv/_decoder.py"
-  "../rosidl_generator_py/interfaces/srv/_decoder_s.c"
+  "../rosidl_generator_py/interfaces/srv/_decoding_service.py"
+  "../rosidl_generator_py/interfaces/srv/_decoding_service_s.c"
   "CMakeFiles/interfaces__py"
 )
 

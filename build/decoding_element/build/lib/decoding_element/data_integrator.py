@@ -132,28 +132,24 @@ class PassiveDataIntegrator(Node):
         parameters['group'] = 0
         parameters['state'] = 0
         parameters['AlignedData'] = 'observation'
+        parameters['entry_observation_groups'] = ['/system_{}/passive_observation'.format(str(parameters['system']))]
+        parameters['entry_state_groups'] = ['/system_{}/group_{}/state_{}/desired_state'.format(parameters['system'], parameters['group'], parameters['state'])]
 
         #%% default entry group topic
-        entry_observation_groups = ['/system_{}/passive_observation'.format(str(parameters['system']))]
+        entry_observation_groups = parameters['entry_observation_groups']
 
         #%% default entry state topic
-        entry_state_groups = ['/system_{}/group_{}/state_{}/desired_state'.format(parameters['system'], parameters['group'], parameters['state'])]
+        entry_state_groups = parameters['entry_state_groups']
         
         #%% declare parameters    
         self.declare_parameter('parameters', list(pickle.dumps(parameters)))
-        self.declare_parameter('entry_observation_groups', entry_observation_groups)
-        self.declare_parameter('entry_state_groups', entry_state_groups)
         
         #%% get parameters
         parameters = pickle.loads(bytes(list(self.get_parameter('parameters').get_parameter_value().integer_array_value)))
-        entry_observation_groups = self.get_parameter('entry_observation_groups').get_parameter_value().string_array_value
-        entry_state_groups = self.get_parameter('entry_state_groups').get_parameter_value().string_array_value
         
         #%% logging parameters
         for par in parameters:
-            self.get_logger().info('Parameters: {}: {}'.format(par, str(parameters[par])))    
-        self.get_logger().info('Parameters: entry observation group: {}'.format(entry_observation_groups))
-        self.get_logger().info('Parameters: entry state group: {}'.format(entry_state_groups))
+            self.get_logger().info('Parameters: {}: {}'.format(par, str(parameters[par])))
         
         #+-----------------------------------------------------------------------
         # initialize communication module and use callback function
@@ -218,6 +214,7 @@ class PassiveDataIntegrator(Node):
                         self._sample.y_observation = self._observation
                         self.publisher_.publish(self._sample)
                         self.get_logger().info('Publishing: integrated data: [x_state : {}, y_observation : {}]'.format(str(self._sample.x_state), str(self._sample.y_observation)))
+                        self._state = None
 
     def state_listener_callback(self, msg):
         
@@ -231,6 +228,7 @@ class PassiveDataIntegrator(Node):
                         self._sample.y_observation = self._observation
                         self.publisher_.publish(self._sample)
                         self.get_logger().info('Publishing: integrated data: [x_state : {}, y_observation : {}]'.format(str(self._sample.x_state), str(self._sample.y_observation)))
+                        self._observation = None
 
 def main(args=None):
     

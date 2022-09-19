@@ -9,8 +9,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/detail/sample__functions.c.o.d"
   "CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/detail/state__functions.c.o"
   "CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/detail/state__functions.c.o.d"
-  "CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/srv/detail/decoder__functions.c.o"
-  "CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/srv/detail/decoder__functions.c.o.d"
+  "CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/srv/detail/decoding_service__functions.c.o"
+  "CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/srv/detail/decoding_service__functions.c.o.d"
   "libinterfaces__rosidl_generator_c.pdb"
   "libinterfaces__rosidl_generator_c.so"
   "rosidl_generator_c/interfaces/msg/decoder_element.h"
@@ -38,11 +38,11 @@ file(REMOVE_RECURSE
   "rosidl_generator_c/interfaces/msg/passive_observation.h"
   "rosidl_generator_c/interfaces/msg/sample.h"
   "rosidl_generator_c/interfaces/msg/state.h"
-  "rosidl_generator_c/interfaces/srv/decoder.h"
-  "rosidl_generator_c/interfaces/srv/detail/decoder__functions.c"
-  "rosidl_generator_c/interfaces/srv/detail/decoder__functions.h"
-  "rosidl_generator_c/interfaces/srv/detail/decoder__struct.h"
-  "rosidl_generator_c/interfaces/srv/detail/decoder__type_support.h"
+  "rosidl_generator_c/interfaces/srv/decoding_service.h"
+  "rosidl_generator_c/interfaces/srv/detail/decoding_service__functions.c"
+  "rosidl_generator_c/interfaces/srv/detail/decoding_service__functions.h"
+  "rosidl_generator_c/interfaces/srv/detail/decoding_service__struct.h"
+  "rosidl_generator_c/interfaces/srv/detail/decoding_service__type_support.h"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -186,7 +186,7 @@ CMakeFiles/interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/interfaces/
   /opt/ros/humble/include/rosidl_typesupport_c/rosidl_typesupport_c/message_type_support_dispatch.h \
   /opt/ros/humble/include/rosidl_typesupport_c/rosidl_typesupport_c/type_support_map.h
 
-CMakeFiles/interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/interfaces/srv/decoder__type_support.cpp.o: rosidl_typesupport_c/interfaces/srv/decoder__type_support.cpp \
+CMakeFiles/interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/interfaces/srv/decoding_service__type_support.cpp.o: rosidl_typesupport_c/interfaces/srv/decoding_service__type_support.cpp \
   /usr/include/stdc-predef.h \
   /usr/include/c++/11/cstddef \
   /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
@@ -204,7 +204,7 @@ CMakeFiles/interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/interfaces/
   /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/message_type_support_struct.h \
   /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/visibility_control.h \
   /opt/ros/humble/include/rosidl_typesupport_interface/rosidl_typesupport_interface/macros.h \
-  rosidl_generator_c/interfaces/srv/detail/decoder__struct.h \
+  rosidl_generator_c/interfaces/srv/detail/decoding_service__struct.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h \
   /usr/include/stdint.h \
@@ -216,7 +216,7 @@ CMakeFiles/interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/interfaces/
   /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
   /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
   /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/primitives_sequence.h \
-  rosidl_generator_c/interfaces/srv/detail/decoder__type_support.h \
+  rosidl_generator_c/interfaces/srv/detail/decoding_service__type_support.h \
   rosidl_generator_c/interfaces/msg/rosidl_generator_c__visibility_control.h \
   /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/service_type_support_struct.h \
   /opt/ros/humble/include/rosidl_typesupport_c/rosidl_typesupport_c/identifier.h \
@@ -228,7 +228,11 @@ CMakeFiles/interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/interfaces/
 
 /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/service_type_support_struct.h:
 
-rosidl_generator_c/interfaces/srv/detail/decoder__struct.h:
+rosidl_generator_c/interfaces/srv/detail/decoding_service__type_support.h:
+
+rosidl_generator_c/interfaces/srv/detail/decoding_service__struct.h:
+
+rosidl_typesupport_c/interfaces/srv/decoding_service__type_support.cpp:
 
 rosidl_generator_c/interfaces/msg/detail/state__struct.h:
 
@@ -241,8 +245,6 @@ rosidl_typesupport_c/interfaces/msg/state__type_support.cpp:
 rosidl_generator_c/interfaces/msg/detail/passive_observation__type_support.h:
 
 rosidl_generator_c/interfaces/msg/detail/passive_observation__struct.h:
-
-rosidl_generator_c/interfaces/srv/detail/decoder__type_support.h:
 
 rosidl_typesupport_c/interfaces/msg/passive_observation__type_support.cpp:
 
@@ -321,8 +323,6 @@ rosidl_generator_c/interfaces/msg/detail/decoder_element__struct.h:
 /usr/include/x86_64-linux-gnu/bits/typesizes.h:
 
 /usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
-
-rosidl_typesupport_c/interfaces/srv/decoder__type_support.cpp:
 
 /usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
 

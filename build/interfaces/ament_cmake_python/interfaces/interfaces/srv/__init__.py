@@ -1,1 +1,1 @@
-from interfaces.srv._decoder import Decoder  # noqa: F401
+from interfaces.srv._decoding_service import DecodingService  # noqa: F401

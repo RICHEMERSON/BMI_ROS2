@@ -386,9 +386,9 @@ CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/
   /opt/ros/humble/include/rcutils/rcutils/types/rcutils_ret.h \
   /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/primitives_sequence_functions.h
 
-CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/srv/detail/decoder__functions.c.o: rosidl_generator_c/interfaces/srv/detail/decoder__functions.c \
+CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/srv/detail/decoding_service__functions.c.o: rosidl_generator_c/interfaces/srv/detail/decoding_service__functions.c \
   /usr/include/stdc-predef.h \
-  rosidl_generator_c/interfaces/srv/detail/decoder__functions.h \
+  rosidl_generator_c/interfaces/srv/detail/decoding_service__functions.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h \
   /usr/include/stdlib.h \
   /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
@@ -435,7 +435,7 @@ CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/srv/
   /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
   /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/visibility_control.h \
   rosidl_generator_c/interfaces/msg/rosidl_generator_c__visibility_control.h \
-  rosidl_generator_c/interfaces/srv/detail/decoder__struct.h \
+  rosidl_generator_c/interfaces/srv/detail/decoding_service__struct.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h \
   /usr/include/stdint.h \
   /usr/include/x86_64-linux-gnu/bits/wchar.h \
@@ -464,7 +464,11 @@ CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/srv/
   /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/primitives_sequence_functions.h
 
 
-rosidl_generator_c/interfaces/srv/detail/decoder__functions.c:
+rosidl_generator_c/interfaces/srv/detail/decoding_service__struct.h:
+
+rosidl_generator_c/interfaces/srv/detail/decoding_service__functions.h:
+
+rosidl_generator_c/interfaces/srv/detail/decoding_service__functions.c:
 
 rosidl_generator_c/interfaces/msg/detail/state__struct.h:
 
@@ -506,8 +510,6 @@ rosidl_generator_c/interfaces/msg/detail/ir__functions.h:
 
 /usr/include/x86_64-linux-gnu/bits/endianness.h:
 
-rosidl_generator_c/interfaces/srv/detail/decoder__struct.h:
-
 rosidl_generator_c/interfaces/msg/detail/ir__functions.c:
 
 /opt/ros/humble/include/rcutils/rcutils/visibility_control.h:
@@ -533,8 +535,6 @@ rosidl_generator_c/interfaces/msg/detail/ir__functions.c:
 /usr/include/x86_64-linux-gnu/bits/floatn.h:
 
 /usr/include/x86_64-linux-gnu/bits/waitstatus.h:
-
-rosidl_generator_c/interfaces/srv/detail/decoder__functions.h:
 
 /usr/include/x86_64-linux-gnu/bits/waitflags.h:
 

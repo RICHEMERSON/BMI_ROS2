@@ -17,7 +17,7 @@ from rclpy.node import Node
 import numpy as np
 import time
 from interfaces.msg import State
-from interfaces.srv import Decoder
+from interfaces.srv import DecodingService
 from collections import deque
 from queue import Queue
 from shared_memory_support import Shared_Array
@@ -127,13 +127,13 @@ class PsychopyPresenter(Node):
                                                )
         
         '''
-        self.cli = self.create_client(Decoder, '/system_{}/group_{}/state_{}/{}'.format(
+        self.cli = self.create_client(DecodingService, '/system_{}/group_{}/state_{}/{}'.format(
                                      parameters['system'], parameters['group'], parameters['state'],parameters['decoding_element'])
                                      )
                                      
         while not self.cli.wait_for_service(timeout_sec=0.02):
             self.get_logger().info('service not available, waiting again...')
-        self.req = Decoder.Request()'''
+        self.req = DecodingService.Request()'''
 
     def send_request(self, re):
         self.req.req = re

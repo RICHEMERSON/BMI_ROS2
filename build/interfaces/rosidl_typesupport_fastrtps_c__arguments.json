@@ -8,7 +8,7 @@
     "/workspace/BMI/build/interfaces/rosidl_adapter/interfaces:msg/State.idl",
     "/workspace/BMI/build/interfaces/rosidl_adapter/interfaces:msg/DecoderElement.idl",
     "/workspace/BMI/build/interfaces/rosidl_adapter/interfaces:msg/PassiveObservation.idl",
-    "/workspace/BMI/build/interfaces/rosidl_adapter/interfaces:srv/Decoder.idl"
+    "/workspace/BMI/build/interfaces/rosidl_adapter/interfaces:srv/DecodingService.idl"
   ],
   "target_dependencies": [
     "/opt/ros/humble/lib/rosidl_typesupport_fastrtps_c/rosidl_typesupport_fastrtps_c",
@@ -24,6 +24,6 @@
     "/workspace/BMI/build/interfaces/rosidl_adapter/interfaces/msg/State.idl",
     "/workspace/BMI/build/interfaces/rosidl_adapter/interfaces/msg/DecoderElement.idl",
     "/workspace/BMI/build/interfaces/rosidl_adapter/interfaces/msg/PassiveObservation.idl",
-    "/workspace/BMI/build/interfaces/rosidl_adapter/interfaces/srv/Decoder.idl"
+    "/workspace/BMI/build/interfaces/rosidl_adapter/interfaces/srv/DecodingService.idl"
   ]
 }

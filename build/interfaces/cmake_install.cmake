@@ -376,7 +376,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/interfaces/srv" TYPE FILE FILES "/workspace/BMI/build/interfaces/rosidl_adapter/interfaces/srv/Decoder.idl")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/interfaces/srv" TYPE FILE FILES "/workspace/BMI/build/interfaces/rosidl_adapter/interfaces/srv/DecodingService.idl")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -400,15 +400,15 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/interfaces/srv" TYPE FILE FILES "/workspace/BMI/src/interfaces/srv/Decoder.srv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/interfaces/srv" TYPE FILE FILES "/workspace/BMI/src/interfaces/srv/DecodingService.srv")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/interfaces/srv" TYPE FILE FILES "/workspace/BMI/build/interfaces/rosidl_cmake/srv/Decoder_Request.msg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/interfaces/srv" TYPE FILE FILES "/workspace/BMI/build/interfaces/rosidl_cmake/srv/DecodingService_Request.msg")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/interfaces/srv" TYPE FILE FILES "/workspace/BMI/build/interfaces/rosidl_cmake/srv/Decoder_Response.msg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/interfaces/srv" TYPE FILE FILES "/workspace/BMI/build/interfaces/rosidl_cmake/srv/DecodingService_Response.msg")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)

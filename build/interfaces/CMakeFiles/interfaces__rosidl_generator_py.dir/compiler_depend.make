@@ -1266,7 +1266,7 @@ CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/ms
   rosidl_generator_c/interfaces/msg/rosidl_generator_c__visibility_control.h \
   /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/primitives_sequence_functions.h
 
-CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/srv/_decoder_s.c.o: rosidl_generator_py/interfaces/srv/_decoder_s.c \
+CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/srv/_decoding_service_s.c.o: rosidl_generator_py/interfaces/srv/_decoding_service_s.c \
   /usr/include/stdc-predef.h \
   /usr/include/python3.10/Python.h \
   /usr/include/python3.10/patchlevel.h \
@@ -1513,14 +1513,14 @@ CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/sr
   /usr/include/python3.10/numpy/_neighborhood_iterator_imp.h \
   /usr/include/python3.10/numpy/__multiarray_api.h \
   /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/visibility_control.h \
-  rosidl_generator_c/interfaces/srv/detail/decoder__struct.h \
+  rosidl_generator_c/interfaces/srv/detail/decoding_service__struct.h \
   /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/primitives_sequence.h \
-  rosidl_generator_c/interfaces/srv/detail/decoder__functions.h \
+  rosidl_generator_c/interfaces/srv/detail/decoding_service__functions.h \
   rosidl_generator_c/interfaces/msg/rosidl_generator_c__visibility_control.h \
   /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/primitives_sequence_functions.h
 
 
-rosidl_generator_py/interfaces/srv/_decoder_s.c:
+rosidl_generator_c/interfaces/srv/detail/decoding_service__struct.h:
 
 rosidl_generator_c/interfaces/msg/detail/state__struct.h:
 
@@ -1531,6 +1531,8 @@ rosidl_generator_c/interfaces/msg/detail/passive_observation__functions.h:
 /usr/include/linux/stddef.h:
 
 /usr/include/linux/posix_types.h:
+
+rosidl_generator_c/interfaces/srv/detail/decoding_service__functions.h:
 
 /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h:
 
@@ -1559,8 +1561,6 @@ rosidl_generator_py/interfaces/msg/_state_s.c:
 /usr/include/x86_64-linux-gnu/bits/iscanonical.h:
 
 /usr/include/python3.10/numpy/npy_cpu.h:
-
-rosidl_generator_c/interfaces/srv/detail/decoder__functions.h:
 
 /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h:
 
@@ -1759,6 +1759,8 @@ rosidl_generator_c/interfaces/msg/detail/ir__functions.h:
 /usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
+
+rosidl_generator_py/interfaces/srv/_decoding_service_s.c:
 
 /usr/include/python3.10/funcobject.h:
 
@@ -1977,8 +1979,6 @@ rosidl_generator_c/interfaces/msg/rosidl_generator_c__visibility_control.h:
 /usr/include/pthread.h:
 
 /usr/include/sched.h:
-
-rosidl_generator_c/interfaces/srv/detail/decoder__struct.h:
 
 /usr/include/python3.10/pythread.h:
 

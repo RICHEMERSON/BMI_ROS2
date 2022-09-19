@@ -82,7 +82,7 @@ rosidl_typesupport_fastrtps_cpp/interfaces/msg/detail/dds_fastrtps/ir__type_supp
 rosidl_typesupport_fastrtps_cpp/interfaces/msg/detail/dds_fastrtps/ir__type_support.cpp: rosidl_adapter/interfaces/msg/State.idl
 rosidl_typesupport_fastrtps_cpp/interfaces/msg/detail/dds_fastrtps/ir__type_support.cpp: rosidl_adapter/interfaces/msg/DecoderElement.idl
 rosidl_typesupport_fastrtps_cpp/interfaces/msg/detail/dds_fastrtps/ir__type_support.cpp: rosidl_adapter/interfaces/msg/PassiveObservation.idl
-rosidl_typesupport_fastrtps_cpp/interfaces/msg/detail/dds_fastrtps/ir__type_support.cpp: rosidl_adapter/interfaces/srv/Decoder.idl
+rosidl_typesupport_fastrtps_cpp/interfaces/msg/detail/dds_fastrtps/ir__type_support.cpp: rosidl_adapter/interfaces/srv/DecodingService.idl
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/workspace/BMI/build/interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ type support for eProsima Fast-RTPS"
 	/usr/bin/python3.10 /opt/ros/humble/lib/rosidl_typesupport_fastrtps_cpp/rosidl_typesupport_fastrtps_cpp --generator-arguments-file /workspace/BMI/build/interfaces/rosidl_typesupport_fastrtps_cpp__arguments.json
 
@@ -113,11 +113,11 @@ rosidl_typesupport_fastrtps_cpp/interfaces/msg/detail/dds_fastrtps/passive_obser
 rosidl_typesupport_fastrtps_cpp/interfaces/msg/detail/passive_observation__rosidl_typesupport_fastrtps_cpp.hpp: rosidl_typesupport_fastrtps_cpp/interfaces/msg/detail/dds_fastrtps/ir__type_support.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_typesupport_fastrtps_cpp/interfaces/msg/detail/passive_observation__rosidl_typesupport_fastrtps_cpp.hpp
 
-rosidl_typesupport_fastrtps_cpp/interfaces/srv/detail/dds_fastrtps/decoder__type_support.cpp: rosidl_typesupport_fastrtps_cpp/interfaces/msg/detail/dds_fastrtps/ir__type_support.cpp
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_typesupport_fastrtps_cpp/interfaces/srv/detail/dds_fastrtps/decoder__type_support.cpp
+rosidl_typesupport_fastrtps_cpp/interfaces/srv/detail/dds_fastrtps/decoding_service__type_support.cpp: rosidl_typesupport_fastrtps_cpp/interfaces/msg/detail/dds_fastrtps/ir__type_support.cpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_typesupport_fastrtps_cpp/interfaces/srv/detail/dds_fastrtps/decoding_service__type_support.cpp
 
-rosidl_typesupport_fastrtps_cpp/interfaces/srv/detail/decoder__rosidl_typesupport_fastrtps_cpp.hpp: rosidl_typesupport_fastrtps_cpp/interfaces/msg/detail/dds_fastrtps/ir__type_support.cpp
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_typesupport_fastrtps_cpp/interfaces/srv/detail/decoder__rosidl_typesupport_fastrtps_cpp.hpp
+rosidl_typesupport_fastrtps_cpp/interfaces/srv/detail/decoding_service__rosidl_typesupport_fastrtps_cpp.hpp: rosidl_typesupport_fastrtps_cpp/interfaces/msg/detail/dds_fastrtps/ir__type_support.cpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_typesupport_fastrtps_cpp/interfaces/srv/detail/decoding_service__rosidl_typesupport_fastrtps_cpp.hpp
 
 CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces/msg/detail/dds_fastrtps/ir__type_support.cpp.o: CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/flags.make
 CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces/msg/detail/dds_fastrtps/ir__type_support.cpp.o: rosidl_typesupport_fastrtps_cpp/interfaces/msg/detail/dds_fastrtps/ir__type_support.cpp
@@ -189,19 +189,19 @@ CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fa
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces/msg/detail/dds_fastrtps/passive_observation__type_support.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/BMI/build/interfaces/rosidl_typesupport_fastrtps_cpp/interfaces/msg/detail/dds_fastrtps/passive_observation__type_support.cpp -o CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces/msg/detail/dds_fastrtps/passive_observation__type_support.cpp.s
 
-CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces/srv/detail/dds_fastrtps/decoder__type_support.cpp.o: CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/flags.make
-CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces/srv/detail/dds_fastrtps/decoder__type_support.cpp.o: rosidl_typesupport_fastrtps_cpp/interfaces/srv/detail/dds_fastrtps/decoder__type_support.cpp
-CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces/srv/detail/dds_fastrtps/decoder__type_support.cpp.o: CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspace/BMI/build/interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces/srv/detail/dds_fastrtps/decoder__type_support.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces/srv/detail/dds_fastrtps/decoder__type_support.cpp.o -MF CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces/srv/detail/dds_fastrtps/decoder__type_support.cpp.o.d -o CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces/srv/detail/dds_fastrtps/decoder__type_support.cpp.o -c /workspace/BMI/build/interfaces/rosidl_typesupport_fastrtps_cpp/interfaces/srv/detail/dds_fastrtps/decoder__type_support.cpp
+CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces/srv/detail/dds_fastrtps/decoding_service__type_support.cpp.o: CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/flags.make
+CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces/srv/detail/dds_fastrtps/decoding_service__type_support.cpp.o: rosidl_typesupport_fastrtps_cpp/interfaces/srv/detail/dds_fastrtps/decoding_service__type_support.cpp
+CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces/srv/detail/dds_fastrtps/decoding_service__type_support.cpp.o: CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspace/BMI/build/interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces/srv/detail/dds_fastrtps/decoding_service__type_support.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces/srv/detail/dds_fastrtps/decoding_service__type_support.cpp.o -MF CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces/srv/detail/dds_fastrtps/decoding_service__type_support.cpp.o.d -o CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces/srv/detail/dds_fastrtps/decoding_service__type_support.cpp.o -c /workspace/BMI/build/interfaces/rosidl_typesupport_fastrtps_cpp/interfaces/srv/detail/dds_fastrtps/decoding_service__type_support.cpp
 
-CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces/srv/detail/dds_fastrtps/decoder__type_support.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces/srv/detail/dds_fastrtps/decoder__type_support.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/BMI/build/interfaces/rosidl_typesupport_fastrtps_cpp/interfaces/srv/detail/dds_fastrtps/decoder__type_support.cpp > CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces/srv/detail/dds_fastrtps/decoder__type_support.cpp.i
+CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces/srv/detail/dds_fastrtps/decoding_service__type_support.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces/srv/detail/dds_fastrtps/decoding_service__type_support.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/BMI/build/interfaces/rosidl_typesupport_fastrtps_cpp/interfaces/srv/detail/dds_fastrtps/decoding_service__type_support.cpp > CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces/srv/detail/dds_fastrtps/decoding_service__type_support.cpp.i
 
-CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces/srv/detail/dds_fastrtps/decoder__type_support.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces/srv/detail/dds_fastrtps/decoder__type_support.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/BMI/build/interfaces/rosidl_typesupport_fastrtps_cpp/interfaces/srv/detail/dds_fastrtps/decoder__type_support.cpp -o CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces/srv/detail/dds_fastrtps/decoder__type_support.cpp.s
+CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces/srv/detail/dds_fastrtps/decoding_service__type_support.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces/srv/detail/dds_fastrtps/decoding_service__type_support.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/BMI/build/interfaces/rosidl_typesupport_fastrtps_cpp/interfaces/srv/detail/dds_fastrtps/decoding_service__type_support.cpp -o CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces/srv/detail/dds_fastrtps/decoding_service__type_support.cpp.s
 
 # Object files for target interfaces__rosidl_typesupport_fastrtps_cpp
 interfaces__rosidl_typesupport_fastrtps_cpp_OBJECTS = \
@@ -210,7 +210,7 @@ interfaces__rosidl_typesupport_fastrtps_cpp_OBJECTS = \
 "CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces/msg/detail/dds_fastrtps/state__type_support.cpp.o" \
 "CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces/msg/detail/dds_fastrtps/decoder_element__type_support.cpp.o" \
 "CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces/msg/detail/dds_fastrtps/passive_observation__type_support.cpp.o" \
-"CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces/srv/detail/dds_fastrtps/decoder__type_support.cpp.o"
+"CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces/srv/detail/dds_fastrtps/decoding_service__type_support.cpp.o"
 
 # External object files for target interfaces__rosidl_typesupport_fastrtps_cpp
 interfaces__rosidl_typesupport_fastrtps_cpp_EXTERNAL_OBJECTS =
@@ -220,7 +220,7 @@ libinterfaces__rosidl_typesupport_fastrtps_cpp.so: CMakeFiles/interfaces__rosidl
 libinterfaces__rosidl_typesupport_fastrtps_cpp.so: CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces/msg/detail/dds_fastrtps/state__type_support.cpp.o
 libinterfaces__rosidl_typesupport_fastrtps_cpp.so: CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces/msg/detail/dds_fastrtps/decoder_element__type_support.cpp.o
 libinterfaces__rosidl_typesupport_fastrtps_cpp.so: CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces/msg/detail/dds_fastrtps/passive_observation__type_support.cpp.o
-libinterfaces__rosidl_typesupport_fastrtps_cpp.so: CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces/srv/detail/dds_fastrtps/decoder__type_support.cpp.o
+libinterfaces__rosidl_typesupport_fastrtps_cpp.so: CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces/srv/detail/dds_fastrtps/decoding_service__type_support.cpp.o
 libinterfaces__rosidl_typesupport_fastrtps_cpp.so: CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/build.make
 libinterfaces__rosidl_typesupport_fastrtps_cpp.so: /opt/ros/humble/lib/librosidl_typesupport_fastrtps_cpp.so
 libinterfaces__rosidl_typesupport_fastrtps_cpp.so: /opt/ros/humble/lib/libfastcdr.so.1.0.24
@@ -249,8 +249,8 @@ CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/depend: rosidl_typesu
 CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/depend: rosidl_typesupport_fastrtps_cpp/interfaces/msg/detail/passive_observation__rosidl_typesupport_fastrtps_cpp.hpp
 CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/depend: rosidl_typesupport_fastrtps_cpp/interfaces/msg/detail/sample__rosidl_typesupport_fastrtps_cpp.hpp
 CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/depend: rosidl_typesupport_fastrtps_cpp/interfaces/msg/detail/state__rosidl_typesupport_fastrtps_cpp.hpp
-CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/depend: rosidl_typesupport_fastrtps_cpp/interfaces/srv/detail/dds_fastrtps/decoder__type_support.cpp
-CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/depend: rosidl_typesupport_fastrtps_cpp/interfaces/srv/detail/decoder__rosidl_typesupport_fastrtps_cpp.hpp
+CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/depend: rosidl_typesupport_fastrtps_cpp/interfaces/srv/detail/dds_fastrtps/decoding_service__type_support.cpp
+CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/depend: rosidl_typesupport_fastrtps_cpp/interfaces/srv/detail/decoding_service__rosidl_typesupport_fastrtps_cpp.hpp
 	cd /workspace/BMI/build/interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /workspace/BMI/src/interfaces /workspace/BMI/src/interfaces /workspace/BMI/build/interfaces /workspace/BMI/build/interfaces /workspace/BMI/build/interfaces/CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/depend
 

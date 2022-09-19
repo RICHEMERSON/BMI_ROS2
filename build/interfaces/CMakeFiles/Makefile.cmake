@@ -408,7 +408,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/workspace/BMI/src/interfaces/msg/Sample.msg"
   "/workspace/BMI/src/interfaces/msg/State.msg"
   "/workspace/BMI/src/interfaces/package.xml"
-  "/workspace/BMI/src/interfaces/srv/Decoder.srv"
+  "/workspace/BMI/src/interfaces/srv/DecodingService.srv"
   )
 
 # The corresponding makefile is:
@@ -427,7 +427,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "ament_cmake_core/stamps/State.msg.stamp"
   "ament_cmake_core/stamps/DecoderElement.msg.stamp"
   "ament_cmake_core/stamps/PassiveObservation.msg.stamp"
-  "ament_cmake_core/stamps/Decoder.srv.stamp"
+  "ament_cmake_core/stamps/DecodingService.srv.stamp"
   "ament_cmake_core/stamps/package.xml.stamp"
   "ament_cmake_core/stamps/package_xml_2_cmake.py.stamp"
   "rosidl_generator_c/interfaces/msg/rosidl_generator_c__visibility_control.h"

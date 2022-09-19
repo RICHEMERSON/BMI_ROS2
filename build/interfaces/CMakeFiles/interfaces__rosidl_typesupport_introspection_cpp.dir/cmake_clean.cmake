@@ -9,8 +9,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/interfaces/msg/detail/sample__type_support.cpp.o.d"
   "CMakeFiles/interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/interfaces/msg/detail/state__type_support.cpp.o"
   "CMakeFiles/interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/interfaces/msg/detail/state__type_support.cpp.o.d"
-  "CMakeFiles/interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/interfaces/srv/detail/decoder__type_support.cpp.o"
-  "CMakeFiles/interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/interfaces/srv/detail/decoder__type_support.cpp.o.d"
+  "CMakeFiles/interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/interfaces/srv/detail/decoding_service__type_support.cpp.o"
+  "CMakeFiles/interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/interfaces/srv/detail/decoding_service__type_support.cpp.o.d"
   "libinterfaces__rosidl_typesupport_introspection_cpp.pdb"
   "libinterfaces__rosidl_typesupport_introspection_cpp.so"
   "rosidl_typesupport_introspection_cpp/interfaces/msg/detail/decoder_element__rosidl_typesupport_introspection_cpp.hpp"
@@ -23,8 +23,8 @@ file(REMOVE_RECURSE
   "rosidl_typesupport_introspection_cpp/interfaces/msg/detail/sample__type_support.cpp"
   "rosidl_typesupport_introspection_cpp/interfaces/msg/detail/state__rosidl_typesupport_introspection_cpp.hpp"
   "rosidl_typesupport_introspection_cpp/interfaces/msg/detail/state__type_support.cpp"
-  "rosidl_typesupport_introspection_cpp/interfaces/srv/detail/decoder__rosidl_typesupport_introspection_cpp.hpp"
-  "rosidl_typesupport_introspection_cpp/interfaces/srv/detail/decoder__type_support.cpp"
+  "rosidl_typesupport_introspection_cpp/interfaces/srv/detail/decoding_service__rosidl_typesupport_introspection_cpp.hpp"
+  "rosidl_typesupport_introspection_cpp/interfaces/srv/detail/decoding_service__type_support.cpp"
 )
 
 # Per-language clean rules from dependency scanning.

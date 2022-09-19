@@ -1,0 +1,563 @@
+[0.000000] (-) TimerEvent: {}
+[0.000121] (decoding_element) JobQueued: {'identifier': 'decoding_element', 'dependencies': OrderedDict()}
+[0.000148] (interfaces) JobQueued: {'identifier': 'interfaces', 'dependencies': OrderedDict()}
+[0.000170] (observation_reader) JobQueued: {'identifier': 'observation_reader', 'dependencies': OrderedDict()}
+[0.000200] (state_reader) JobQueued: {'identifier': 'state_reader', 'dependencies': OrderedDict()}
+[0.000219] (test_pkg) JobQueued: {'identifier': 'test_pkg', 'dependencies': OrderedDict()}
+[0.000235] (decoding_element) JobStarted: {'identifier': 'decoding_element'}
+[0.009140] (interfaces) JobStarted: {'identifier': 'interfaces'}
+[0.014501] (observation_reader) JobStarted: {'identifier': 'observation_reader'}
+[0.019975] (state_reader) JobStarted: {'identifier': 'state_reader'}
+[0.024492] (test_pkg) JobStarted: {'identifier': 'test_pkg'}
+[0.099257] (-) TimerEvent: {}
+[0.199455] (-) TimerEvent: {}
+[0.200513] (interfaces) JobProgress: {'identifier': 'interfaces', 'progress': 'cmake'}
+[0.200872] (interfaces) JobProgress: {'identifier': 'interfaces', 'progress': 'build'}
+[0.201424] (interfaces) Command: {'cmd': ['/usr/bin/cmake', '--build', '/workspace/BMI/build/interfaces', '--', '-j20', '-l20'], 'cwd': '/workspace/BMI/build/interfaces', 'env': OrderedDict([('HOSTNAME', 'user-Z490-UD'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/workspace/BMI/install/interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/root'), ('OLDPWD', '/workspace/BMI/src'), ('ROS_PYTHON_VERSION', '3'), ('COLCON_PREFIX_PATH', '/workspace/BMI/install'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', ':1'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/workspace/BMI/install/test_pkg:/workspace/BMI/install/state_reader:/workspace/BMI/install/presenter:/workspace/BMI/install/observation_reader:/workspace/BMI/install/neural_data_generator:/workspace/BMI/install/interfaces:/workspace/BMI/install/decoding_element:/workspace/BMI/install/decoder:/opt/ros/humble'), ('PWD', '/workspace/BMI/build/interfaces'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/workspace/BMI/install/test_pkg/lib/python3.10/site-packages:/workspace/BMI/install/state_reader/lib/python3.10/site-packages:/workspace/BMI/install/presenter/lib/python3.10/site-packages:/workspace/BMI/install/observation_reader/lib/python3.10/site-packages:/workspace/BMI/install/neural_data_generator/lib/python3.10/site-packages:/workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages:/workspace/BMI/install/decoding_element/lib/python3.10/site-packages:/workspace/BMI/install/decoder/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/workspace/BMI/install/interfaces:/workspace/BMI/install/test_pkg:/workspace/BMI/install/state_reader:/workspace/BMI/install/presenter:/workspace/BMI/install/observation_reader:/workspace/BMI/install/neural_data_generator:/workspace/BMI/install/decoding_element:/workspace/BMI/install/decoder:/opt/ros/humble')]), 'shell': False}
+[0.299569] (-) TimerEvent: {}
+[0.399785] (-) TimerEvent: {}
+[0.499993] (-) TimerEvent: {}
+[0.558703] (interfaces) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.2 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.559150] (interfaces) StdoutLine: {'line': b'-- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)\n'}
+[0.559449] (interfaces) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.559536] (interfaces) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.3 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.559619] (interfaces) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.559699] (interfaces) StdoutLine: {'line': b'-- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)\n'}
+[0.600087] (-) TimerEvent: {}
+[0.672559] (interfaces) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.700173] (-) TimerEvent: {}
+[0.800443] (-) TimerEvent: {}
+[0.841212] (interfaces) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.857401] (interfaces) StdoutLine: {'line': b'-- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)\n'}
+[0.873828] (interfaces) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[0.874003] (interfaces) StdoutLine: {'line': b'-- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10\n'}
+[0.874090] (interfaces) StdoutLine: {'line': b'-- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so\n'}
+[0.882704] (interfaces) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.4 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[0.889137] (interfaces) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[0.889732] (interfaces) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[0.890828] (interfaces) StdoutLine: {'line': b'-- Configuring done\n'}
+[0.900526] (-) TimerEvent: {}
+[0.917045] (interfaces) StdoutLine: {'line': b'-- Generating done\n'}
+[0.919058] (interfaces) StdoutLine: {'line': b'-- Build files have been written to: /workspace/BMI/build/interfaces\n'}
+[0.933274] (interfaces) StdoutLine: {'line': b'[  1%] \x1b[34m\x1b[1mGenerating C code for ROS interfaces\x1b[0m\n'}
+[0.938947] (interfaces) StdoutLine: {'line': b'[  2%] \x1b[34m\x1b[1mGenerating C++ code for ROS interfaces\x1b[0m\n'}
+[0.945098] (interfaces) StdoutLine: {'line': b'[  2%] Built target ament_cmake_python_copy_interfaces\n'}
+[1.000640] (-) TimerEvent: {}
+[1.024168] (observation_reader) Command: {'cmd': ['/usr/bin/python3', 'setup.py', 'egg_info', '--egg-base', '../../build/observation_reader', 'build', '--build-base', '/workspace/BMI/build/observation_reader/build', 'install', '--prefix', '/workspace/BMI/install/observation_reader', '--record', '/workspace/BMI/build/observation_reader/install.log', '--single-version-externally-managed'], 'cwd': '/workspace/BMI/src/observation_reader', 'env': {'HOSTNAME': 'user-Z490-UD', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/workspace/BMI/install/interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/root', 'OLDPWD': '/workspace/BMI/src', 'ROS_PYTHON_VERSION': '3', 'COLCON_PREFIX_PATH': '/workspace/BMI/install', 'ROS_DISTRO': 'humble', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'DISPLAY': ':1', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'AMENT_PREFIX_PATH': '/workspace/BMI/install/test_pkg:/workspace/BMI/install/state_reader:/workspace/BMI/install/presenter:/workspace/BMI/install/observation_reader:/workspace/BMI/install/neural_data_generator:/workspace/BMI/install/interfaces:/workspace/BMI/install/decoding_element:/workspace/BMI/install/decoder:/opt/ros/humble', 'PWD': '/workspace/BMI/build/observation_reader', 'LC_ALL': 'C.UTF-8', 'PYTHONPATH': '/workspace/BMI/install/observation_reader/lib/python3.10/site-packages:/workspace/BMI/install/test_pkg/lib/python3.10/site-packages:/workspace/BMI/install/state_reader/lib/python3.10/site-packages:/workspace/BMI/install/presenter/lib/python3.10/site-packages:/workspace/BMI/install/observation_reader/lib/python3.10/site-packages:/workspace/BMI/install/neural_data_generator/lib/python3.10/site-packages:/workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages:/workspace/BMI/install/decoding_element/lib/python3.10/site-packages:/workspace/BMI/install/decoder/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/workspace/BMI/install/interfaces'}, 'shell': False}
+[1.026626] (decoding_element) Command: {'cmd': ['/usr/bin/python3', 'setup.py', 'egg_info', '--egg-base', '../../build/decoding_element', 'build', '--build-base', '/workspace/BMI/build/decoding_element/build', 'install', '--prefix', '/workspace/BMI/install/decoding_element', '--record', '/workspace/BMI/build/decoding_element/install.log', '--single-version-externally-managed'], 'cwd': '/workspace/BMI/src/decoding_element', 'env': {'HOSTNAME': 'user-Z490-UD', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/workspace/BMI/install/interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/root', 'OLDPWD': '/workspace/BMI/src', 'ROS_PYTHON_VERSION': '3', 'COLCON_PREFIX_PATH': '/workspace/BMI/install', 'ROS_DISTRO': 'humble', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'DISPLAY': ':1', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'AMENT_PREFIX_PATH': '/workspace/BMI/install/test_pkg:/workspace/BMI/install/state_reader:/workspace/BMI/install/presenter:/workspace/BMI/install/observation_reader:/workspace/BMI/install/neural_data_generator:/workspace/BMI/install/interfaces:/workspace/BMI/install/decoding_element:/workspace/BMI/install/decoder:/opt/ros/humble', 'PWD': '/workspace/BMI/build/decoding_element', 'LC_ALL': 'C.UTF-8', 'PYTHONPATH': '/workspace/BMI/install/decoding_element/lib/python3.10/site-packages:/workspace/BMI/install/test_pkg/lib/python3.10/site-packages:/workspace/BMI/install/state_reader/lib/python3.10/site-packages:/workspace/BMI/install/presenter/lib/python3.10/site-packages:/workspace/BMI/install/observation_reader/lib/python3.10/site-packages:/workspace/BMI/install/neural_data_generator/lib/python3.10/site-packages:/workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages:/workspace/BMI/install/decoding_element/lib/python3.10/site-packages:/workspace/BMI/install/decoder/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/workspace/BMI/install/interfaces'}, 'shell': False}
+[1.028896] (state_reader) Command: {'cmd': ['/usr/bin/python3', 'setup.py', 'egg_info', '--egg-base', '../../build/state_reader', 'build', '--build-base', '/workspace/BMI/build/state_reader/build', 'install', '--prefix', '/workspace/BMI/install/state_reader', '--record', '/workspace/BMI/build/state_reader/install.log', '--single-version-externally-managed'], 'cwd': '/workspace/BMI/src/state_reader', 'env': {'HOSTNAME': 'user-Z490-UD', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/workspace/BMI/install/interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/root', 'OLDPWD': '/workspace/BMI/src', 'ROS_PYTHON_VERSION': '3', 'COLCON_PREFIX_PATH': '/workspace/BMI/install', 'ROS_DISTRO': 'humble', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'DISPLAY': ':1', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'AMENT_PREFIX_PATH': '/workspace/BMI/install/test_pkg:/workspace/BMI/install/state_reader:/workspace/BMI/install/presenter:/workspace/BMI/install/observation_reader:/workspace/BMI/install/neural_data_generator:/workspace/BMI/install/interfaces:/workspace/BMI/install/decoding_element:/workspace/BMI/install/decoder:/opt/ros/humble', 'PWD': '/workspace/BMI/build/state_reader', 'LC_ALL': 'C.UTF-8', 'PYTHONPATH': '/workspace/BMI/install/state_reader/lib/python3.10/site-packages:/workspace/BMI/install/test_pkg/lib/python3.10/site-packages:/workspace/BMI/install/state_reader/lib/python3.10/site-packages:/workspace/BMI/install/presenter/lib/python3.10/site-packages:/workspace/BMI/install/observation_reader/lib/python3.10/site-packages:/workspace/BMI/install/neural_data_generator/lib/python3.10/site-packages:/workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages:/workspace/BMI/install/decoding_element/lib/python3.10/site-packages:/workspace/BMI/install/decoder/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/workspace/BMI/install/interfaces'}, 'shell': False}
+[1.037193] (test_pkg) Command: {'cmd': ['/usr/bin/python3', 'setup.py', 'egg_info', '--egg-base', '../../build/test_pkg', 'build', '--build-base', '/workspace/BMI/build/test_pkg/build', 'install', '--prefix', '/workspace/BMI/install/test_pkg', '--record', '/workspace/BMI/build/test_pkg/install.log', '--single-version-externally-managed'], 'cwd': '/workspace/BMI/src/test_pkg', 'env': {'HOSTNAME': 'user-Z490-UD', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/workspace/BMI/install/interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/root', 'OLDPWD': '/workspace/BMI/src', 'ROS_PYTHON_VERSION': '3', 'COLCON_PREFIX_PATH': '/workspace/BMI/install', 'ROS_DISTRO': 'humble', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'DISPLAY': ':1', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'AMENT_PREFIX_PATH': '/workspace/BMI/install/test_pkg:/workspace/BMI/install/state_reader:/workspace/BMI/install/presenter:/workspace/BMI/install/observation_reader:/workspace/BMI/install/neural_data_generator:/workspace/BMI/install/interfaces:/workspace/BMI/install/decoding_element:/workspace/BMI/install/decoder:/opt/ros/humble', 'PWD': '/workspace/BMI/build/test_pkg', 'LC_ALL': 'C.UTF-8', 'PYTHONPATH': '/workspace/BMI/install/test_pkg/lib/python3.10/site-packages:/workspace/BMI/install/test_pkg/lib/python3.10/site-packages:/workspace/BMI/install/state_reader/lib/python3.10/site-packages:/workspace/BMI/install/presenter/lib/python3.10/site-packages:/workspace/BMI/install/observation_reader/lib/python3.10/site-packages:/workspace/BMI/install/neural_data_generator/lib/python3.10/site-packages:/workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages:/workspace/BMI/install/decoding_element/lib/python3.10/site-packages:/workspace/BMI/install/decoder/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/workspace/BMI/install/interfaces'}, 'shell': False}
+[1.100713] (-) TimerEvent: {}
+[1.138344] (interfaces) StdoutLine: {'line': b'running egg_info\n'}
+[1.138857] (interfaces) StdoutLine: {'line': b'writing interfaces.egg-info/PKG-INFO\n'}
+[1.139006] (interfaces) StdoutLine: {'line': b'writing dependency_links to interfaces.egg-info/dependency_links.txt\n'}
+[1.139123] (interfaces) StdoutLine: {'line': b'writing top-level names to interfaces.egg-info/top_level.txt\n'}
+[1.140777] (interfaces) StdoutLine: {'line': b"reading manifest file 'interfaces.egg-info/SOURCES.txt'\n"}
+[1.141187] (interfaces) StdoutLine: {'line': b"writing manifest file 'interfaces.egg-info/SOURCES.txt'\n"}
+[1.161647] (interfaces) StdoutLine: {'line': b'[  2%] Built target ament_cmake_python_build_interfaces_egg\n'}
+[1.200794] (-) TimerEvent: {}
+[1.201480] (state_reader) StdoutLine: {'line': b'running egg_info\n'}
+[1.201636] (decoding_element) StdoutLine: {'line': b'running egg_info\n'}
+[1.202183] (state_reader) StdoutLine: {'line': b'writing ../../build/state_reader/state_reader.egg-info/PKG-INFO\n'}
+[1.202289] (decoding_element) StdoutLine: {'line': b'writing ../../build/decoding_element/decoding_element.egg-info/PKG-INFO\n'}
+[1.202384] (state_reader) StdoutLine: {'line': b'writing dependency_links to ../../build/state_reader/state_reader.egg-info/dependency_links.txt\n'}
+[1.202482] (state_reader) StdoutLine: {'line': b'writing entry points to ../../build/state_reader/state_reader.egg-info/entry_points.txt\n'}
+[1.202589] (decoding_element) StdoutLine: {'line': b'writing dependency_links to ../../build/decoding_element/decoding_element.egg-info/dependency_links.txt\n'}
+[1.202656] (state_reader) StdoutLine: {'line': b'writing requirements to ../../build/state_reader/state_reader.egg-info/requires.txt\n'}
+[1.202708] (decoding_element) StdoutLine: {'line': b'writing entry points to ../../build/decoding_element/decoding_element.egg-info/entry_points.txt\n'}
+[1.202759] (state_reader) StdoutLine: {'line': b'writing top-level names to ../../build/state_reader/state_reader.egg-info/top_level.txt\n'}
+[1.202863] (decoding_element) StdoutLine: {'line': b'writing requirements to ../../build/decoding_element/decoding_element.egg-info/requires.txt\n'}
+[1.202926] (decoding_element) StdoutLine: {'line': b'writing top-level names to ../../build/decoding_element/decoding_element.egg-info/top_level.txt\n'}
+[1.203204] (observation_reader) StdoutLine: {'line': b'running egg_info\n'}
+[1.203797] (observation_reader) StdoutLine: {'line': b'writing ../../build/observation_reader/observation_reader.egg-info/PKG-INFO\n'}
+[1.203867] (state_reader) StdoutLine: {'line': b"reading manifest file '../../build/state_reader/state_reader.egg-info/SOURCES.txt'\n"}
+[1.203996] (decoding_element) StdoutLine: {'line': b"reading manifest file '../../build/decoding_element/decoding_element.egg-info/SOURCES.txt'\n"}
+[1.204104] (observation_reader) StdoutLine: {'line': b'writing dependency_links to ../../build/observation_reader/observation_reader.egg-info/dependency_links.txt\n'}
+[1.204173] (observation_reader) StdoutLine: {'line': b'writing entry points to ../../build/observation_reader/observation_reader.egg-info/entry_points.txt\n'}
+[1.204330] (observation_reader) StdoutLine: {'line': b'writing requirements to ../../build/observation_reader/observation_reader.egg-info/requires.txt\n'}
+[1.204429] (observation_reader) StdoutLine: {'line': b'writing top-level names to ../../build/observation_reader/observation_reader.egg-info/top_level.txt\n'}
+[1.204477] (state_reader) StdoutLine: {'line': b"writing manifest file '../../build/state_reader/state_reader.egg-info/SOURCES.txt'\n"}
+[1.204539] (state_reader) StdoutLine: {'line': b'running build\n'}
+[1.204604] (state_reader) StdoutLine: {'line': b'running build_py\n'}
+[1.204648] (decoding_element) StdoutLine: {'line': b"writing manifest file '../../build/decoding_element/decoding_element.egg-info/SOURCES.txt'\n"}
+[1.204696] (decoding_element) StdoutLine: {'line': b'running build\n'}
+[1.204794] (decoding_element) StdoutLine: {'line': b'running build_py\n'}
+[1.204869] (state_reader) StdoutLine: {'line': b'running install\n'}
+[1.204913] (decoding_element) StdoutLine: {'line': b'copying decoding_element/decoding_element_predictor.py -> /workspace/BMI/build/decoding_element/build/lib/decoding_element\n'}
+[1.204959] (state_reader) StderrLine: {'line': b'/usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.\n'}
+[1.205018] (state_reader) StderrLine: {'line': b'  warnings.warn(\n'}
+[1.205106] (state_reader) StdoutLine: {'line': b'running install_lib\n'}
+[1.205174] (decoding_element) StdoutLine: {'line': b'running install\n'}
+[1.205218] (decoding_element) StderrLine: {'line': b'/usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.\n'}
+[1.205268] (decoding_element) StderrLine: {'line': b'  warnings.warn(\n'}
+[1.205340] (decoding_element) StdoutLine: {'line': b'running install_lib\n'}
+[1.205439] (observation_reader) StdoutLine: {'line': b"reading manifest file '../../build/observation_reader/observation_reader.egg-info/SOURCES.txt'\n"}
+[1.205862] (decoding_element) StdoutLine: {'line': b'copying /workspace/BMI/build/decoding_element/build/lib/decoding_element/decoding_element_predictor.py -> /workspace/BMI/install/decoding_element/lib/python3.10/site-packages/decoding_element\n'}
+[1.205914] (state_reader) StdoutLine: {'line': b'running install_data\n'}
+[1.206004] (observation_reader) StdoutLine: {'line': b"writing manifest file '../../build/observation_reader/observation_reader.egg-info/SOURCES.txt'\n"}
+[1.206068] (observation_reader) StdoutLine: {'line': b'running build\n'}
+[1.206125] (observation_reader) StdoutLine: {'line': b'running build_py\n'}
+[1.206191] (state_reader) StdoutLine: {'line': b'running install_egg_info\n'}
+[1.206266] (decoding_element) StdoutLine: {'line': b'byte-compiling /workspace/BMI/install/decoding_element/lib/python3.10/site-packages/decoding_element/decoding_element_predictor.py to decoding_element_predictor.cpython-310.pyc\n'}
+[1.206464] (observation_reader) StdoutLine: {'line': b'running install\n'}
+[1.206556] (observation_reader) StderrLine: {'line': b'/usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.\n'}
+[1.206624] (observation_reader) StderrLine: {'line': b'  warnings.warn(\n'}
+[1.206744] (observation_reader) StdoutLine: {'line': b'running install_lib\n'}
+[1.206907] (decoding_element) StdoutLine: {'line': b'running install_data\n'}
+[1.207225] (decoding_element) StdoutLine: {'line': b'running install_egg_info\n'}
+[1.207298] (state_reader) StdoutLine: {'line': b"removing '/workspace/BMI/install/state_reader/lib/python3.10/site-packages/state_reader-0.0.0-py3.10.egg-info' (and everything under it)\n"}
+[1.207422] (state_reader) StdoutLine: {'line': b'Copying ../../build/state_reader/state_reader.egg-info to /workspace/BMI/install/state_reader/lib/python3.10/site-packages/state_reader-0.0.0-py3.10.egg-info\n'}
+[1.207610] (observation_reader) StdoutLine: {'line': b'running install_data\n'}
+[1.207915] (observation_reader) StdoutLine: {'line': b'running install_egg_info\n'}
+[1.207967] (state_reader) StdoutLine: {'line': b'running install_scripts\n'}
+[1.208311] (decoding_element) StdoutLine: {'line': b"removing '/workspace/BMI/install/decoding_element/lib/python3.10/site-packages/decoding_element-0.0.0-py3.10.egg-info' (and everything under it)\n"}
+[1.208463] (decoding_element) StdoutLine: {'line': b'Copying ../../build/decoding_element/decoding_element.egg-info to /workspace/BMI/install/decoding_element/lib/python3.10/site-packages/decoding_element-0.0.0-py3.10.egg-info\n'}
+[1.208930] (decoding_element) StdoutLine: {'line': b'running install_scripts\n'}
+[1.209021] (observation_reader) StdoutLine: {'line': b"removing '/workspace/BMI/install/observation_reader/lib/python3.10/site-packages/observation_reader-0.0.0-py3.10.egg-info' (and everything under it)\n"}
+[1.209185] (observation_reader) StdoutLine: {'line': b'Copying ../../build/observation_reader/observation_reader.egg-info to /workspace/BMI/install/observation_reader/lib/python3.10/site-packages/observation_reader-0.0.0-py3.10.egg-info\n'}
+[1.209661] (observation_reader) StdoutLine: {'line': b'running install_scripts\n'}
+[1.219463] (test_pkg) StdoutLine: {'line': b'running egg_info\n'}
+[1.219988] (test_pkg) StdoutLine: {'line': b'writing ../../build/test_pkg/test_pkg.egg-info/PKG-INFO\n'}
+[1.220142] (test_pkg) StdoutLine: {'line': b'writing dependency_links to ../../build/test_pkg/test_pkg.egg-info/dependency_links.txt\n'}
+[1.220270] (test_pkg) StdoutLine: {'line': b'writing entry points to ../../build/test_pkg/test_pkg.egg-info/entry_points.txt\n'}
+[1.220347] (test_pkg) StdoutLine: {'line': b'writing requirements to ../../build/test_pkg/test_pkg.egg-info/requires.txt\n'}
+[1.220410] (test_pkg) StdoutLine: {'line': b'writing top-level names to ../../build/test_pkg/test_pkg.egg-info/top_level.txt\n'}
+[1.221934] (test_pkg) StdoutLine: {'line': b"reading manifest file '../../build/test_pkg/test_pkg.egg-info/SOURCES.txt'\n"}
+[1.222780] (test_pkg) StdoutLine: {'line': b"writing manifest file '../../build/test_pkg/test_pkg.egg-info/SOURCES.txt'\n"}
+[1.222912] (test_pkg) StdoutLine: {'line': b'running build\n'}
+[1.222973] (test_pkg) StdoutLine: {'line': b'running build_py\n'}
+[1.223061] (state_reader) StdoutLine: {'line': b'Installing psychopy_1D_center_out script to /workspace/BMI/install/state_reader/lib/state_reader\n'}
+[1.223304] (state_reader) StdoutLine: {'line': b"writing list of installed files to '/workspace/BMI/build/state_reader/install.log'\n"}
+[1.223519] (test_pkg) StdoutLine: {'line': b'running install\n'}
+[1.223642] (test_pkg) StderrLine: {'line': b'/usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.\n'}
+[1.223705] (test_pkg) StderrLine: {'line': b'  warnings.warn(\n'}
+[1.223785] (decoding_element) StdoutLine: {'line': b'Installing integrator script to /workspace/BMI/install/decoding_element/lib/decoding_element\n'}
+[1.223890] (test_pkg) StdoutLine: {'line': b'running install_lib\n'}
+[1.223959] (decoding_element) StdoutLine: {'line': b'Installing predictor script to /workspace/BMI/install/decoding_element/lib/decoding_element\n'}
+[1.224033] (decoding_element) StdoutLine: {'line': b'Installing trainer script to /workspace/BMI/install/decoding_element/lib/decoding_element\n'}
+[1.224226] (decoding_element) StdoutLine: {'line': b"writing list of installed files to '/workspace/BMI/build/decoding_element/install.log'\n"}
+[1.224904] (observation_reader) StdoutLine: {'line': b'Installing blackrock_ir_talker script to /workspace/BMI/install/observation_reader/lib/observation_reader\n'}
+[1.225044] (test_pkg) StdoutLine: {'line': b'running install_data\n'}
+[1.225216] (observation_reader) StdoutLine: {'line': b"writing list of installed files to '/workspace/BMI/build/observation_reader/install.log'\n"}
+[1.225511] (test_pkg) StdoutLine: {'line': b'running install_egg_info\n'}
+[1.227035] (test_pkg) StdoutLine: {'line': b"removing '/workspace/BMI/install/test_pkg/lib/python3.10/site-packages/test_pkg-0.0.0-py3.10.egg-info' (and everything under it)\n"}
+[1.227272] (test_pkg) StdoutLine: {'line': b'Copying ../../build/test_pkg/test_pkg.egg-info to /workspace/BMI/install/test_pkg/lib/python3.10/site-packages/test_pkg-0.0.0-py3.10.egg-info\n'}
+[1.227897] (test_pkg) StdoutLine: {'line': b'running install_scripts\n'}
+[1.245859] (test_pkg) StdoutLine: {'line': b'Installing client script to /workspace/BMI/install/test_pkg/lib/test_pkg\n'}
+[1.246104] (test_pkg) StdoutLine: {'line': b'Installing listener script to /workspace/BMI/install/test_pkg/lib/test_pkg\n'}
+[1.246190] (test_pkg) StdoutLine: {'line': b'Installing server script to /workspace/BMI/install/test_pkg/lib/test_pkg\n'}
+[1.246259] (test_pkg) StdoutLine: {'line': b'Installing talker script to /workspace/BMI/install/test_pkg/lib/test_pkg\n'}
+[1.246334] (test_pkg) StdoutLine: {'line': b"writing list of installed files to '/workspace/BMI/build/test_pkg/install.log'\n"}
+[1.257042] (state_reader) CommandEnded: {'returncode': 0}
+[1.273363] (state_reader) JobEnded: {'identifier': 'state_reader', 'rc': 0}
+[1.276971] (decoding_element) CommandEnded: {'returncode': 0}
+[1.288675] (decoding_element) JobEnded: {'identifier': 'decoding_element', 'rc': 0}
+[1.289844] (observation_reader) CommandEnded: {'returncode': 0}
+[1.299141] (observation_reader) JobEnded: {'identifier': 'observation_reader', 'rc': 0}
+[1.302462] (-) TimerEvent: {}
+[1.302557] (test_pkg) CommandEnded: {'returncode': 0}
+[1.302743] (interfaces) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target interfaces__rosidl_generator_c\x1b[0m\n'}
+[1.309627] (interfaces) StdoutLine: {'line': b'[  7%] \x1b[32mBuilding C object CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/detail/sample__functions.c.o\x1b[0m\n'}
+[1.309869] (interfaces) StdoutLine: {'line': b'[  7%] \x1b[32mBuilding C object CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/detail/state__functions.c.o\x1b[0m\n'}
+[1.310328] (interfaces) StdoutLine: {'line': b'[  8%] \x1b[32mBuilding C object CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/detail/passive_observation__functions.c.o\x1b[0m\n'}
+[1.310439] (interfaces) StdoutLine: {'line': b'[  8%] \x1b[32mBuilding C object CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/detail/ir__functions.c.o\x1b[0m\n'}
+[1.310690] (interfaces) StdoutLine: {'line': b'[  9%] \x1b[32mBuilding C object CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/detail/decoder_element__functions.c.o\x1b[0m\n'}
+[1.310884] (interfaces) StdoutLine: {'line': b'[ 11%] \x1b[32mBuilding C object CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/srv/detail/decoding_service__functions.c.o\x1b[0m\n'}
+[1.312993] (test_pkg) JobEnded: {'identifier': 'test_pkg', 'rc': 0}
+[1.334354] (interfaces) StdoutLine: {'line': b'[ 11%] Built target interfaces__cpp\n'}
+[1.341151] (interfaces) StdoutLine: {'line': b'[ 15%] \x1b[34m\x1b[1mGenerating C++ introspection for ROS interfaces\x1b[0m\n'}
+[1.341290] (interfaces) StdoutLine: {'line': b'[ 15%] \x1b[34m\x1b[1mGenerating C++ type support dispatch for ROS interfaces\x1b[0m\n'}
+[1.341353] (interfaces) StdoutLine: {'line': b'[ 15%] \x1b[34m\x1b[1mGenerating C++ type support for eProsima Fast-RTPS\x1b[0m\n'}
+[1.358937] (interfaces) StdoutLine: {'line': b'[ 16%] \x1b[32m\x1b[1mLinking C shared library libinterfaces__rosidl_generator_c.so\x1b[0m\n'}
+[1.382593] (interfaces) StdoutLine: {'line': b'[ 16%] Built target interfaces__rosidl_generator_c\n'}
+[1.389388] (interfaces) StdoutLine: {'line': b'[ 21%] \x1b[34m\x1b[1mGenerating C introspection for ROS interfaces\x1b[0m\n'}
+[1.389536] (interfaces) StdoutLine: {'line': b'[ 21%] \x1b[34m\x1b[1mGenerating C type support dispatch for ROS interfaces\x1b[0m\n'}
+[1.389599] (interfaces) StdoutLine: {'line': b'[ 21%] \x1b[34m\x1b[1mGenerating C type support for eProsima Fast-RTPS\x1b[0m\n'}
+[1.402552] (-) TimerEvent: {}
+[1.502792] (-) TimerEvent: {}
+[1.567313] (interfaces) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target interfaces__rosidl_typesupport_cpp\x1b[0m\n'}
+[1.577229] (interfaces) StdoutLine: {'line': b'[ 25%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/interfaces/msg/ir__type_support.cpp.o\x1b[0m\n'}
+[1.577458] (interfaces) StdoutLine: {'line': b'[ 25%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/interfaces/msg/sample__type_support.cpp.o\x1b[0m\n'}
+[1.577564] (interfaces) StdoutLine: {'line': b'[ 25%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/interfaces/msg/state__type_support.cpp.o\x1b[0m\n'}
+[1.578685] (interfaces) StdoutLine: {'line': b'[ 29%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/interfaces/srv/decoding_service__type_support.cpp.o\x1b[0m\n'}
+[1.578826] (interfaces) StdoutLine: {'line': b'[ 29%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/interfaces/msg/decoder_element__type_support.cpp.o\x1b[0m\n'}
+[1.578917] (interfaces) StdoutLine: {'line': b'[ 29%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/interfaces/msg/passive_observation__type_support.cpp.o\x1b[0m\n'}
+[1.602898] (-) TimerEvent: {}
+[1.638959] (interfaces) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target interfaces__rosidl_typesupport_introspection_cpp\x1b[0m\n'}
+[1.654536] (interfaces) StdoutLine: {'line': b'[ 33%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/interfaces/msg/detail/state__type_support.cpp.o\x1b[0m\n'}
+[1.654804] (interfaces) StdoutLine: {'line': b'[ 33%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/interfaces/msg/detail/passive_observation__type_support.cpp.o\x1b[0m\n'}
+[1.654914] (interfaces) StdoutLine: {'line': b'[ 35%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/interfaces/srv/detail/decoding_service__type_support.cpp.o\x1b[0m\n'}
+[1.654995] (interfaces) StdoutLine: {'line': b'[ 33%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/interfaces/msg/detail/sample__type_support.cpp.o\x1b[0m\n'}
+[1.655654] (interfaces) StdoutLine: {'line': b'[ 38%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/interfaces/msg/detail/decoder_element__type_support.cpp.o\x1b[0m\n'}
+[1.655780] (interfaces) StdoutLine: {'line': b'[ 38%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/interfaces/msg/detail/ir__type_support.cpp.o\x1b[0m\n'}
+[1.703019] (-) TimerEvent: {}
+[1.711861] (interfaces) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target interfaces__rosidl_typesupport_c\x1b[0m\n'}
+[1.713274] (interfaces) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target interfaces__rosidl_typesupport_fastrtps_cpp\x1b[0m\n'}
+[1.724230] (interfaces) StdoutLine: {'line': b'[ 40%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/interfaces/msg/state__type_support.cpp.o\x1b[0m\n'}
+[1.724476] (interfaces) StdoutLine: {'line': b'[ 40%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/interfaces/msg/ir__type_support.cpp.o\x1b[0m\n'}
+[1.730484] (interfaces) StdoutLine: {'line': b'[ 42%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/interfaces/msg/sample__type_support.cpp.o\x1b[0m\n'}
+[1.753506] (interfaces) StdoutLine: {'line': b'[ 45%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/interfaces/msg/passive_observation__type_support.cpp.o\x1b[0m\n'}
+[1.753784] (interfaces) StdoutLine: {'line': b'[ 45%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces/msg/detail/dds_fastrtps/ir__type_support.cpp.o\x1b[0m\n'}
+[1.753898] (interfaces) StdoutLine: {'line': b'[ 46%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/interfaces/msg/decoder_element__type_support.cpp.o\x1b[0m\n'}
+[1.756963] (interfaces) StdoutLine: {'line': b'[ 47%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces/msg/detail/dds_fastrtps/sample__type_support.cpp.o\x1b[0m\n'}
+[1.759198] (interfaces) StdoutLine: {'line': b'[ 49%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces/msg/detail/dds_fastrtps/state__type_support.cpp.o\x1b[0m\n'}
+[1.779875] (interfaces) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/interfaces/srv/decoding_service__type_support.cpp.o\x1b[0m\n'}
+[1.801940] (interfaces) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target interfaces__rosidl_typesupport_fastrtps_c\x1b[0m\n'}
+[1.803087] (-) TimerEvent: {}
+[1.813469] (interfaces) StdoutLine: {'line': b'[ 52%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces/msg/detail/dds_fastrtps/decoder_element__type_support.cpp.o\x1b[0m\n'}
+[1.821647] (interfaces) StdoutLine: {'line': b'[ 54%] \x1b[32m\x1b[1mLinking CXX shared library libinterfaces__rosidl_typesupport_c.so\x1b[0m\n'}
+[1.821969] (interfaces) StdoutLine: {'line': b'[ 54%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces/msg/detail/dds_fastrtps/passive_observation__type_support.cpp.o\x1b[0m\n'}
+[1.840388] (interfaces) StdoutLine: {'line': b'[ 56%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/ir__type_support_c.cpp.o\x1b[0m\n'}
+[1.853125] (interfaces) StdoutLine: {'line': b'[ 57%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interfaces/srv/detail/dds_fastrtps/decoding_service__type_support.cpp.o\x1b[0m\n'}
+[1.857785] (interfaces) StdoutLine: {'line': b'[ 59%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/sample__type_support_c.cpp.o\x1b[0m\n'}
+[1.882077] (interfaces) StdoutLine: {'line': b'[ 59%] Built target interfaces__rosidl_typesupport_c\n'}
+[1.882668] (interfaces) StdoutLine: {'line': b'[ 60%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/decoder_element__type_support_c.cpp.o\x1b[0m\n'}
+[1.887544] (interfaces) StdoutLine: {'line': b'[ 61%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/state__type_support_c.cpp.o\x1b[0m\n'}
+[1.893084] (interfaces) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target interfaces__rosidl_typesupport_introspection_c\x1b[0m\n'}
+[1.901658] (interfaces) StdoutLine: {'line': b'[ 63%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/passive_observation__type_support_c.cpp.o\x1b[0m\n'}
+[1.903182] (-) TimerEvent: {}
+[1.908297] (interfaces) StdoutLine: {'line': b'[ 64%] \x1b[32mBuilding C object CMakeFiles/interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/interfaces/msg/detail/ir__type_support.c.o\x1b[0m\n'}
+[1.916881] (interfaces) StdoutLine: {'line': b'[ 66%] \x1b[32mBuilding CXX object CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/srv/detail/decoding_service__type_support_c.cpp.o\x1b[0m\n'}
+[1.927424] (interfaces) StdoutLine: {'line': b'[ 67%] \x1b[32m\x1b[1mLinking CXX shared library libinterfaces__rosidl_typesupport_cpp.so\x1b[0m\n'}
+[2.000477] (interfaces) StdoutLine: {'line': b'[ 69%] \x1b[32mBuilding C object CMakeFiles/interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/interfaces/msg/detail/sample__type_support.c.o\x1b[0m\n'}
+[2.003304] (-) TimerEvent: {}
+[2.020342] (interfaces) StdoutLine: {'line': b'[ 69%] Built target interfaces__rosidl_typesupport_cpp\n'}
+[2.072145] (interfaces) StdoutLine: {'line': b'[ 70%] \x1b[32mBuilding C object CMakeFiles/interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/interfaces/msg/detail/state__type_support.c.o\x1b[0m\n'}
+[2.103525] (-) TimerEvent: {}
+[2.120969] (interfaces) StdoutLine: {'line': b'[ 71%] \x1b[32mBuilding C object CMakeFiles/interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/interfaces/msg/detail/decoder_element__type_support.c.o\x1b[0m\n'}
+[2.143121] (interfaces) StdoutLine: {'line': b'[ 73%] \x1b[32mBuilding C object CMakeFiles/interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/interfaces/msg/detail/passive_observation__type_support.c.o\x1b[0m\n'}
+[2.155797] (interfaces) StdoutLine: {'line': b'[ 74%] \x1b[32mBuilding C object CMakeFiles/interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/interfaces/srv/detail/decoding_service__type_support.c.o\x1b[0m\n'}
+[2.198573] (interfaces) StdoutLine: {'line': b'[ 76%] \x1b[32m\x1b[1mLinking C shared library libinterfaces__rosidl_typesupport_introspection_c.so\x1b[0m\n'}
+[2.203645] (-) TimerEvent: {}
+[2.213893] (interfaces) StdoutLine: {'line': b'[ 77%] \x1b[32m\x1b[1mLinking CXX shared library libinterfaces__rosidl_typesupport_introspection_cpp.so\x1b[0m\n'}
+[2.230141] (interfaces) StdoutLine: {'line': b'[ 77%] Built target interfaces__rosidl_typesupport_introspection_c\n'}
+[2.303757] (-) TimerEvent: {}
+[2.310762] (interfaces) StdoutLine: {'line': b'[ 77%] Built target interfaces__rosidl_typesupport_introspection_cpp\n'}
+[2.334803] (interfaces) StdoutLine: {'line': b'[ 78%] \x1b[32m\x1b[1mLinking CXX shared library libinterfaces__rosidl_typesupport_fastrtps_c.so\x1b[0m\n'}
+[2.378643] (interfaces) StdoutLine: {'line': b'[ 80%] \x1b[32m\x1b[1mLinking CXX shared library libinterfaces__rosidl_typesupport_fastrtps_cpp.so\x1b[0m\n'}
+[2.391899] (interfaces) StdoutLine: {'line': b'[ 80%] Built target interfaces__rosidl_typesupport_fastrtps_c\n'}
+[2.403845] (-) TimerEvent: {}
+[2.437652] (interfaces) StdoutLine: {'line': b'[ 80%] Built target interfaces__rosidl_typesupport_fastrtps_cpp\n'}
+[2.449483] (interfaces) StdoutLine: {'line': b'[ 80%] Built target interfaces\n'}
+[2.460227] (interfaces) StdoutLine: {'line': b'[ 81%] \x1b[34m\x1b[1mGenerating Python code for ROS interfaces\x1b[0m\n'}
+[2.503949] (-) TimerEvent: {}
+[2.604173] (-) TimerEvent: {}
+[2.704380] (-) TimerEvent: {}
+[2.804572] (-) TimerEvent: {}
+[2.904758] (-) TimerEvent: {}
+[2.998708] (interfaces) StdoutLine: {'line': b'[ 81%] Built target interfaces__py\n'}
+[3.004330] (interfaces) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target interfaces__rosidl_generator_py\x1b[0m\n'}
+[3.004814] (-) TimerEvent: {}
+[3.013135] (interfaces) StdoutLine: {'line': b'[ 85%] \x1b[32mBuilding C object CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/msg/_ir_s.c.o\x1b[0m\n'}
+[3.013345] (interfaces) StdoutLine: {'line': b'[ 85%] \x1b[32mBuilding C object CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/msg/_sample_s.c.o\x1b[0m\n'}
+[3.013438] (interfaces) StdoutLine: {'line': b'[ 85%] \x1b[32mBuilding C object CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/msg/_state_s.c.o\x1b[0m\n'}
+[3.013510] (interfaces) StdoutLine: {'line': b'[ 87%] \x1b[32mBuilding C object CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/msg/_decoder_element_s.c.o\x1b[0m\n'}
+[3.013580] (interfaces) StdoutLine: {'line': b'[ 88%] \x1b[32mBuilding C object CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/msg/_passive_observation_s.c.o\x1b[0m\n'}
+[3.013636] (interfaces) StdoutLine: {'line': b'[ 90%] \x1b[32mBuilding C object CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/srv/_decoding_service_s.c.o\x1b[0m\n'}
+[3.085791] (interfaces) StdoutLine: {'line': b'[ 91%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/interfaces/libinterfaces__rosidl_generator_py.so\x1b[0m\n'}
+[3.104932] (-) TimerEvent: {}
+[3.107828] (interfaces) StdoutLine: {'line': b'[ 91%] Built target interfaces__rosidl_generator_py\n'}
+[3.113241] (interfaces) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target interfaces__rosidl_typesupport_introspection_c__pyext\x1b[0m\n'}
+[3.113401] (interfaces) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target interfaces__rosidl_typesupport_c__pyext\x1b[0m\n'}
+[3.113482] (interfaces) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target interfaces__rosidl_typesupport_fastrtps_c__pyext\x1b[0m\n'}
+[3.120444] (interfaces) StdoutLine: {'line': b'[ 95%] \x1b[32mBuilding C object CMakeFiles/interfaces__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/interfaces/_interfaces_s.ep.rosidl_typesupport_introspection_c.c.o\x1b[0m\n'}
+[3.120557] (interfaces) StdoutLine: {'line': b'[ 95%] \x1b[32mBuilding C object CMakeFiles/interfaces__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/interfaces/_interfaces_s.ep.rosidl_typesupport_c.c.o\x1b[0m\n'}
+[3.120611] (interfaces) StdoutLine: {'line': b'[ 95%] \x1b[32mBuilding C object CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/interfaces/_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c.o\x1b[0m\n'}
+[3.188159] (interfaces) StdoutLine: {'line': b'[ 97%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/interfaces/interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\x1b[0m\n'}
+[3.188483] (interfaces) StdoutLine: {'line': b'[ 98%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/interfaces/interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\x1b[0m\n'}
+[3.188932] (interfaces) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/interfaces/interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\x1b[0m\n'}
+[3.205047] (-) TimerEvent: {}
+[3.206821] (interfaces) StdoutLine: {'line': b'[100%] Built target interfaces__rosidl_typesupport_introspection_c__pyext\n'}
+[3.206935] (interfaces) StdoutLine: {'line': b'[100%] Built target interfaces__rosidl_typesupport_c__pyext\n'}
+[3.207034] (interfaces) StdoutLine: {'line': b'[100%] Built target interfaces__rosidl_typesupport_fastrtps_c__pyext\n'}
+[3.213326] (interfaces) CommandEnded: {'returncode': 0}
+[3.277031] (interfaces) JobProgress: {'identifier': 'interfaces', 'progress': 'install'}
+[3.281671] (interfaces) Command: {'cmd': ['/usr/bin/cmake', '--install', '/workspace/BMI/build/interfaces'], 'cwd': '/workspace/BMI/build/interfaces', 'env': OrderedDict([('HOSTNAME', 'user-Z490-UD'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/workspace/BMI/install/interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/root'), ('OLDPWD', '/workspace/BMI/src'), ('ROS_PYTHON_VERSION', '3'), ('COLCON_PREFIX_PATH', '/workspace/BMI/install'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', ':1'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/workspace/BMI/install/test_pkg:/workspace/BMI/install/state_reader:/workspace/BMI/install/presenter:/workspace/BMI/install/observation_reader:/workspace/BMI/install/neural_data_generator:/workspace/BMI/install/interfaces:/workspace/BMI/install/decoding_element:/workspace/BMI/install/decoder:/opt/ros/humble'), ('PWD', '/workspace/BMI/build/interfaces'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/workspace/BMI/install/test_pkg/lib/python3.10/site-packages:/workspace/BMI/install/state_reader/lib/python3.10/site-packages:/workspace/BMI/install/presenter/lib/python3.10/site-packages:/workspace/BMI/install/observation_reader/lib/python3.10/site-packages:/workspace/BMI/install/neural_data_generator/lib/python3.10/site-packages:/workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages:/workspace/BMI/install/decoding_element/lib/python3.10/site-packages:/workspace/BMI/install/decoder/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/workspace/BMI/install/interfaces:/workspace/BMI/install/test_pkg:/workspace/BMI/install/state_reader:/workspace/BMI/install/presenter:/workspace/BMI/install/observation_reader:/workspace/BMI/install/neural_data_generator:/workspace/BMI/install/decoding_element:/workspace/BMI/install/decoder:/opt/ros/humble')]), 'shell': False}
+[3.285744] (interfaces) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[3.285913] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/share/ament_index/resource_index/rosidl_interfaces/interfaces\n'}
+[3.285990] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces\n'}
+[3.286102] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg\n'}
+[3.286178] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/rosidl_generator_c__visibility_control.h\n'}
+[3.286241] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/state.h\n'}
+[3.286303] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/decoder_element.h\n'}
+[3.286370] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/num.h\n'}
+[3.286418] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/sample.h\n'}
+[3.286490] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail\n'}
+[3.286549] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/state__struct.h\n'}
+[3.286610] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/decoder_element__functions.c\n'}
+[3.286675] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/ir__functions.h\n'}
+[3.286722] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/decoder_element__struct.h\n'}
+[3.286790] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/num__type_support.h\n'}
+[3.286838] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/passive_observation__type_support.h\n'}
+[3.286896] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/ir__type_support.h\n'}
+[3.286952] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/state__type_support.h\n'}
+[3.287017] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/ir__struct.h\n'}
+[3.287076] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/passive_observation__functions.c\n'}
+[3.287135] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/num__struct.h\n'}
+[3.287195] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/sample__functions.h\n'}
+[3.287259] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/sample__type_support.h\n'}
+[3.287323] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/passive_observation__functions.h\n'}
+[3.287385] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/state__functions.h\n'}
+[3.287445] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/state__functions.c\n'}
+[3.287523] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/num__functions.h\n'}
+[3.287612] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/decoder_element__type_support.h\n'}
+[3.287672] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/passive_observation__struct.h\n'}
+[3.287743] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/sample__functions.c\n'}
+[3.287800] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/sample__struct.h\n'}
+[3.287847] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/num__functions.c\n'}
+[3.287920] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/decoder_element__functions.h\n'}
+[3.287963] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/ir__functions.c\n'}
+[3.288008] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/ir.h\n'}
+[3.288055] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/passive_observation.h\n'}
+[3.288123] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/srv\n'}
+[3.288167] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/srv/decoder.h\n'}
+[3.288268] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/srv/decoding_service.h\n'}
+[3.288325] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/srv/detail\n'}
+[3.288384] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/srv/detail/decoder__type_support.h\n'}
+[3.288448] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/srv/detail/decoder__functions.h\n'}
+[3.288506] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/srv/detail/decoder__functions.c\n'}
+[3.288565] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/srv/detail/decoding_service__type_support.h\n'}
+[3.288634] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/srv/detail/decoding_service__functions.h\n'}
+[3.288696] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/srv/detail/decoder__struct.h\n'}
+[3.288740] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/srv/detail/decoding_service__struct.h\n'}
+[3.288786] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/srv/detail/decoding_service__functions.c\n'}
+[3.288834] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/share/interfaces/environment/library_path.sh\n'}
+[3.288880] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/share/interfaces/environment/library_path.dsv\n'}
+[3.288925] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/lib/libinterfaces__rosidl_generator_c.so\n'}
+[3.289038] (interfaces) StdoutLine: {'line': b'-- Set runtime path of "/workspace/BMI/install/interfaces/lib/libinterfaces__rosidl_generator_c.so" to ""\n'}
+[3.289097] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces\n'}
+[3.289155] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg\n'}
+[3.289219] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail\n'}
+[3.289279] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/sample__rosidl_typesupport_fastrtps_c.h\n'}
+[3.289339] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/passive_observation__rosidl_typesupport_fastrtps_c.h\n'}
+[3.289400] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/num__rosidl_typesupport_fastrtps_c.h\n'}
+[3.289465] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/ir__rosidl_typesupport_fastrtps_c.h\n'}
+[3.289525] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/state__rosidl_typesupport_fastrtps_c.h\n'}
+[3.289586] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/decoder_element__rosidl_typesupport_fastrtps_c.h\n'}
+[3.289651] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[3.289728] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/srv\n'}
+[3.289789] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/srv/detail\n'}
+[3.289854] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/srv/detail/decoder__rosidl_typesupport_fastrtps_c.h\n'}
+[3.289899] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/srv/detail/decoding_service__rosidl_typesupport_fastrtps_c.h\n'}
+[3.289958] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/lib/libinterfaces__rosidl_typesupport_fastrtps_c.so\n'}
+[3.290001] (interfaces) StdoutLine: {'line': b'-- Set runtime path of "/workspace/BMI/install/interfaces/lib/libinterfaces__rosidl_typesupport_fastrtps_c.so" to ""\n'}
+[3.290045] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces\n'}
+[3.290103] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg\n'}
+[3.290161] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[3.290207] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail\n'}
+[3.290250] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/decoder_element__type_support.c\n'}
+[3.290311] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/ir__type_support.c\n'}
+[3.290385] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/num__rosidl_typesupport_introspection_c.h\n'}
+[3.290444] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/sample__rosidl_typesupport_introspection_c.h\n'}
+[3.290503] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/decoder_element__rosidl_typesupport_introspection_c.h\n'}
+[3.290579] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/state__type_support.c\n'}
+[3.290637] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/ir__rosidl_typesupport_introspection_c.h\n'}
+[3.290694] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/num__type_support.c\n'}
+[3.290754] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/sample__type_support.c\n'}
+[3.290817] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/state__rosidl_typesupport_introspection_c.h\n'}
+[3.290866] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/passive_observation__type_support.c\n'}
+[3.290926] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/passive_observation__rosidl_typesupport_introspection_c.h\n'}
+[3.290988] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/srv\n'}
+[3.291048] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/srv/detail\n'}
+[3.291107] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/srv/detail/decoding_service__type_support.c\n'}
+[3.291167] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/srv/detail/decoding_service__rosidl_typesupport_introspection_c.h\n'}
+[3.291226] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/srv/detail/decoder__type_support.c\n'}
+[3.291300] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/srv/detail/decoder__rosidl_typesupport_introspection_c.h\n'}
+[3.291360] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/lib/libinterfaces__rosidl_typesupport_introspection_c.so\n'}
+[3.291419] (interfaces) StdoutLine: {'line': b'-- Set runtime path of "/workspace/BMI/install/interfaces/lib/libinterfaces__rosidl_typesupport_introspection_c.so" to ""\n'}
+[3.291483] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/lib/libinterfaces__rosidl_typesupport_c.so\n'}
+[3.291542] (interfaces) StdoutLine: {'line': b'-- Set runtime path of "/workspace/BMI/install/interfaces/lib/libinterfaces__rosidl_typesupport_c.so" to ""\n'}
+[3.291615] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces\n'}
+[3.291704] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg\n'}
+[3.291763] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/ir.hpp\n'}
+[3.291832] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/decoder_element.hpp\n'}
+[3.291892] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/state.hpp\n'}
+[3.291972] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail\n'}
+[3.292031] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/num__builder.hpp\n'}
+[3.292095] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/passive_observation__struct.hpp\n'}
+[3.292170] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/decoder_element__traits.hpp\n'}
+[3.292291] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/sample__traits.hpp\n'}
+[3.292362] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/state__traits.hpp\n'}
+[3.292422] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/num__traits.hpp\n'}
+[3.292482] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/ir__traits.hpp\n'}
+[3.292525] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/ir__builder.hpp\n'}
+[3.292567] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/num__struct.hpp\n'}
+[3.292609] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/sample__builder.hpp\n'}
+[3.292653] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/decoder_element__struct.hpp\n'}
+[3.292745] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/state__struct.hpp\n'}
+[3.292803] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/decoder_element__builder.hpp\n'}
+[3.292863] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/state__builder.hpp\n'}
+[3.292920] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/ir__struct.hpp\n'}
+[3.292979] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/sample__struct.hpp\n'}
+[3.293037] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/passive_observation__builder.hpp\n'}
+[3.293095] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/passive_observation__traits.hpp\n'}
+[3.293154] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/num.hpp\n'}
+[3.293213] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/sample.hpp\n'}
+[3.293281] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/passive_observation.hpp\n'}
+[3.293337] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/srv\n'}
+[3.293384] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/srv/decoder.hpp\n'}
+[3.293457] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/srv/decoding_service.hpp\n'}
+[3.293527] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/srv/detail\n'}
+[3.293571] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/srv/detail/decoder__struct.hpp\n'}
+[3.293615] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/srv/detail/decoder__traits.hpp\n'}
+[3.293671] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/srv/detail/decoding_service__traits.hpp\n'}
+[3.293718] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/srv/detail/decoding_service__builder.hpp\n'}
+[3.293760] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/srv/detail/decoder__builder.hpp\n'}
+[3.293803] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/srv/detail/decoding_service__struct.hpp\n'}
+[3.293860] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces\n'}
+[3.293909] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg\n'}
+[3.293965] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[3.294008] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail\n'}
+[3.294051] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/decoder_element__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[3.294125] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/passive_observation__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[3.294181] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/num__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[3.294247] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/ir__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[3.294307] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/dds_fastrtps\n'}
+[3.294365] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/sample__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[3.294425] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/state__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[3.294482] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/srv\n'}
+[3.294549] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/srv/detail\n'}
+[3.294609] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/srv/detail/decoding_service__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[3.294667] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/srv/detail/dds_fastrtps\n'}
+[3.294726] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/srv/detail/decoder__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[3.294786] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/lib/libinterfaces__rosidl_typesupport_fastrtps_cpp.so\n'}
+[3.294844] (interfaces) StdoutLine: {'line': b'-- Set runtime path of "/workspace/BMI/install/interfaces/lib/libinterfaces__rosidl_typesupport_fastrtps_cpp.so" to ""\n'}
+[3.294901] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces\n'}
+[3.294958] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg\n'}
+[3.295014] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail\n'}
+[3.295073] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/ir__type_support.cpp\n'}
+[3.295123] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/ir__rosidl_typesupport_introspection_cpp.hpp\n'}
+[3.295183] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/sample__type_support.cpp\n'}
+[3.295240] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/passive_observation__rosidl_typesupport_introspection_cpp.hpp\n'}
+[3.295314] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/passive_observation__type_support.cpp\n'}
+[3.295381] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/decoder_element__rosidl_typesupport_introspection_cpp.hpp\n'}
+[3.295439] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/state__type_support.cpp\n'}
+[3.295497] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/state__rosidl_typesupport_introspection_cpp.hpp\n'}
+[3.295540] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/num__rosidl_typesupport_introspection_cpp.hpp\n'}
+[3.295597] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/num__type_support.cpp\n'}
+[3.295643] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/sample__rosidl_typesupport_introspection_cpp.hpp\n'}
+[3.295700] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/msg/detail/decoder_element__type_support.cpp\n'}
+[3.295755] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/srv\n'}
+[3.295812] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/srv/detail\n'}
+[3.295871] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/srv/detail/decoding_service__type_support.cpp\n'}
+[3.295928] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/srv/detail/decoder__type_support.cpp\n'}
+[3.295972] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/include/interfaces/interfaces/srv/detail/decoder__rosidl_typesupport_introspection_cpp.hpp\n'}
+[3.296014] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/include/interfaces/interfaces/srv/detail/decoding_service__rosidl_typesupport_introspection_cpp.hpp\n'}
+[3.296063] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/lib/libinterfaces__rosidl_typesupport_introspection_cpp.so\n'}
+[3.296107] (interfaces) StdoutLine: {'line': b'-- Set runtime path of "/workspace/BMI/install/interfaces/lib/libinterfaces__rosidl_typesupport_introspection_cpp.so" to ""\n'}
+[3.296150] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/lib/libinterfaces__rosidl_typesupport_cpp.so\n'}
+[3.296199] (interfaces) StdoutLine: {'line': b'-- Set runtime path of "/workspace/BMI/install/interfaces/lib/libinterfaces__rosidl_typesupport_cpp.so" to ""\n'}
+[3.296243] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/share/interfaces/environment/pythonpath.sh\n'}
+[3.296286] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/share/interfaces/environment/pythonpath.dsv\n'}
+[3.296328] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces-0.0.0-py3.10.egg-info\n'}
+[3.296374] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces-0.0.0-py3.10.egg-info/PKG-INFO\n'}
+[3.296417] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces-0.0.0-py3.10.egg-info/dependency_links.txt\n'}
+[3.296459] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces-0.0.0-py3.10.egg-info/top_level.txt\n'}
+[3.296502] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces-0.0.0-py3.10.egg-info/SOURCES.txt\n'}
+[3.296545] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces\n'}
+[3.296587] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg\n'}
+[3.296630] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_decoder_element.py\n'}
+[3.296673] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_ir_s.c\n'}
+[3.296715] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_ir.py\n'}
+[3.296758] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_passive_observation.py\n'}
+[3.296801] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_state.py\n'}
+[3.296843] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_state_s.c\n'}
+[3.296886] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_sample_s.c\n'}
+[3.296928] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/__init__.py\n'}
+[3.296971] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_decoder_element_s.c\n'}
+[3.297014] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_num.py\n'}
+[3.297056] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_passive_observation_s.c\n'}
+[3.297099] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_num_s.c\n'}
+[3.297142] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_sample.py\n'}
+[3.297185] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces/_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c\n'}
+[3.297228] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces/srv\n'}
+[3.297270] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces/srv/_decoder.py\n'}
+[3.297313] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces/srv/_decoder_s.c\n'}
+[3.297355] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces/srv/_decoding_service_s.c\n'}
+[3.297397] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces/srv/__init__.py\n'}
+[3.297443] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces/srv/_decoding_service.py\n'}
+[3.297486] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces/libinterfaces__rosidl_generator_py.so\n'}
+[3.297532] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces/interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\n'}
+[3.297580] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces/interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\n'}
+[3.297624] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces/_interfaces_s.ep.rosidl_typesupport_c.c\n'}
+[3.297666] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces/__init__.py\n'}
+[3.297709] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces/interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\n'}
+[3.297752] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces/_interfaces_s.ep.rosidl_typesupport_introspection_c.c\n'}
+[3.305099] (-) TimerEvent: {}
+[3.324552] (interfaces) StdoutLine: {'line': b"Listing '/workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces'...\n"}
+[3.324653] (interfaces) StdoutLine: {'line': b"Compiling '/workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces/__init__.py'...\n"}
+[3.324702] (interfaces) StdoutLine: {'line': b"Listing '/workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg'...\n"}
+[3.324748] (interfaces) StdoutLine: {'line': b"Compiling '/workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/__init__.py'...\n"}
+[3.324793] (interfaces) StdoutLine: {'line': b"Compiling '/workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_decoder_element.py'...\n"}
+[3.324838] (interfaces) StdoutLine: {'line': b"Compiling '/workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_ir.py'...\n"}
+[3.324882] (interfaces) StdoutLine: {'line': b"Compiling '/workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_passive_observation.py'...\n"}
+[3.324926] (interfaces) StdoutLine: {'line': b"Compiling '/workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_sample.py'...\n"}
+[3.324968] (interfaces) StdoutLine: {'line': b"Compiling '/workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces/msg/_state.py'...\n"}
+[3.325011] (interfaces) StdoutLine: {'line': b"Listing '/workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces/srv'...\n"}
+[3.325053] (interfaces) StdoutLine: {'line': b"Compiling '/workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces/srv/__init__.py'...\n"}
+[3.325096] (interfaces) StdoutLine: {'line': b"Compiling '/workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces/srv/_decoding_service.py'...\n"}
+[3.327404] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces/interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\n'}
+[3.327498] (interfaces) StdoutLine: {'line': b'-- Set runtime path of "/workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces/interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so" to ""\n'}
+[3.327602] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces/interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\n'}
+[3.327760] (interfaces) StdoutLine: {'line': b'-- Set runtime path of "/workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces/interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so" to ""\n'}
+[3.327868] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces/interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\n'}
+[3.328020] (interfaces) StdoutLine: {'line': b'-- Set runtime path of "/workspace/BMI/install/interfaces/local/lib/python3.10/dist-packages/interfaces/interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so" to ""\n'}
+[3.328102] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/lib/libinterfaces__rosidl_generator_py.so\n'}
+[3.328366] (interfaces) StdoutLine: {'line': b'-- Set runtime path of "/workspace/BMI/install/interfaces/lib/libinterfaces__rosidl_generator_py.so" to ""\n'}
+[3.328447] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/share/interfaces/msg/Ir.idl\n'}
+[3.328561] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/share/interfaces/msg/Sample.idl\n'}
+[3.328617] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/share/interfaces/msg/State.idl\n'}
+[3.328718] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/share/interfaces/msg/DecoderElement.idl\n'}
+[3.328782] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/share/interfaces/msg/PassiveObservation.idl\n'}
+[3.328829] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/share/interfaces/srv/DecodingService.idl\n'}
+[3.328901] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/share/interfaces/msg/Ir.msg\n'}
+[3.328971] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/share/interfaces/msg/Sample.msg\n'}
+[3.329018] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/share/interfaces/msg/State.msg\n'}
+[3.329087] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/share/interfaces/msg/DecoderElement.msg\n'}
+[3.329159] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/share/interfaces/msg/PassiveObservation.msg\n'}
+[3.329228] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/share/interfaces/srv/DecodingService.srv\n'}
+[3.329287] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/share/interfaces/srv/DecodingService_Request.msg\n'}
+[3.329333] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/share/interfaces/srv/DecodingService_Response.msg\n'}
+[3.329391] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/share/ament_index/resource_index/package_run_dependencies/interfaces\n'}
+[3.329461] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/share/ament_index/resource_index/parent_prefix_path/interfaces\n'}
+[3.329531] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/share/interfaces/environment/ament_prefix_path.sh\n'}
+[3.329604] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/share/interfaces/environment/ament_prefix_path.dsv\n'}
+[3.329675] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/share/interfaces/environment/path.sh\n'}
+[3.329734] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/share/interfaces/environment/path.dsv\n'}
+[3.329804] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/share/interfaces/local_setup.bash\n'}
+[3.329876] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/share/interfaces/local_setup.sh\n'}
+[3.329935] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/share/interfaces/local_setup.zsh\n'}
+[3.329996] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/share/interfaces/local_setup.dsv\n'}
+[3.330077] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/share/interfaces/package.dsv\n'}
+[3.330122] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/share/ament_index/resource_index/packages/interfaces\n'}
+[3.330194] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/share/interfaces/cmake/export_interfaces__rosidl_generator_cExport.cmake\n'}
+[3.330268] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/share/interfaces/cmake/export_interfaces__rosidl_generator_cExport-noconfig.cmake\n'}
+[3.330351] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/share/interfaces/cmake/export_interfaces__rosidl_typesupport_fastrtps_cExport.cmake\n'}
+[3.330394] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/share/interfaces/cmake/export_interfaces__rosidl_typesupport_fastrtps_cExport-noconfig.cmake\n'}
+[3.330437] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/share/interfaces/cmake/interfaces__rosidl_typesupport_introspection_cExport.cmake\n'}
+[3.330479] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/share/interfaces/cmake/interfaces__rosidl_typesupport_introspection_cExport-noconfig.cmake\n'}
+[3.330527] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/share/interfaces/cmake/interfaces__rosidl_typesupport_cExport.cmake\n'}
+[3.330570] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/share/interfaces/cmake/interfaces__rosidl_typesupport_cExport-noconfig.cmake\n'}
+[3.330613] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/share/interfaces/cmake/export_interfaces__rosidl_generator_cppExport.cmake\n'}
+[3.330655] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/share/interfaces/cmake/export_interfaces__rosidl_typesupport_fastrtps_cppExport.cmake\n'}
+[3.330697] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/share/interfaces/cmake/export_interfaces__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake\n'}
+[3.330740] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/share/interfaces/cmake/interfaces__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[3.330782] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/share/interfaces/cmake/interfaces__rosidl_typesupport_introspection_cppExport-noconfig.cmake\n'}
+[3.330825] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/share/interfaces/cmake/interfaces__rosidl_typesupport_cppExport.cmake\n'}
+[3.330870] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/share/interfaces/cmake/interfaces__rosidl_typesupport_cppExport-noconfig.cmake\n'}
+[3.330914] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/share/interfaces/cmake/export_interfaces__rosidl_generator_pyExport.cmake\n'}
+[3.330956] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/share/interfaces/cmake/export_interfaces__rosidl_generator_pyExport-noconfig.cmake\n'}
+[3.330999] (interfaces) StdoutLine: {'line': b'-- Installing: /workspace/BMI/install/interfaces/share/interfaces/cmake/rosidl_cmake-extras.cmake\n'}
+[3.331042] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/share/interfaces/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[3.331089] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/share/interfaces/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[3.331137] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/share/interfaces/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[3.331181] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/share/interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[3.331301] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/share/interfaces/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[3.331461] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/share/interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[3.331738] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/share/interfaces/cmake/interfacesConfig.cmake\n'}
+[3.333384] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/share/interfaces/cmake/interfacesConfig-version.cmake\n'}
+[3.333474] (interfaces) StdoutLine: {'line': b'-- Up-to-date: /workspace/BMI/install/interfaces/share/interfaces/package.xml\n'}
+[3.333627] (interfaces) CommandEnded: {'returncode': 0}
+[3.406166] (-) TimerEvent: {}
+[3.413233] (interfaces) JobEnded: {'identifier': 'interfaces', 'rc': 0}
+[3.413660] (-) EventReactorShutdown: {}

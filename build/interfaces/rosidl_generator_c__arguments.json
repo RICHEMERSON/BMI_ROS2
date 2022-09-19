@@ -8,7 +8,7 @@
     "/workspace/BMI/build/interfaces/rosidl_adapter/interfaces:msg/State.idl",
     "/workspace/BMI/build/interfaces/rosidl_adapter/interfaces:msg/DecoderElement.idl",
     "/workspace/BMI/build/interfaces/rosidl_adapter/interfaces:msg/PassiveObservation.idl",
-    "/workspace/BMI/build/interfaces/rosidl_adapter/interfaces:srv/Decoder.idl"
+    "/workspace/BMI/build/interfaces/rosidl_adapter/interfaces:srv/DecodingService.idl"
   ],
   "target_dependencies": [
     "/opt/ros/humble/share/rosidl_generator_c/cmake/../../../lib/rosidl_generator_c/rosidl_generator_c",
@@ -29,6 +29,6 @@
     "/workspace/BMI/build/interfaces/rosidl_adapter/interfaces/msg/State.idl",
     "/workspace/BMI/build/interfaces/rosidl_adapter/interfaces/msg/DecoderElement.idl",
     "/workspace/BMI/build/interfaces/rosidl_adapter/interfaces/msg/PassiveObservation.idl",
-    "/workspace/BMI/build/interfaces/rosidl_adapter/interfaces/srv/Decoder.idl"
+    "/workspace/BMI/build/interfaces/rosidl_adapter/interfaces/srv/DecodingService.idl"
   ]
 }

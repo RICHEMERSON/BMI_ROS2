@@ -20,10 +20,10 @@ file(REMOVE_RECURSE
   "rosidl_generator_cpp/interfaces/msg/passive_observation.hpp"
   "rosidl_generator_cpp/interfaces/msg/sample.hpp"
   "rosidl_generator_cpp/interfaces/msg/state.hpp"
-  "rosidl_generator_cpp/interfaces/srv/decoder.hpp"
-  "rosidl_generator_cpp/interfaces/srv/detail/decoder__builder.hpp"
-  "rosidl_generator_cpp/interfaces/srv/detail/decoder__struct.hpp"
-  "rosidl_generator_cpp/interfaces/srv/detail/decoder__traits.hpp"
+  "rosidl_generator_cpp/interfaces/srv/decoding_service.hpp"
+  "rosidl_generator_cpp/interfaces/srv/detail/decoding_service__builder.hpp"
+  "rosidl_generator_cpp/interfaces/srv/detail/decoding_service__struct.hpp"
+  "rosidl_generator_cpp/interfaces/srv/detail/decoding_service__traits.hpp"
 )
 
 # Per-language clean rules from dependency scanning.

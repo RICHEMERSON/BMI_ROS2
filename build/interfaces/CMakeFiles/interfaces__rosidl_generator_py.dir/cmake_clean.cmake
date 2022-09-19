@@ -9,8 +9,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/msg/_sample_s.c.o.d"
   "CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/msg/_state_s.c.o"
   "CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/msg/_state_s.c.o.d"
-  "CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/srv/_decoder_s.c.o"
-  "CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/srv/_decoder_s.c.o.d"
+  "CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/srv/_decoding_service_s.c.o"
+  "CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/srv/_decoding_service_s.c.o.d"
   "rosidl_generator_py/interfaces/libinterfaces__rosidl_generator_py.pdb"
   "rosidl_generator_py/interfaces/libinterfaces__rosidl_generator_py.so"
 )

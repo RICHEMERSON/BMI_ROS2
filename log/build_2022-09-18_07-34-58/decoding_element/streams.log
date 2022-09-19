@@ -1,0 +1,28 @@
+[1.004s] Invoking command in '/workspace/BMI/src/decoding_element': PYTHONPATH=/workspace/BMI/install/decoding_element/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/decoding_element build --build-base /workspace/BMI/build/decoding_element/build install --prefix /workspace/BMI/install/decoding_element --record /workspace/BMI/build/decoding_element/install.log --single-version-externally-managed
+[1.164s] running egg_info
+[1.165s] writing ../../build/decoding_element/decoding_element.egg-info/PKG-INFO
+[1.165s] writing dependency_links to ../../build/decoding_element/decoding_element.egg-info/dependency_links.txt
+[1.165s] writing entry points to ../../build/decoding_element/decoding_element.egg-info/entry_points.txt
+[1.165s] writing requirements to ../../build/decoding_element/decoding_element.egg-info/requires.txt
+[1.165s] writing top-level names to ../../build/decoding_element/decoding_element.egg-info/top_level.txt
+[1.166s] reading manifest file '../../build/decoding_element/decoding_element.egg-info/SOURCES.txt'
+[1.167s] writing manifest file '../../build/decoding_element/decoding_element.egg-info/SOURCES.txt'
+[1.167s] running build
+[1.167s] running build_py
+[1.167s] copying decoding_element/decoding_element_predictor.py -> /workspace/BMI/build/decoding_element/build/lib/decoding_element
+[1.167s] running install
+[1.167s] /usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[1.167s]   warnings.warn(
+[1.167s] running install_lib
+[1.168s] copying /workspace/BMI/build/decoding_element/build/lib/decoding_element/decoding_element_predictor.py -> /workspace/BMI/install/decoding_element/lib/python3.10/site-packages/decoding_element
+[1.168s] byte-compiling /workspace/BMI/install/decoding_element/lib/python3.10/site-packages/decoding_element/decoding_element_predictor.py to decoding_element_predictor.cpython-310.pyc
+[1.169s] running install_data
+[1.169s] running install_egg_info
+[1.170s] removing '/workspace/BMI/install/decoding_element/lib/python3.10/site-packages/decoding_element-0.0.0-py3.10.egg-info' (and everything under it)
+[1.171s] Copying ../../build/decoding_element/decoding_element.egg-info to /workspace/BMI/install/decoding_element/lib/python3.10/site-packages/decoding_element-0.0.0-py3.10.egg-info
+[1.171s] running install_scripts
+[1.186s] Installing integrator script to /workspace/BMI/install/decoding_element/lib/decoding_element
+[1.186s] Installing predictor script to /workspace/BMI/install/decoding_element/lib/decoding_element
+[1.186s] Installing trainer script to /workspace/BMI/install/decoding_element/lib/decoding_element
+[1.186s] writing list of installed files to '/workspace/BMI/build/decoding_element/install.log'
+[1.207s] Invoked command in '/workspace/BMI/src/decoding_element' returned '0': PYTHONPATH=/workspace/BMI/install/decoding_element/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/decoding_element build --build-base /workspace/BMI/build/decoding_element/build install --prefix /workspace/BMI/install/decoding_element --record /workspace/BMI/build/decoding_element/install.log --single-version-externally-managed

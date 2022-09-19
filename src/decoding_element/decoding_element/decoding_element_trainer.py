@@ -70,10 +70,10 @@ class DecodingElementTrainer(Node):
         parameters['algorithm'] = 'wiener_filter'
         
         #%% declare parameters    
-        self.declare_parameter('parameters', json.dumps(parameters))
+        self.declare_parameter('parameters', list(pickle.dumps(parameters)))
         
         #%% get parameters
-        parameters = json.loads(self.get_parameter('parameters').get_parameter_value().string_value)
+        parameters = pickle.loads(bytes(list(self.get_parameter('parameters').get_parameter_value().integer_array_value)))
         
         #%% logging parameters
         for par in parameters:
@@ -115,7 +115,7 @@ class DecodingElementTrainer(Node):
             self.get_logger().info('Publishing: decoding element: {}'.format(str(_decoding_element_msg.de)))
 
     def sample_listener_callback(self, msg):
-        # self.get_logger().info('Recieving: integrated data: [x_state : {}, y_observation : {}]'.format(str(msg.x_state), str(msg.y_observation)))
+        self.get_logger().info('Recieving: integrated data: [x_state : {}, y_observation : {}]'.format(str(msg.x_state), str(msg.y_observation)))
         self._sample_buffer.put(msg)            
 
 def main(args=None):

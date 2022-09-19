@@ -331,10 +331,10 @@ CMakeFiles/interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport
   /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/primitives_sequence.h \
   /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/primitives_sequence_functions.h
 
-CMakeFiles/interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/interfaces/srv/detail/decoder__type_support.c.o: rosidl_typesupport_introspection_c/interfaces/srv/detail/decoder__type_support.c \
+CMakeFiles/interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/interfaces/srv/detail/decoding_service__type_support.c.o: rosidl_typesupport_introspection_c/interfaces/srv/detail/decoding_service__type_support.c \
   /usr/include/stdc-predef.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h \
-  rosidl_typesupport_introspection_c/interfaces/srv/detail/decoder__rosidl_typesupport_introspection_c.h \
+  rosidl_typesupport_introspection_c/interfaces/srv/detail/decoding_service__rosidl_typesupport_introspection_c.h \
   /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/message_type_support_struct.h \
   /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/visibility_control.h \
   /opt/ros/humble/include/rosidl_typesupport_interface/rosidl_typesupport_interface/macros.h \
@@ -363,7 +363,7 @@ CMakeFiles/interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport
   /opt/ros/humble/include/rosidl_typesupport_introspection_c/rosidl_typesupport_introspection_c/message_introspection.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h \
   /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/message_initialization.h \
-  rosidl_generator_c/interfaces/srv/detail/decoder__functions.h \
+  rosidl_generator_c/interfaces/srv/detail/decoding_service__functions.h \
   /usr/include/stdlib.h \
   /usr/include/x86_64-linux-gnu/bits/waitflags.h \
   /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
@@ -394,7 +394,7 @@ CMakeFiles/interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport
   /usr/include/alloca.h \
   /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
   rosidl_generator_c/interfaces/msg/rosidl_generator_c__visibility_control.h \
-  rosidl_generator_c/interfaces/srv/detail/decoder__struct.h \
+  rosidl_generator_c/interfaces/srv/detail/decoding_service__struct.h \
   /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/primitives_sequence.h \
   /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/primitives_sequence_functions.h \
   /opt/ros/humble/include/rosidl_typesupport_introspection_c/rosidl_typesupport_introspection_c/service_introspection.h
@@ -402,7 +402,11 @@ CMakeFiles/interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport
 
 /opt/ros/humble/include/rosidl_typesupport_introspection_c/rosidl_typesupport_introspection_c/service_introspection.h:
 
-rosidl_typesupport_introspection_c/interfaces/srv/detail/decoder__type_support.c:
+rosidl_generator_c/interfaces/srv/detail/decoding_service__functions.h:
+
+rosidl_typesupport_introspection_c/interfaces/srv/detail/decoding_service__rosidl_typesupport_introspection_c.h:
+
+rosidl_typesupport_introspection_c/interfaces/srv/detail/decoding_service__type_support.c:
 
 rosidl_generator_c/interfaces/msg/detail/state__struct.h:
 
@@ -446,8 +450,6 @@ rosidl_generator_c/interfaces/msg/rosidl_generator_c__visibility_control.h:
 
 /usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
 
-rosidl_typesupport_introspection_c/interfaces/srv/detail/decoder__rosidl_typesupport_introspection_c.h:
-
 /usr/include/x86_64-linux-gnu/bits/typesizes.h:
 
 /usr/include/x86_64-linux-gnu/bits/endianness.h:
@@ -469,6 +471,8 @@ rosidl_generator_c/interfaces/msg/detail/sample__struct.h:
 rosidl_typesupport_introspection_c/interfaces/msg/detail/ir__type_support.c:
 
 /usr/include/stdlib.h:
+
+rosidl_generator_c/interfaces/srv/detail/decoding_service__struct.h:
 
 /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/message_type_support_struct.h:
 
@@ -516,8 +520,6 @@ rosidl_typesupport_introspection_c/interfaces/msg/detail/sample__rosidl_typesupp
 
 rosidl_generator_c/interfaces/msg/detail/decoder_element__functions.h:
 
-rosidl_generator_c/interfaces/srv/detail/decoder__functions.h:
-
 /usr/include/x86_64-linux-gnu/bits/waitflags.h:
 
 /usr/include/x86_64-linux-gnu/bits/waitstatus.h:
@@ -525,8 +527,6 @@ rosidl_generator_c/interfaces/srv/detail/decoder__functions.h:
 /usr/include/x86_64-linux-gnu/bits/floatn.h:
 
 /usr/include/x86_64-linux-gnu/bits/floatn-common.h:
-
-rosidl_generator_c/interfaces/srv/detail/decoder__struct.h:
 
 /usr/include/x86_64-linux-gnu/sys/types.h:
 

@@ -1,0 +1,23 @@
+[0.967s] Invoking command in '/workspace/BMI/src/state_reader': PYTHONPATH=/workspace/BMI/install/state_reader/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/state_reader build --build-base /workspace/BMI/build/state_reader/build install --prefix /workspace/BMI/install/state_reader --record /workspace/BMI/build/state_reader/install.log --single-version-externally-managed
+[1.132s] running egg_info
+[1.132s] writing ../../build/state_reader/state_reader.egg-info/PKG-INFO
+[1.133s] writing dependency_links to ../../build/state_reader/state_reader.egg-info/dependency_links.txt
+[1.133s] writing entry points to ../../build/state_reader/state_reader.egg-info/entry_points.txt
+[1.133s] writing requirements to ../../build/state_reader/state_reader.egg-info/requires.txt
+[1.133s] writing top-level names to ../../build/state_reader/state_reader.egg-info/top_level.txt
+[1.134s] reading manifest file '../../build/state_reader/state_reader.egg-info/SOURCES.txt'
+[1.134s] writing manifest file '../../build/state_reader/state_reader.egg-info/SOURCES.txt'
+[1.135s] running build
+[1.135s] running build_py
+[1.135s] running install
+[1.135s] /usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[1.135s]   warnings.warn(
+[1.135s] running install_lib
+[1.136s] running install_data
+[1.136s] running install_egg_info
+[1.137s] removing '/workspace/BMI/install/state_reader/lib/python3.10/site-packages/state_reader-0.0.0-py3.10.egg-info' (and everything under it)
+[1.137s] Copying ../../build/state_reader/state_reader.egg-info to /workspace/BMI/install/state_reader/lib/python3.10/site-packages/state_reader-0.0.0-py3.10.egg-info
+[1.138s] running install_scripts
+[1.152s] Installing psychopy_1D_center_out script to /workspace/BMI/install/state_reader/lib/state_reader
+[1.152s] writing list of installed files to '/workspace/BMI/build/state_reader/install.log'
+[1.182s] Invoked command in '/workspace/BMI/src/state_reader' returned '0': PYTHONPATH=/workspace/BMI/install/state_reader/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/state_reader build --build-base /workspace/BMI/build/state_reader/build install --prefix /workspace/BMI/install/state_reader --record /workspace/BMI/build/state_reader/install.log --single-version-externally-managed

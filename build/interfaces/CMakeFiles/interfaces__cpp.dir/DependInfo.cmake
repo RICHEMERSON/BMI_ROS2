@@ -31,10 +31,10 @@ set(CMAKE_MULTIPLE_OUTPUT_PAIRS
   "/workspace/BMI/build/interfaces/rosidl_generator_cpp/interfaces/msg/passive_observation.hpp" "/workspace/BMI/build/interfaces/rosidl_generator_cpp/interfaces/msg/ir.hpp"
   "/workspace/BMI/build/interfaces/rosidl_generator_cpp/interfaces/msg/sample.hpp" "/workspace/BMI/build/interfaces/rosidl_generator_cpp/interfaces/msg/ir.hpp"
   "/workspace/BMI/build/interfaces/rosidl_generator_cpp/interfaces/msg/state.hpp" "/workspace/BMI/build/interfaces/rosidl_generator_cpp/interfaces/msg/ir.hpp"
-  "/workspace/BMI/build/interfaces/rosidl_generator_cpp/interfaces/srv/decoder.hpp" "/workspace/BMI/build/interfaces/rosidl_generator_cpp/interfaces/msg/ir.hpp"
-  "/workspace/BMI/build/interfaces/rosidl_generator_cpp/interfaces/srv/detail/decoder__builder.hpp" "/workspace/BMI/build/interfaces/rosidl_generator_cpp/interfaces/msg/ir.hpp"
-  "/workspace/BMI/build/interfaces/rosidl_generator_cpp/interfaces/srv/detail/decoder__struct.hpp" "/workspace/BMI/build/interfaces/rosidl_generator_cpp/interfaces/msg/ir.hpp"
-  "/workspace/BMI/build/interfaces/rosidl_generator_cpp/interfaces/srv/detail/decoder__traits.hpp" "/workspace/BMI/build/interfaces/rosidl_generator_cpp/interfaces/msg/ir.hpp"
+  "/workspace/BMI/build/interfaces/rosidl_generator_cpp/interfaces/srv/decoding_service.hpp" "/workspace/BMI/build/interfaces/rosidl_generator_cpp/interfaces/msg/ir.hpp"
+  "/workspace/BMI/build/interfaces/rosidl_generator_cpp/interfaces/srv/detail/decoding_service__builder.hpp" "/workspace/BMI/build/interfaces/rosidl_generator_cpp/interfaces/msg/ir.hpp"
+  "/workspace/BMI/build/interfaces/rosidl_generator_cpp/interfaces/srv/detail/decoding_service__struct.hpp" "/workspace/BMI/build/interfaces/rosidl_generator_cpp/interfaces/msg/ir.hpp"
+  "/workspace/BMI/build/interfaces/rosidl_generator_cpp/interfaces/srv/detail/decoding_service__traits.hpp" "/workspace/BMI/build/interfaces/rosidl_generator_cpp/interfaces/msg/ir.hpp"
   )
 
 

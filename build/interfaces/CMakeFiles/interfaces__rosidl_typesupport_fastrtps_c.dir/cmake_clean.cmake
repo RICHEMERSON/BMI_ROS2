@@ -9,8 +9,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/sample__type_support_c.cpp.o.d"
   "CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/state__type_support_c.cpp.o"
   "CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/msg/detail/state__type_support_c.cpp.o.d"
-  "CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/srv/detail/decoder__type_support_c.cpp.o"
-  "CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/srv/detail/decoder__type_support_c.cpp.o.d"
+  "CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/srv/detail/decoding_service__type_support_c.cpp.o"
+  "CMakeFiles/interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interfaces/srv/detail/decoding_service__type_support_c.cpp.o.d"
   "libinterfaces__rosidl_typesupport_fastrtps_c.pdb"
   "libinterfaces__rosidl_typesupport_fastrtps_c.so"
   "rosidl_typesupport_fastrtps_c/interfaces/msg/detail/decoder_element__rosidl_typesupport_fastrtps_c.h"
@@ -23,8 +23,8 @@ file(REMOVE_RECURSE
   "rosidl_typesupport_fastrtps_c/interfaces/msg/detail/sample__type_support_c.cpp"
   "rosidl_typesupport_fastrtps_c/interfaces/msg/detail/state__rosidl_typesupport_fastrtps_c.h"
   "rosidl_typesupport_fastrtps_c/interfaces/msg/detail/state__type_support_c.cpp"
-  "rosidl_typesupport_fastrtps_c/interfaces/srv/detail/decoder__rosidl_typesupport_fastrtps_c.h"
-  "rosidl_typesupport_fastrtps_c/interfaces/srv/detail/decoder__type_support_c.cpp"
+  "rosidl_typesupport_fastrtps_c/interfaces/srv/detail/decoding_service__rosidl_typesupport_fastrtps_c.h"
+  "rosidl_typesupport_fastrtps_c/interfaces/srv/detail/decoding_service__type_support_c.cpp"
 )
 
 # Per-language clean rules from dependency scanning.
