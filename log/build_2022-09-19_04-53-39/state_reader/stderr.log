@@ -1,0 +1,7 @@
+/usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+  warnings.warn(
+  File "/workspace/BMI/install/state_reader/lib/python3.10/site-packages/state_reader/monkeylogic_interception.py", line 105
+    monkeylogic_server.get_logger().info('Publishing: pos: {}'.format(udp_socket_pos.recv(1024).decode()) 
+                                        ^
+SyntaxError: '(' was never closed
+

@@ -42,7 +42,14 @@ def trainer(decoding_element, sample_buffer, de_buffer):
              if len(_y_observation)<10:
                  continue
              
-             decoding_element.fit(np.array(_y_observation), np.array(_x_state))
+             state_data = np.array(_x_state)
+             neural_data = np.array(_y_observation)
+             select_neural_data = neural_data[state_data[:,1::].sum(1)==0]
+             select_state_data = state_data[state_data[:,1::].sum(1)!=0]
+             if len(select_neural_data)>len(select_state_data):
+                 select_neural_data = select_neural_data[0:-1]
+             
+             decoding_element.fit(np.array(select_neural_data), np.array(select_state_data))
              _decoding_element_msg = list(pickle.dumps(decoding_element))
              de_buffer.put(_decoding_element_msg)
          

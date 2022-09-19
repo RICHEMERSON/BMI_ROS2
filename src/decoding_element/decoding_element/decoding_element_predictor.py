@@ -58,10 +58,10 @@ class DecodingElementPredictor(Node):
         parameters['wait'] = False
         
         #%% declare parameters    
-        self.declare_parameter('parameters', json.dumps(parameters))
+        self.declare_parameter('parameters', list(pickle.dumps(parameters)))
         
         #%% get parameters
-        parameters = json.loads(self.get_parameter('parameters').get_parameter_value().string_value)
+        parameters = pickle.loads(bytes(list(self.get_parameter('parameters').get_parameter_value().integer_array_value)))
         
         #%% logging parameters
         for par in parameters:

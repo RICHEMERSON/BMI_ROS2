@@ -97,12 +97,12 @@ def main(args=None):
     
     while True:
         mo_trial = float(udp_socket.recv(1024).decode())
-        monkeylogic_server.get_logger().info('Publishing: MO: {}'.format(mo_trial) 
+        monkeylogic_server.get_logger().info('Publishing: MO: {}'.format(mo_trial))
         state_msg.x_state = [mo_trial, 0.0, 0.0]
         monkeylogic_server.desired_state_publisher_.publish(state_msg)
         
-        state_msg.x_state = [float(i) for i in udp_socket_pos.recv(1024).decode()[0,-1].split()]
-        monkeylogic_server.get_logger().info('Publishing: pos: {}'.format(str(state_msg.x_state)) 
+        state_msg.x_state = [float(i) for i in udp_socket_pos.recv(1024).decode().split()]
+        monkeylogic_server.get_logger().info('Publishing: pos: {}'.format(state_msg)) 
         monkeylogic_server.desired_state_publisher_.publish(state_msg)
         # udp_socket_decode.sendto(str(monkeylogic_server.send_request(True)).encode("utf-8"), bhvaddr)
         

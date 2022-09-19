@@ -5,8 +5,9 @@ import time
 import pickle
 import signal
 
-if os.path.exist('/share/'+str(int(time.time()*10))):
-    os.mkdir('/share/'+str(int(time.time()*10)))
+time_file = '/share/'+str(int(time.time()*10))+'/'
+if not os.path.exists(time_file):
+    os.mkdir(time_file)
 
 parameters = {}
 parameters['system'] = 0
@@ -18,7 +19,7 @@ parameters['entry_state_groups'] = ['/system_{}/group_{}/state_{}/desired_state'
 
 def raise_data_integrator_node(**kwargs):
     
-    log_file = '/share/{}/'.format(str(int(time.time()*10)))+'system{}_group{}_integrator.log'.format(str(parameters['system']), str(parameters['group']))
+    log_file = time_file+'system{}_group{}_integrator.log'.format(str(parameters['system']), str(parameters['group']))
     bash_excution = 'ros2 run decoding_element integrator '
     node_name = '--ros-args -r __node:=system{}_group{}_integrator '.format(str(parameters['system']), str(parameters['group']))
     par = "--param "+"parameters:={} ".format(list(pickle.dumps(kwargs))).replace(' ', '')
@@ -38,7 +39,7 @@ parameters['algorithm'] = 'wiener_filter'
 
 def raise_trainer_node(**kwargs):
     
-    log_file = '/share/{}/'.format(str(int(time.time()*10)))+'system{}_group{}_trainer.log'.format(str(parameters['system']), str(parameters['group']))
+    log_file = time_file+'system{}_group{}_trainer.log'.format(str(parameters['system']), str(parameters['group']))
     bash_excution = 'ros2 run decoding_element trainer '
     node_name = '--ros-args -r __node:=system{}_group{}_trainer '.format(str(parameters['system']), str(parameters['group']))
     par = "--param "+"parameters:={} ".format(list(pickle.dumps(kwargs))).replace(' ', '')
@@ -56,9 +57,9 @@ parameters['wait'] = False
         
 def raise_predictor_node(**kwargs):
     
-    log_file = '/share/{}/'.format(str(int(time.time()*10)))+'system{}_group{}_predictor.log'.format(str(parameters['system']), str(parameters['group']))
+    log_file = time_file+'system{}_group{}_predictor.log'.format(str(parameters['system']), str(parameters['group']))
     bash_excution = 'ros2 run decoding_element predictor '
-    node_name = '--ros-args -r __node:=system{}_group{}_trainer '.format(str(parameters['system']), str(parameters['group']))
+    node_name = '--ros-args -r __node:=system{}_group{}_predictor '.format(str(parameters['system']), str(parameters['group']))
     par = "--param "+"parameters:={} ".format(list(pickle.dumps(kwargs))).replace(' ', '')
     bash_excution = bash_excution + node_name + par+' 2>{}'.format(log_file)
     p = subprocess.Popen(bash_excution,shell=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE,encoding="utf-8")

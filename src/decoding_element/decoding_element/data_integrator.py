@@ -213,7 +213,7 @@ class PassiveDataIntegrator(Node):
                         self._sample.x_state = self._state
                         self._sample.y_observation = self._observation
                         self.publisher_.publish(self._sample)
-                        self.get_logger().info('Publishing: integrated data: [x_state : {}, y_observation : {}]'.format(str(self._sample.x_state), str(self._sample.y_observation)))
+                        self.get_logger().info('Publishing: integrated data: x_state : {}, y_observation : {}'.format(str(self._sample.x_state), str(self._sample.y_observation)))
                         self._state = None
 
     def state_listener_callback(self, msg):
@@ -227,7 +227,7 @@ class PassiveDataIntegrator(Node):
                         self._sample.x_state = self._state
                         self._sample.y_observation = self._observation
                         self.publisher_.publish(self._sample)
-                        self.get_logger().info('Publishing: integrated data: [x_state : {}, y_observation : {}]'.format(str(self._sample.x_state), str(self._sample.y_observation)))
+                        self.get_logger().info('Publishing: integrated data: x_state : {}, y_observation : {}'.format(str(self._sample.x_state), str(self._sample.y_observation)))
                         self._observation = None
 
 def main(args=None):
