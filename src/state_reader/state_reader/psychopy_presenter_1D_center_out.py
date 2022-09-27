@@ -39,7 +39,7 @@ udp_socket.settimeout(None)
 #%% task parameter
 SurroundRadius = 10
 TouchErr = 2.5
-mywin = visual.Window(size=(1280, 1024),monitor='testMonitor',color=(-1, -1, -1), units="deg",screen=1,fullscr=False)
+mywin = visual.Window(size=(1280, 1024),monitor='testMonitor',color=(-1, -1, -1), units="deg",screen=1,fullscr=True)
 
 ## object statement map
 object_map = {}
@@ -84,16 +84,28 @@ BellCurveCounter = core.Clock()
 
 #%% initialize shared memory parameter
 try:
+    
     assist_coefficient = shared_memory.ShareableList([2],name='AssistCoefficient')
     decoder_coefficient = shared_memory.ShareableList([0],name='DecoderCoefficient')
+    training_flag = shared_memory.ShareableList([1],name='TrainingFlag')
+    PosFlag = shared_memory.ShareableList([1],name='PosFlag')
+
 except FileExistsError:
+    
     assist_coefficient = shared_memory.ShareableList(name='AssistCoefficient')
-    decoder_coefficient = shared_memory.ShareableList(name='AssistCoefficient')
+    decoder_coefficient = shared_memory.ShareableList(name='DecoderCoefficient')
+    training_flag = shared_memory.ShareableList(name='TrainingFlag')
+    
     assist_coefficient.shm.unlink()
     decoder_coefficient.shm.unlink()
+    training_flag.shm.unlink()
+    
     assist_coefficient = shared_memory.ShareableList([2],name='AssistCoefficient')
     decoder_coefficient = shared_memory.ShareableList([0],name='DecoderCoefficient')
-    
+    training_flag = shared_memory.ShareableList([1],name='TrainingFlag')
+
+
+PosFlag = shared_memory.ShareableList(name='PosFlag')
 
 #%% filename
 psychopy_filename = '/share/{}_'.format('monkey_name')+str(int(time.time()*10))+'_center_out_1D.psydat'
@@ -126,14 +138,14 @@ class PsychopyPresenter(Node):
                                                parameters['system'], parameters['group'], parameters['state']), 1
                                                )
         
-        '''
-        self.cli = self.create_client(DecodingService, '/system_{}/group_{}/state_{}/{}'.format(
-                                     parameters['system'], parameters['group'], parameters['state'],parameters['decoding_element'])
+        
+        self.cli = self.create_client(
+                                      DecodingService, '/system_{}/group_{}/predictor/decoding_service'.format(parameters['system'], parameters['group'])
                                      )
                                      
         while not self.cli.wait_for_service(timeout_sec=0.02):
             self.get_logger().info('service not available, waiting again...')
-        self.req = DecodingService.Request()'''
+        self.req = DecodingService.Request()
 
     def send_request(self, re):
         self.req.req = re
@@ -153,6 +165,7 @@ def main(args=None):
     state_msg = State()
     desired_state = State()
     psychopy_presenter = PsychopyPresenter()
+    PosFlag[0]=0
     
     for trial in BMIExp:
         
@@ -193,22 +206,28 @@ def main(args=None):
         #%% BMIdecoding
         marker_publisher(3)
         TrialTimeCounter.reset()
+        
+        PosFlag[0]=1
+        
         while TrialTimeCounter.getTime()<10:
-            # Xvel = np.array(psychopy_presenter.send_request(True))*DecoderCoefficient[0]+np.cos(trial['Reach Direction'])*AssistCoefficient[0]
-            Xvel = np.cos(trial['Reach Direction'])*assist_coefficient[0]
+            Xvel = np.array(psychopy_presenter.send_request(True).res)[0]*decoder_coefficient[0]+np.cos(trial['Reach Direction'])*assist_coefficient[0]
+            # psychopy_presenter.get_logger().info(str(np.cos(trial['Reach Direction'])*np.abs(Xvel)))
+            # Xvel = np.cos(trial['Reach Direction'])*assist_coefficient[0]
             Xpos = Xpos+Xvel*0.01667
+            psychopy_presenter.get_logger().info('Publishing: Xpos: {}'.format(str(Xpos)))
             object_instance['Cursor'].pos = [Xpos,0]
             mywin.flip()
             
             #%% adaptive intention state
-            desired_state.x_state = [np.cos(trial['Reach Direction'])*np.abs(Xvel), 0.0, 1.0]
-            psychopy_presenter.desired_state_publisher_.publish(desired_state)
+            desired_state.x_state = [np.cos(trial['Reach Direction'])*np.abs(Xvel), Xpos, 1.0]
+            if training_flag[0]==1:
+                 psychopy_presenter.desired_state_publisher_.publish(desired_state)
             
             #%% actual state
             state_msg.x_state = list(object_instance['Cursor'].pos)
             psychopy_presenter.state_publisher_.publish(state_msg)
-            psychopy_presenter.get_logger().info('Publishing: state: [desired state: {}, state: {}]'.format(str(desired_state.x_state), str(state_msg.x_state)))
-            psychopy_presenter.get_logger().info('Publishing: coefficient: [decoder coefficient: {}, assist coefficient: {}]'.format(str(decoder_coefficient[0]), str(assist_coefficient[0])))
+            psychopy_presenter.get_logger().info('Publishing: state: desired state: {}, state: {}'.format(str(desired_state.x_state), str(state_msg.x_state)))
+            psychopy_presenter.get_logger().info('Publishing: coefficient: decoder coefficient: {}, assist coefficient: {}'.format(str(decoder_coefficient[0]), str(assist_coefficient[0])))
             
             CursorTrajectory = CursorTrajectory+[object_instance['Cursor'].pos]
         
@@ -216,6 +235,8 @@ def main(args=None):
                  marker_publisher(4)
                  BMIExp.addData('TrialError', 0)
                  break
+        
+        PosFlag[0]=0
         
         #%% Target off
         object_instance['Cursor'].autoDraw = False

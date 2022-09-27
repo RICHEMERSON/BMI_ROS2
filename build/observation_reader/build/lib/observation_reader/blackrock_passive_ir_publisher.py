@@ -134,7 +134,9 @@ class BlackrockPassiveIrPublisher(Node):
         ree,event = cbpy.trial_event(instance = 0,reset = True)
         self._neural_buffer[:] = 0
         if len(event)!=0:
-            for i in event: self._neural_buffer[i[0]-1] = i[1]['timestamps'][0].shape[0]
+            for i in event:
+                if i[0]>len(self._neural_buffer): continue
+                self._neural_buffer[i[0]-1] = i[1]['timestamps'][0].shape[0]
         
         #%% smooth data to get ir
         self._neural_buffer_deque.append(self._neural_buffer.copy())

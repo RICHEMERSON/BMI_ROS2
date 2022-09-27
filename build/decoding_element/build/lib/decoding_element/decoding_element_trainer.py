@@ -24,11 +24,9 @@ from multiprocessing import Queue
 from sklearn.linear_model import LinearRegression
 from multiprocessing import Process
 import pickle
+from neural_decoding.decoder.decoder import decoder
 
 def trainer(decoding_element, sample_buffer, de_buffer):
-
-      _x_state = deque(maxlen = 100000)
-      _y_observation = deque(maxlen = 100000)
       
       while True: 
          
@@ -36,20 +34,9 @@ def trainer(decoding_element, sample_buffer, de_buffer):
              
              while not sample_buffer.empty():
                  sample = sample_buffer.get()
-                 _x_state.append(sample.x_state)
-                 _y_observation.append(sample.y_observation)
+                 decoding_element.update(np.array(sample.y_observation), np.array(sample.x_state))
              
-             if len(_y_observation)<10:
-                 continue
-             
-             state_data = np.array(_x_state)
-             neural_data = np.array(_y_observation)
-             select_neural_data = neural_data[state_data[:,1::].sum(1)==0]
-             select_state_data = state_data[state_data[:,1::].sum(1)!=0]
-             if len(select_neural_data)>len(select_state_data):
-                 select_neural_data = select_neural_data[0:-1]
-             
-             decoding_element.fit(np.array(select_neural_data), np.array(select_state_data))
+             decoding_element.fit()
              _decoding_element_msg = list(pickle.dumps(decoding_element))
              de_buffer.put(_decoding_element_msg)
          
@@ -74,7 +61,7 @@ class DecodingElementTrainer(Node):
         parameters['system'] = 0
         parameters['group'] = 0
         parameters['decoding_element'] = 'decoder'
-        parameters['algorithm'] = 'wiener_filter'
+        parameters['algorithm'] = 'wiener_filter_synchronous'
         
         #%% declare parameters    
         self.declare_parameter('parameters', list(pickle.dumps(parameters)))
@@ -105,7 +92,7 @@ class DecodingElementTrainer(Node):
         # declare protect/private attribute for callback function
         #+-----------------------------------------------------------------------    
         
-        self._decoding_element = LinearRegression()
+        self._decoding_element = decoder[parameters['algorithm']]()
         self._sample_buffer = Queue()
         self._de_buffer = Queue()
         
@@ -119,10 +106,11 @@ class DecodingElementTrainer(Node):
         while not self._de_buffer.empty():
             _decoding_element_msg.de = self._de_buffer.get()
             self.publisher_.publish(_decoding_element_msg)
-            self.get_logger().info('Publishing: decoding element: {}'.format(str(_decoding_element_msg.de)))
+        # self.get_logger().info('Publishing: decoding element')
+        # self.get_logger().info('Publishing: decoding element: {}'.format(str(_decoding_element_msg.de)))
 
     def sample_listener_callback(self, msg):
-        self.get_logger().info('Recieving: integrated data: [x_state : {}, y_observation : {}]'.format(str(msg.x_state), str(msg.y_observation)))
+        # self.get_logger().info('Recieving: integrated data: x_state : {}, y_observation : {}'.format(str(msg.x_state), str(msg.y_observation)))
         self._sample_buffer.put(msg)            
 
 def main(args=None):

@@ -108,7 +108,7 @@ def _synchro_concatenation_subscriber(self, parameters, shared_buffer, group_nam
             po_msg.x_state = list(concatenate_buffer)
             
         exec('self.{}_publisher_.publish(po_msg)'.format(group_name))
-        self.get_logger().info('Recieving: grouped {}: {}'.format(group_name, str(po_msg)))
+        # self.get_logger().info('Recieving: grouped {}: {}'.format(group_name, str(po_msg)))
         for i in concatenate_buffer: i.clear()
 
 class PassiveDataIntegrator(Node):

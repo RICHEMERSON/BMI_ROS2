@@ -57,14 +57,14 @@ class MonkeylogicServer(Node):
                                                parameters['system'], parameters['group'], parameters['state']), 1
                                                )
         
-        '''
-        self.cli = self.create_client(DecodingService, '/system_{}/group_{}/state_{}/{}'.format(
-                                     parameters['system'], parameters['group'], parameters['state'],parameters['decoding_element'])
+        
+        self.cli = self.create_client(DecodingService, '/system_{}/group_{}/predictor/decoding_service'.format(
+                                     parameters['system'], parameters['group'])
                                      )
-                                     
+                             
         while not self.cli.wait_for_service(timeout_sec=0.02):
             self.get_logger().info('service not available, waiting again...')
-        self.req = DecodingService.Request()'''
+        self.req = DecodingService.Request()
 
     def send_request(self, re):
         self.req.req = re
@@ -81,6 +81,7 @@ def main(args=None):
     bhvaddr=(bhvip,bhvport)
     udp_socket=socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
     udp_socket.bind(bhvaddr)
+    udp_socket.settimeout(None)
     state_msg = State()
     monkeylogic_server = MonkeylogicServer()
     
@@ -89,22 +90,32 @@ def main(args=None):
     bhvaddr=(bhvip,bhvport)
     udp_socket_pos=socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
     udp_socket_pos.bind(bhvaddr)
+    udp_socket_pos.settimeout(None)
     
     bhvip='192.168.137.3'
     bhvport=8822
     bhvaddr=(bhvip,bhvport)
     udp_socket_decode=socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
+    udp_socket_decode.settimeout(None)
     
     while True:
         mo_trial = float(udp_socket.recv(1024).decode())
         monkeylogic_server.get_logger().info('Publishing: MO: {}'.format(mo_trial))
         state_msg.x_state = [mo_trial, 0.0, 0.0]
         monkeylogic_server.desired_state_publisher_.publish(state_msg)
+
+        decoding_results = str(monkeylogic_server.send_request(True).res)
+        monkeylogic_server.get_logger().info('Publishing: decoding result: {}'.format(decoding_results)) 
+        udp_socket_decode.sendto(decoding_results.encode(), bhvaddr)
         
-        state_msg.x_state = [float(i) for i in udp_socket_pos.recv(1024).decode().split()]
+        recv_data = udp_socket_pos.recv(1024).decode()
+        if 'wrong' in recv_data:
+            print('wrong trial')
+            continue
+        
+        state_msg.x_state = [float(i) for i in recv_data.split()]
         monkeylogic_server.get_logger().info('Publishing: pos: {}'.format(state_msg)) 
         monkeylogic_server.desired_state_publisher_.publish(state_msg)
-        # udp_socket_decode.sendto(str(monkeylogic_server.send_request(True)).encode("utf-8"), bhvaddr)
         
         
 

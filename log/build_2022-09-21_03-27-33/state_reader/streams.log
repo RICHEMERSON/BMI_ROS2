@@ -1,0 +1,27 @@
+[0.974s] Invoking command in '/workspace/BMI/src/state_reader': PYTHONPATH=/workspace/BMI/install/state_reader/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/state_reader build --build-base /workspace/BMI/build/state_reader/build install --prefix /workspace/BMI/install/state_reader --record /workspace/BMI/build/state_reader/install.log --single-version-externally-managed
+[1.137s] running egg_info
+[1.138s] writing ../../build/state_reader/state_reader.egg-info/PKG-INFO
+[1.138s] writing dependency_links to ../../build/state_reader/state_reader.egg-info/dependency_links.txt
+[1.138s] writing entry points to ../../build/state_reader/state_reader.egg-info/entry_points.txt
+[1.138s] writing requirements to ../../build/state_reader/state_reader.egg-info/requires.txt
+[1.138s] writing top-level names to ../../build/state_reader/state_reader.egg-info/top_level.txt
+[1.139s] reading manifest file '../../build/state_reader/state_reader.egg-info/SOURCES.txt'
+[1.140s] writing manifest file '../../build/state_reader/state_reader.egg-info/SOURCES.txt'
+[1.140s] running build
+[1.140s] running build_py
+[1.140s] copying state_reader/monkeylogic_interception.py -> /workspace/BMI/build/state_reader/build/lib/state_reader
+[1.140s] running install
+[1.140s] /usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[1.140s]   warnings.warn(
+[1.141s] running install_lib
+[1.141s] copying /workspace/BMI/build/state_reader/build/lib/state_reader/monkeylogic_interception.py -> /workspace/BMI/install/state_reader/lib/python3.10/site-packages/state_reader
+[1.142s] byte-compiling /workspace/BMI/install/state_reader/lib/python3.10/site-packages/state_reader/monkeylogic_interception.py to monkeylogic_interception.cpython-310.pyc
+[1.142s] running install_data
+[1.142s] running install_egg_info
+[1.144s] removing '/workspace/BMI/install/state_reader/lib/python3.10/site-packages/state_reader-0.0.0-py3.10.egg-info' (and everything under it)
+[1.144s] Copying ../../build/state_reader/state_reader.egg-info to /workspace/BMI/install/state_reader/lib/python3.10/site-packages/state_reader-0.0.0-py3.10.egg-info
+[1.144s] running install_scripts
+[1.160s] Installing monkeylogic_server script to /workspace/BMI/install/state_reader/lib/state_reader
+[1.160s] Installing psychopy_1D_center_out script to /workspace/BMI/install/state_reader/lib/state_reader
+[1.161s] writing list of installed files to '/workspace/BMI/build/state_reader/install.log'
+[1.179s] Invoked command in '/workspace/BMI/src/state_reader' returned '0': PYTHONPATH=/workspace/BMI/install/state_reader/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/state_reader build --build-base /workspace/BMI/build/state_reader/build install --prefix /workspace/BMI/install/state_reader --record /workspace/BMI/build/state_reader/install.log --single-version-externally-managed

@@ -27,14 +27,16 @@ from multiprocessing import Process
 
 def model_inference(observation_q, state_q, decoding_element_q):
     decoding_element = None
+    
     while True:
-        if not decoding_element_q.empty():
-            while not decoding_element_q.empty():
-                decoding_element = decoding_element_q.get()
+        
+        while not decoding_element_q.empty():
+            decoding_element = decoding_element_q.get()
     
         if decoding_element is not None:
-            decoding_state = list(decoding_element.predict(observation_q.get()))
-            state_q.put(decoding_state)
+            decoding_input = observation_q.get()
+            decoding_state = decoding_element.predict(decoding_input)
+            state_q.put([decoding_state, decoding_input, decoding_element])
 
 class DecodingElementPredictor(Node):
 
@@ -98,6 +100,7 @@ class DecodingElementPredictor(Node):
         self._observation_q = Queue()
         self._state_q = Queue()
         self._decoding_element_q = Queue()
+        self._decoding_element_de = None
         
         #%% build sub process for consideration of GIL
         predictor_process = Process(target=model_inference, args=(self._observation_q, self._state_q, self._decoding_element_q))
@@ -107,6 +110,7 @@ class DecodingElementPredictor(Node):
     def decoding_element_listener_callback(self, msg):
     
         # self.get_logger().info('Recieving: decoding element: {}'.format(str(msg.de)))
+        self._decoding_element_de = msg.de
         self._decoding_element = pickle.loads(bytes(list(msg.de)))
         self._decoding_element_q.put(self._decoding_element)
     
@@ -115,20 +119,28 @@ class DecodingElementPredictor(Node):
         _decoding_state = State()
         # self.get_logger().info('Recieving: neural data: {}'.format(str(msg.y_observation)))
         self._observation_q.put(np.array(msg.y_observation)[np.newaxis,:])
+        
+        readout = None
 
         while not self._state_q.empty():
-            self._decoding_state = self._state_q.get()
+            readout = self._state_q.get()
+            self._decoding_state = readout[0]
         
-        self.get_logger().info('Publishing: decoding state: {}'.format(str(self._decoding_state)))
+        # if not readout is None:
+            # self.get_logger().info('Publishing: decoding state: {}, input: {}'.format(str(readout[0]), str(list(readout[1].squeeze()))))
     
     def decoding_element_predict_callback(self, request, response):
         
-        response.res = [0.0] if self._decoding_state is None else self._decoding_state  
+        # self.get_logger().info('request inquiring: {}'.format(self._decoding_state))
+        response.res = [0.0] if self._decoding_state is None else list(self._decoding_state.squeeze())
         
         if self._wait and self._decoding_element is not None:
-            response.res = list(self._decoding_element.predict(np.array(msg.y_observation)[np.newaxis,:]))
-                  
-        self.get_logger().info('Servicing: decoding element: [incoming request : {}, outcoming response : {}]'.format(str(request.req), str(response.res)))
+            dr = self._decoding_element.predict(np.array(msg.y_observation)[np.newaxis,:])
+            response.res = [0.0] if dr is None else list(dr.squeeze())
+        
+        if not self._decoding_state is None:
+            self.get_logger().info('Servicing: decoding element: incoming request : {}, outcoming response : {}'.format(str(request.req), str(response.res)))
+        return response
 
 def main(args=None):
     rclpy.init(args=args)

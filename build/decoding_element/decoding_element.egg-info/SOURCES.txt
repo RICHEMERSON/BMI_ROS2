@@ -11,7 +11,9 @@ setup.py
 decoding_element/__init__.py
 decoding_element/data_integrator.py
 decoding_element/decoding_element_predictor.py
+decoding_element/decoding_element_predictor_old.py
 decoding_element/decoding_element_trainer.py
+decoding_element/decoding_element_trainer_old.py
 resource/decoding_element
 test/test_copyright.py
 test/test_flake8.py
