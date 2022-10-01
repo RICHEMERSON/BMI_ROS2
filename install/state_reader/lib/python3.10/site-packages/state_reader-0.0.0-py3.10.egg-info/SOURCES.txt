@@ -12,6 +12,7 @@ resource/state_reader
 state_reader/__init__.py
 state_reader/monkeylogic_interception.py
 state_reader/psychopy_presenter_1D_center_out.py
+state_reader/psychopy_presenter_2D_center_out.py
 test/test_copyright.py
 test/test_flake8.py
 test/test_pep257.py

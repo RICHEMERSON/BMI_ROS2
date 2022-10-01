@@ -25,20 +25,26 @@ from sklearn.linear_model import LinearRegression
 from multiprocessing import Process
 import pickle
 from neural_decoding.decoder.decoder import decoder
+import traceback
 
-def trainer(decoding_element, sample_buffer, de_buffer):
+def trainer(decoding_element, sample_buffer, de_buffer, error_buffer):
       
       while True: 
          
          if not sample_buffer.empty():
              
-             while not sample_buffer.empty():
-                 sample = sample_buffer.get()
-                 decoding_element.update(np.array(sample.y_observation), np.array(sample.x_state))
+             try:
              
-             decoding_element.fit()
-             _decoding_element_msg = list(pickle.dumps(decoding_element))
-             de_buffer.put(_decoding_element_msg)
+                 while not sample_buffer.empty():
+                     sample = sample_buffer.get()
+                     decoding_element.update(np.array(sample.y_observation), np.array(sample.x_state))
+             
+                 decoding_element.fit()
+                 _decoding_element_msg = list(pickle.dumps(decoding_element))
+                 de_buffer.put(_decoding_element_msg)
+             
+             except Exception as e:
+                 error_buffer.put(traceback.format_exc().replace('\n','\o'))
          
 
 class DecodingElementTrainer(Node):
@@ -95,22 +101,33 @@ class DecodingElementTrainer(Node):
         self._decoding_element = decoder[parameters['algorithm']]()
         self._sample_buffer = Queue()
         self._de_buffer = Queue()
+        self._error_buffer = Queue()
+        
+        self.counter = 0
         
         #%% build sub process for consideration of GIL
-        trainer_process = Process(target=trainer, args=(self._decoding_element, self._sample_buffer, self._de_buffer))
+        trainer_process = Process(target=trainer, args=(self._decoding_element, self._sample_buffer, self._de_buffer, self._error_buffer))
         trainer_process.daemon = True
         trainer_process.start()
         
     def decoding_element_talker_callback(self):
         _decoding_element_msg = DecoderElement()
+        self.counter = self.counter+1
+        
         while not self._de_buffer.empty():
             _decoding_element_msg.de = self._de_buffer.get()
+        
+        while not self._error_buffer.empty():
+            self.get_logger().error(self._error_buffer.get())
+        
+        if len(_decoding_element_msg.de)!=0:
             self.publisher_.publish(_decoding_element_msg)
-        # self.get_logger().info('Publishing: decoding element')
-        # self.get_logger().info('Publishing: decoding element: {}'.format(str(_decoding_element_msg.de)))
+            
+        if len(_decoding_element_msg.de)!=0 and (self.counter%50)==0:
+            self.get_logger().info('Publishing: decoding element: {}'.format(str(_decoding_element_msg.de)))
 
     def sample_listener_callback(self, msg):
-        # self.get_logger().info('Recieving: integrated data: x_state : {}, y_observation : {}'.format(str(msg.x_state), str(msg.y_observation)))
+        self.get_logger().info('Recieving: integrated data: x_state : {}, y_observation : {}'.format(str(msg.x_state), str(msg.y_observation)))
         self._sample_buffer.put(msg)            
 
 def main(args=None):

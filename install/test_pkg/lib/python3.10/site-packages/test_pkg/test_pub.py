@@ -38,6 +38,7 @@ class MinimalPublisher(Node):
         
         self.publisher_.publish(msg)
         self.get_logger().info('Publishing: "%s"' % msg.data)
+        self.get_logger().error('aaa')
         self.i += 1
         
         lr = LinearRegression()

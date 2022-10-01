@@ -25,7 +25,7 @@ from interfaces.srv import DecodingService
 import json
 from multiprocessing import Process
 
-def model_inference(observation_q, state_q, decoding_element_q):
+def model_inference(observation_q, state_q, decoding_element_q, error_buffer):
     decoding_element = None
     
     while True:
@@ -34,9 +34,12 @@ def model_inference(observation_q, state_q, decoding_element_q):
             decoding_element = decoding_element_q.get()
     
         if decoding_element is not None:
-            decoding_input = observation_q.get()
-            decoding_state = decoding_element.predict(decoding_input)
-            state_q.put([decoding_state, decoding_input, decoding_element])
+            try:
+                 decoding_input = observation_q.get()
+                 decoding_state = decoding_element.predict(decoding_input)
+                 state_q.put([decoding_state, decoding_input, decoding_element])
+            except Exception as e:
+                 error_buffer.put(traceback.format_exc().replace('\n','\o'))
 
 class DecodingElementPredictor(Node):
 
@@ -100,10 +103,12 @@ class DecodingElementPredictor(Node):
         self._observation_q = Queue()
         self._state_q = Queue()
         self._decoding_element_q = Queue()
+        self._error_buffer = Queue()
+        
         self._decoding_element_de = None
         
         #%% build sub process for consideration of GIL
-        predictor_process = Process(target=model_inference, args=(self._observation_q, self._state_q, self._decoding_element_q))
+        predictor_process = Process(target=model_inference, args=(self._observation_q, self._state_q, self._decoding_element_q, self._error_buffer))
         predictor_process.daemon = True
         predictor_process.start()
     
@@ -125,6 +130,9 @@ class DecodingElementPredictor(Node):
         while not self._state_q.empty():
             readout = self._state_q.get()
             self._decoding_state = readout[0]
+        
+        while not self._error_buffer.empty():
+            self.get_logger().error(self._error_buffer.get())
         
         # if not readout is None:
             # self.get_logger().info('Publishing: decoding state: {}, input: {}'.format(str(readout[0]), str(list(readout[1].squeeze()))))

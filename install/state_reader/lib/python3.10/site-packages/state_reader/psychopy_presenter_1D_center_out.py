@@ -70,7 +70,7 @@ for object_type in object_dict:
 
 ## task configuration
 conds = data.createFactorialTrialList({'Reach Direction':np.array([1,0])*np.pi})
-BMIExp = data.TrialHandler(trialList=conds, nReps=100, name='Calibrate',method='random',
+BMIExp = data.TrialHandler(trialList=conds, nReps=10000, name='Calibrate',method='random',
                            dataTypes = ['Condition','EventMarker','TrialStartTime','AnalogData',
                                         'UserVars','TrialError'])
 UserVars = {}
@@ -210,21 +210,25 @@ def main(args=None):
         PosFlag[0]=1
         
         while TrialTimeCounter.getTime()<10:
-            Xvel = np.array(psychopy_presenter.send_request(True).res)[0]*decoder_coefficient[0]+np.cos(trial['Reach Direction'])*assist_coefficient[0]
+            dxvel = np.array(psychopy_presenter.send_request(True).res)
+            Xvel = (dxvel[0] if len(dxvel)==1 else dxvel[1])*decoder_coefficient[0]+np.cos(trial['Reach Direction'])*assist_coefficient[0]
             # psychopy_presenter.get_logger().info(str(np.cos(trial['Reach Direction'])*np.abs(Xvel)))
             # Xvel = np.cos(trial['Reach Direction'])*assist_coefficient[0]
+            if np.abs(Xvel) > 5:
+                 Xvel = Xvel/np.abs(Xvel) * 5 
+            
             Xpos = Xpos+Xvel*0.01667
-            psychopy_presenter.get_logger().info('Publishing: Xpos: {}'.format(str(Xpos)))
+            psychopy_presenter.get_logger().info('Publishing: Xpos: {}, Xvel: {}, vec_len: {}'.format(str(Xpos),str(Xvel),str(len(dxvel))))
             object_instance['Cursor'].pos = [Xpos,0]
             mywin.flip()
             
             #%% adaptive intention state
-            desired_state.x_state = [np.cos(trial['Reach Direction'])*np.abs(Xvel), Xpos, 1.0]
+            desired_state.x_state = [Xpos, np.cos(trial['Reach Direction'])*np.abs(Xvel), 1.0]
             if training_flag[0]==1:
                  psychopy_presenter.desired_state_publisher_.publish(desired_state)
             
             #%% actual state
-            state_msg.x_state = list(object_instance['Cursor'].pos)
+            state_msg.x_state = [Xvel]+list(object_instance['Cursor'].pos)
             psychopy_presenter.state_publisher_.publish(state_msg)
             psychopy_presenter.get_logger().info('Publishing: state: desired state: {}, state: {}'.format(str(desired_state.x_state), str(state_msg.x_state)))
             psychopy_presenter.get_logger().info('Publishing: coefficient: decoder coefficient: {}, assist coefficient: {}'.format(str(decoder_coefficient[0]), str(assist_coefficient[0])))
@@ -235,6 +239,10 @@ def main(args=None):
                  marker_publisher(4)
                  BMIExp.addData('TrialError', 0)
                  break
+            
+            if np.linalg.norm(object_instance['Cursor'].pos) > 10:
+                 break
+            
         
         PosFlag[0]=0
         
