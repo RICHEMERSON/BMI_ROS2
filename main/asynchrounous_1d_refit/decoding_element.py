@@ -54,6 +54,7 @@ parameters = {}
 parameters['system'] = 0
 parameters['group'] = 0
 parameters['wait'] = False
+parameters['algorithm'] = 'refit_kf_lcy_1d'
         
 def raise_predictor_node(**kwargs):
     

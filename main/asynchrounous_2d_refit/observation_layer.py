@@ -11,7 +11,7 @@ system_reader['blackrock']['passive'] = 'blackrock_ir_talker'
 
 parameters = {}
 parameters['timer_period'] = 0.02
-parameters['chn_num'] = 64
+parameters['chn_num'] = 256
 parameters['deque_buffer_length'] = 20
 parameters['smoothed_parameter'] = [10**(i/19-1) for i in range(20)]
 parameters['system'] = 0

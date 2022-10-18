@@ -38,7 +38,7 @@ udp_socket.settimeout(None)
 
 #%% task parameter
 SurroundRadius = 10
-TouchErr = 2.5
+TouchErr = 4
 mywin = visual.Window(size=(1280, 1024),monitor='testMonitor',color=(-1, -1, -1), units="deg",screen=1,fullscr=True)
 
 ## object statement map
@@ -95,14 +95,17 @@ except FileExistsError:
     assist_coefficient = shared_memory.ShareableList(name='AssistCoefficient')
     decoder_coefficient = shared_memory.ShareableList(name='DecoderCoefficient')
     training_flag = shared_memory.ShareableList(name='TrainingFlag')
+    PosFlag = shared_memory.ShareableList(name='PosFlag')
     
     assist_coefficient.shm.unlink()
     decoder_coefficient.shm.unlink()
     training_flag.shm.unlink()
+    PosFlag.shm.unlink()
     
     assist_coefficient = shared_memory.ShareableList([2],name='AssistCoefficient')
     decoder_coefficient = shared_memory.ShareableList([0],name='DecoderCoefficient')
     training_flag = shared_memory.ShareableList([1],name='TrainingFlag')
+    PosFlag = shared_memory.ShareableList([1],name='PosFlag')
 
 
 PosFlag = shared_memory.ShareableList(name='PosFlag')
@@ -167,7 +170,7 @@ def main(args=None):
     psychopy_presenter = PsychopyPresenter()
     PosFlag[0]=0
     
-    for trial in BMIExp:
+    for trial_index, trial in enumerate(BMIExp):
         
         #%% task start
         core.wait(2)#interval
@@ -192,7 +195,7 @@ def main(args=None):
     
         UserVars['TargetPos'] = object_instance['SurroundTarget'].pos
         mywin.flip()
-        psychopy_presenter.get_logger().info('Publishing: Target position: {}'.format(str(object_instance['SurroundTarget'].pos)))
+        psychopy_presenter.get_logger().info('Publishing: Trial info: Target position: {}, Trial index: {}'.format(str(object_instance['SurroundTarget'].pos), str(trial_index)))
         marker_publisher(1)
         
         #%% Delay period
@@ -209,6 +212,11 @@ def main(args=None):
         
         PosFlag[0]=1
         
+        if training_flag[0]==1:
+            tf = 1
+        else:
+            tf = 0
+        
         while TrialTimeCounter.getTime()<10:
             
             DiffDegree = np.math.atan2(object_instance['SurroundTarget'].pos[1]-object_instance['Cursor'].pos[1],
@@ -216,12 +224,16 @@ def main(args=None):
             
             assitant_vel = np.array([np.cos(DiffDegree),np.sin(DiffDegree)])
             decoding_results = np.array(psychopy_presenter.send_request(True).res)
+            if np.linalg.norm(decoding_results) > 5:
+                 decoding_results = decoding_results/np.linalg.norm(decoding_results) * 5 
+                 
             vel = decoding_results*decoder_coefficient[0]+assitant_vel*assist_coefficient[0]
             # psychopy_presenter.get_logger().info(str(np.cos(trial['Reach Direction'])*np.abs(Xvel)))
             # Xvel = np.cos(trial['Reach Direction'])*assist_coefficient[0]
             
             object_instance['Cursor'].pos = object_instance['Cursor'].pos+vel*0.01667
             psychopy_presenter.get_logger().info('Publishing: pos: {}'.format(str(object_instance['Cursor'].pos)))
+            psychopy_presenter.get_logger().info('Publishing: pos: {}, vel: {}, vec_len: {}, decoding results: {}'.format(str(object_instance['Cursor'].pos),str(vel),str(len(vel)),str(decoding_results)))
 
             mywin.flip()
             
@@ -229,20 +241,26 @@ def main(args=None):
             vel_norm = np.linalg.norm(vel)
             desired_state.x_state = list(object_instance['Cursor'].pos) + [np.cos(DiffDegree)*vel_norm,np.sin(DiffDegree)*vel_norm] + [1.0]
             
-            if training_flag[0]==1:
+            if tf==1:
                  psychopy_presenter.desired_state_publisher_.publish(desired_state)
             
             #%% actual state
             state_msg.x_state = list(object_instance['Cursor'].pos)
             psychopy_presenter.state_publisher_.publish(state_msg)
             psychopy_presenter.get_logger().info('Publishing: state: desired state: {}, state: {}'.format(str(desired_state.x_state), str(state_msg.x_state)))
-            psychopy_presenter.get_logger().info('Publishing: coefficient: decoder coefficient: {}, assist coefficient: {}'.format(str(decoder_coefficient[0]), str(assist_coefficient[0])))
+            psychopy_presenter.get_logger().info('Publishing: coefficient: decoder coefficient: {}, assist coefficient: {}, PosFlag: {}, training flag: {}'.format(
+                        str(decoder_coefficient[0]), str(assist_coefficient[0]), str(PosFlag[0]), str(tf))
+                        )
             
             CursorTrajectory = CursorTrajectory+[object_instance['Cursor'].pos]
         
             if np.linalg.norm(object_instance['Cursor'].pos-object_instance['SurroundTarget'].pos)<TouchErr:
                  marker_publisher(4)
                  BMIExp.addData('TrialError', 0)
+                 psychopy_presenter.get_logger().info('Publishing: Trial error: 0')
+                 break
+            
+            if np.linalg.norm(object_instance['Cursor'].pos) > 15:
                  break
         
         PosFlag[0]=0

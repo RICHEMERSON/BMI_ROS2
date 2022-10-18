@@ -85,7 +85,7 @@ BellCurveCounter = core.Clock()
 #%% initialize shared memory parameter
 try:
     
-    assist_coefficient = shared_memory.ShareableList([2],name='AssistCoefficient')
+    assist_coefficient = shared_memory.ShareableList([7],name='AssistCoefficient')
     decoder_coefficient = shared_memory.ShareableList([0],name='DecoderCoefficient')
     training_flag = shared_memory.ShareableList([1],name='TrainingFlag')
     PosFlag = shared_memory.ShareableList([1],name='PosFlag')
@@ -95,14 +95,17 @@ except FileExistsError:
     assist_coefficient = shared_memory.ShareableList(name='AssistCoefficient')
     decoder_coefficient = shared_memory.ShareableList(name='DecoderCoefficient')
     training_flag = shared_memory.ShareableList(name='TrainingFlag')
+    PosFlag = shared_memory.ShareableList(name='PosFlag')
     
     assist_coefficient.shm.unlink()
     decoder_coefficient.shm.unlink()
     training_flag.shm.unlink()
+    PosFlag.shm.unlink()
     
-    assist_coefficient = shared_memory.ShareableList([2],name='AssistCoefficient')
+    assist_coefficient = shared_memory.ShareableList([7],name='AssistCoefficient')
     decoder_coefficient = shared_memory.ShareableList([0],name='DecoderCoefficient')
     training_flag = shared_memory.ShareableList([1],name='TrainingFlag')
+    PosFlag = shared_memory.ShareableList([1],name='PosFlag')
 
 
 PosFlag = shared_memory.ShareableList(name='PosFlag')
@@ -167,7 +170,7 @@ def main(args=None):
     psychopy_presenter = PsychopyPresenter()
     PosFlag[0]=0
     
-    for trial in BMIExp:
+    for trial_index, trial in enumerate(BMIExp):
         
         #%% task start
         core.wait(2)#interval
@@ -192,7 +195,7 @@ def main(args=None):
     
         UserVars['TargetPos'] = object_instance['SurroundTarget'].pos
         mywin.flip()
-        psychopy_presenter.get_logger().info('Publishing: Target position: {}'.format(str(object_instance['SurroundTarget'].pos)))
+        psychopy_presenter.get_logger().info('Publishing: Trial info: Target position: {}, Trial index: {}'.format(str(object_instance['SurroundTarget'].pos), str(trial_index)))
         marker_publisher(1)
         
         #%% Delay period
@@ -206,10 +209,17 @@ def main(args=None):
         #%% BMIdecoding
         marker_publisher(3)
         TrialTimeCounter.reset()
+        t1 = 0
         
         PosFlag[0]=1
         
+        if training_flag[0]==1:
+            tf = 1
+        else:
+            tf = 0
+        
         while TrialTimeCounter.getTime()<10:
+            
             dxvel = np.array(psychopy_presenter.send_request(True).res)
             Xvel = (dxvel[0] if len(dxvel)==1 else dxvel[1])*decoder_coefficient[0]+np.cos(trial['Reach Direction'])*assist_coefficient[0]
             # psychopy_presenter.get_logger().info(str(np.cos(trial['Reach Direction'])*np.abs(Xvel)))
@@ -217,14 +227,20 @@ def main(args=None):
             if np.abs(Xvel) > 5:
                  Xvel = Xvel/np.abs(Xvel) * 5 
             
-            Xpos = Xpos+Xvel*0.01667
+            t2 = TrialTimeCounter.getTime()
+            Xpos = Xpos+Xvel*(t2-t1)
             psychopy_presenter.get_logger().info('Publishing: Xpos: {}, Xvel: {}, vec_len: {}'.format(str(Xpos),str(Xvel),str(len(dxvel))))
+            psychopy_presenter.get_logger().info('Publishing: pos: {}, vel: {}, decoding results: {}'.format(str(object_instance['Cursor'].pos),str(Xvel),str(dxvel)))
+            
             object_instance['Cursor'].pos = [Xpos,0]
+            
+            t1 = TrialTimeCounter.getTime()
             mywin.flip()
+            
             
             #%% adaptive intention state
             desired_state.x_state = [Xpos, np.cos(trial['Reach Direction'])*np.abs(Xvel), 1.0]
-            if training_flag[0]==1:
+            if tf==1:
                  psychopy_presenter.desired_state_publisher_.publish(desired_state)
             
             #%% actual state
@@ -238,11 +254,11 @@ def main(args=None):
             if np.linalg.norm(object_instance['Cursor'].pos-object_instance['SurroundTarget'].pos)<TouchErr:
                  marker_publisher(4)
                  BMIExp.addData('TrialError', 0)
+                 psychopy_presenter.get_logger().info('Publishing: Trial error: 0')
                  break
             
             if np.linalg.norm(object_instance['Cursor'].pos) > 10:
                  break
-            
         
         PosFlag[0]=0
         

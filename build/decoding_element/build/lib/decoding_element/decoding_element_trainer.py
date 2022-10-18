@@ -40,8 +40,11 @@ def trainer(decoding_element, sample_buffer, de_buffer, error_buffer):
                      decoding_element.update(np.array(sample.y_observation), np.array(sample.x_state))
              
                  decoding_element.fit()
-                 _decoding_element_msg = list(pickle.dumps(decoding_element))
-                 de_buffer.put(_decoding_element_msg)
+                 par = decoding_element.model_par()
+                 
+                 if not par is None:
+                       _decoding_element_msg = list(pickle.dumps(par))
+                       de_buffer.put(_decoding_element_msg)
              
              except Exception as e:
                  error_buffer.put(traceback.format_exc().replace('\n','\o'))

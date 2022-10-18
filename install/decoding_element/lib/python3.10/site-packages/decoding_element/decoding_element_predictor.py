@@ -24,20 +24,23 @@ import pickle
 from interfaces.srv import DecodingService
 import json
 from multiprocessing import Process
+import traceback
+from neural_decoding.decoder.decoder import decoder
 
-def model_inference(observation_q, state_q, decoding_element_q, error_buffer):
-    decoding_element = None
-    
+def model_inference(observation_q, state_q, decoding_element_q, error_buffer, decoding_element):
+
+    par = None
     while True:
         
         while not decoding_element_q.empty():
-            decoding_element = decoding_element_q.get()
+            par = decoding_element_q.get()
+            decoding_element.model_update(par)          
     
-        if decoding_element is not None:
+        if not par is None:
             try:
                  decoding_input = observation_q.get()
                  decoding_state = decoding_element.predict(decoding_input)
-                 state_q.put([decoding_state, decoding_input, decoding_element])
+                 state_q.put([decoding_state, decoding_input, par])
             except Exception as e:
                  error_buffer.put(traceback.format_exc().replace('\n','\o'))
 
@@ -61,6 +64,7 @@ class DecodingElementPredictor(Node):
         parameters['system'] = 0
         parameters['group'] = 0
         parameters['wait'] = False
+        parameters['algorithm'] = 'wiener_filter_synchronous'
         
         #%% declare parameters    
         self.declare_parameter('parameters', list(pickle.dumps(parameters)))
@@ -96,7 +100,8 @@ class DecodingElementPredictor(Node):
         #+-----------------------------------------------------------------------    
         
         self._decoding_state = None
-        self._decoding_element = None
+        self._par = None
+        self._decoding_element = decoder[parameters['algorithm']]()
         self._neural_data = []
         self._wait = parameters['wait']
         
@@ -108,7 +113,8 @@ class DecodingElementPredictor(Node):
         self._decoding_element_de = None
         
         #%% build sub process for consideration of GIL
-        predictor_process = Process(target=model_inference, args=(self._observation_q, self._state_q, self._decoding_element_q, self._error_buffer))
+        predictor_process = Process(target=model_inference, args=(self._observation_q, self._state_q, 
+                                                                  self._decoding_element_q, self._error_buffer, self._decoding_element))
         predictor_process.daemon = True
         predictor_process.start()
     
@@ -116,8 +122,9 @@ class DecodingElementPredictor(Node):
     
         # self.get_logger().info('Recieving: decoding element: {}'.format(str(msg.de)))
         self._decoding_element_de = msg.de
-        self._decoding_element = pickle.loads(bytes(list(msg.de)))
-        self._decoding_element_q.put(self._decoding_element)
+        self._par = pickle.loads(bytes(list(msg.de)))
+        self._decoding_element.model_update(self._par)
+        self._decoding_element_q.put(self._par)
     
     def neural_data_listener_callback(self, msg):
         
@@ -130,16 +137,16 @@ class DecodingElementPredictor(Node):
         while not self._state_q.empty():
             readout = self._state_q.get()
             self._decoding_state = readout[0]
+            par = list(pickle.dumps(readout[-1]))
         
         while not self._error_buffer.empty():
             self.get_logger().error(self._error_buffer.get())
         
-        # if not readout is None:
-            # self.get_logger().info('Publishing: decoding state: {}, input: {}'.format(str(readout[0]), str(list(readout[1].squeeze()))))
+        if not readout is None:
+            self.get_logger().info('Publishing: decoding state: {}, input: {}'.format(str(readout[0]), str(list(readout[1].squeeze()))))
     
     def decoding_element_predict_callback(self, request, response):
         
-        # self.get_logger().info('request inquiring: {}'.format(self._decoding_state))
         response.res = [0.0] if self._decoding_state is None else list(self._decoding_state.squeeze())
         
         if self._wait and self._decoding_element is not None:

@@ -30,12 +30,13 @@ def raise_data_integrator_node(**kwargs):
 
 integrator_p = raise_data_integrator_node(**parameters)
 
+da = 'refit_kf_lcy_2d'
 
 parameters = {}
 parameters['system'] = 0
 parameters['group'] = 0
 parameters['decoding_element'] = 'decoder'
-parameters['algorithm'] = 'refit_kf_lcy_2d'
+parameters['algorithm'] = da
 
 def raise_trainer_node(**kwargs):
     
@@ -54,6 +55,7 @@ parameters = {}
 parameters['system'] = 0
 parameters['group'] = 0
 parameters['wait'] = False
+parameters['algorithm'] = da
         
 def raise_predictor_node(**kwargs):
     
