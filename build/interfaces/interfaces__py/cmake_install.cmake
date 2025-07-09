@@ -1,8 +1,8 @@
-# Install script for directory: /workspace/BMI/build/interfaces/interfaces__py
+# Install script for directory: /home/soma/Desktop/BMI/build/interfaces/interfaces__py
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/workspace/BMI/install/interfaces")
+  set(CMAKE_INSTALL_PREFIX "/home/soma/Desktop/BMI/install/interfaces")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 

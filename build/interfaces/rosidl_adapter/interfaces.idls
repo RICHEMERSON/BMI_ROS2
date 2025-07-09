@@ -1,6 +1,6 @@
-/workspace/BMI/build/interfaces/rosidl_adapter/interfaces:msg/Ir.idl
-/workspace/BMI/build/interfaces/rosidl_adapter/interfaces:msg/Sample.idl
-/workspace/BMI/build/interfaces/rosidl_adapter/interfaces:msg/State.idl
-/workspace/BMI/build/interfaces/rosidl_adapter/interfaces:msg/DecoderElement.idl
-/workspace/BMI/build/interfaces/rosidl_adapter/interfaces:msg/PassiveObservation.idl
-/workspace/BMI/build/interfaces/rosidl_adapter/interfaces:srv/DecodingService.idl
+/home/soma/Desktop/BMI/build/interfaces/rosidl_adapter/interfaces:msg/Ir.idl
+/home/soma/Desktop/BMI/build/interfaces/rosidl_adapter/interfaces:msg/Sample.idl
+/home/soma/Desktop/BMI/build/interfaces/rosidl_adapter/interfaces:msg/State.idl
+/home/soma/Desktop/BMI/build/interfaces/rosidl_adapter/interfaces:msg/DecoderElement.idl
+/home/soma/Desktop/BMI/build/interfaces/rosidl_adapter/interfaces:msg/PassiveObservation.idl
+/home/soma/Desktop/BMI/build/interfaces/rosidl_adapter/interfaces:srv/DecodingService.idl

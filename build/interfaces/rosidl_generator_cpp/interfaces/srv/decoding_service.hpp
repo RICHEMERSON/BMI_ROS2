@@ -7,5 +7,6 @@
 #include "interfaces/srv/detail/decoding_service__struct.hpp"
 #include "interfaces/srv/detail/decoding_service__builder.hpp"
 #include "interfaces/srv/detail/decoding_service__traits.hpp"
+#include "interfaces/srv/detail/decoding_service__type_support.hpp"
 
 #endif  // INTERFACES__SRV__DECODING_SERVICE_HPP_

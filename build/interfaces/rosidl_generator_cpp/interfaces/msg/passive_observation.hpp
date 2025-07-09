@@ -7,5 +7,6 @@
 #include "interfaces/msg/detail/passive_observation__struct.hpp"
 #include "interfaces/msg/detail/passive_observation__builder.hpp"
 #include "interfaces/msg/detail/passive_observation__traits.hpp"
+#include "interfaces/msg/detail/passive_observation__type_support.hpp"
 
 #endif  // INTERFACES__MSG__PASSIVE_OBSERVATION_HPP_

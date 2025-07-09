@@ -1,2 +1,0 @@
-Invoking command in '/workspace/BMI/build/interfaces': CMAKE_PREFIX_PATH=/workspace/synchronous_BMI/install/neural_data_generator:/opt/ros/humble /usr/bin/cmake --build /workspace/BMI/build/interfaces -- -j20 -l20
-Invoked command in '/workspace/BMI/build/interfaces' returned '2': CMAKE_PREFIX_PATH=/workspace/synchronous_BMI/install/neural_data_generator:/opt/ros/humble /usr/bin/cmake --build /workspace/BMI/build/interfaces -- -j20 -l20

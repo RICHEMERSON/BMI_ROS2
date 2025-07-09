@@ -1,11 +1,11 @@
 {
   "package_name": "interfaces",
   "non_idl_tuples": [
-    "/workspace/BMI/src/interfaces:msg/Ir.msg",
-    "/workspace/BMI/src/interfaces:msg/Sample.msg",
-    "/workspace/BMI/src/interfaces:msg/State.msg",
-    "/workspace/BMI/src/interfaces:msg/DecoderElement.msg",
-    "/workspace/BMI/src/interfaces:msg/PassiveObservation.msg",
-    "/workspace/BMI/src/interfaces:srv/DecodingService.srv"
+    "/home/soma/Desktop/BMI/src/interfaces:msg/Ir.msg",
+    "/home/soma/Desktop/BMI/src/interfaces:msg/Sample.msg",
+    "/home/soma/Desktop/BMI/src/interfaces:msg/State.msg",
+    "/home/soma/Desktop/BMI/src/interfaces:msg/DecoderElement.msg",
+    "/home/soma/Desktop/BMI/src/interfaces:msg/PassiveObservation.msg",
+    "/home/soma/Desktop/BMI/src/interfaces:srv/DecodingService.srv"
   ]
 }

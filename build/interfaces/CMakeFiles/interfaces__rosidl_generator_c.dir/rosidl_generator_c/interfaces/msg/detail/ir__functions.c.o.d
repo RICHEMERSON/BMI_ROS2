@@ -1,7 +1,7 @@
 CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/detail/ir__functions.c.o: \
- /workspace/BMI/build/interfaces/rosidl_generator_c/interfaces/msg/detail/ir__functions.c \
+ /home/soma/Desktop/BMI/build/interfaces/rosidl_generator_c/interfaces/msg/detail/ir__functions.c \
  /usr/include/stdc-predef.h \
- /workspace/BMI/build/interfaces/rosidl_generator_c/interfaces/msg/detail/ir__functions.h \
+ /home/soma/Desktop/BMI/build/interfaces/rosidl_generator_c/interfaces/msg/detail/ir__functions.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h /usr/include/stdlib.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -43,8 +43,8 @@ CMakeFiles/interfaces__rosidl_generator_c.dir/rosidl_generator_c/interfaces/msg/
  /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h /usr/include/alloca.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/visibility_control.h \
- /workspace/BMI/build/interfaces/rosidl_generator_c/interfaces/msg/rosidl_generator_c__visibility_control.h \
- /workspace/BMI/build/interfaces/rosidl_generator_c/interfaces/msg/detail/ir__struct.h \
+ /home/soma/Desktop/BMI/build/interfaces/rosidl_generator_c/interfaces/msg/rosidl_generator_c__visibility_control.h \
+ /home/soma/Desktop/BMI/build/interfaces/rosidl_generator_c/interfaces/msg/detail/ir__struct.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/wchar.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \

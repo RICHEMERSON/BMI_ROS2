@@ -1,5 +1,5 @@
 CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/msg/_decoder_element_s.c.o: \
- /workspace/BMI/build/interfaces/rosidl_generator_py/interfaces/msg/_decoder_element_s.c \
+ /home/soma/Desktop/BMI/build/interfaces/rosidl_generator_py/interfaces/msg/_decoder_element_s.c \
  /usr/include/stdc-predef.h /usr/include/python3.10/Python.h \
  /usr/include/python3.10/patchlevel.h /usr/include/python3.10/pyconfig.h \
  /usr/include/x86_64-linux-gnu/python3.10/pyconfig.h \
@@ -207,8 +207,8 @@ CMakeFiles/interfaces__rosidl_generator_py.dir/rosidl_generator_py/interfaces/ms
  /usr/include/python3.10/numpy/_neighborhood_iterator_imp.h \
  /usr/include/python3.10/numpy/__multiarray_api.h \
  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/visibility_control.h \
- /workspace/BMI/build/interfaces/rosidl_generator_c/interfaces/msg/detail/decoder_element__struct.h \
+ /home/soma/Desktop/BMI/build/interfaces/rosidl_generator_c/interfaces/msg/detail/decoder_element__struct.h \
  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/primitives_sequence.h \
- /workspace/BMI/build/interfaces/rosidl_generator_c/interfaces/msg/detail/decoder_element__functions.h \
- /workspace/BMI/build/interfaces/rosidl_generator_c/interfaces/msg/rosidl_generator_c__visibility_control.h \
+ /home/soma/Desktop/BMI/build/interfaces/rosidl_generator_c/interfaces/msg/detail/decoder_element__functions.h \
+ /home/soma/Desktop/BMI/build/interfaces/rosidl_generator_c/interfaces/msg/rosidl_generator_c__visibility_control.h \
  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/primitives_sequence_functions.h

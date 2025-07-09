@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /workspace/BMI/src/interfaces
+CMAKE_SOURCE_DIR = /home/soma/Desktop/BMI/src/interfaces
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /workspace/BMI/build/interfaces
+CMAKE_BINARY_DIR = /home/soma/Desktop/BMI/build/interfaces
 
 # Utility rule file for ament_cmake_python_build_interfaces_egg.
 
@@ -67,7 +67,7 @@ include CMakeFiles/ament_cmake_python_build_interfaces_egg.dir/compiler_depend.m
 include CMakeFiles/ament_cmake_python_build_interfaces_egg.dir/progress.make
 
 CMakeFiles/ament_cmake_python_build_interfaces_egg:
-	cd /workspace/BMI/build/interfaces/ament_cmake_python/interfaces && /usr/bin/python3.10 setup.py egg_info
+	cd /home/soma/Desktop/BMI/build/interfaces/ament_cmake_python/interfaces && /usr/bin/python3 setup.py egg_info
 
 ament_cmake_python_build_interfaces_egg: CMakeFiles/ament_cmake_python_build_interfaces_egg
 ament_cmake_python_build_interfaces_egg: CMakeFiles/ament_cmake_python_build_interfaces_egg.dir/build.make
@@ -82,6 +82,6 @@ CMakeFiles/ament_cmake_python_build_interfaces_egg.dir/clean:
 .PHONY : CMakeFiles/ament_cmake_python_build_interfaces_egg.dir/clean
 
 CMakeFiles/ament_cmake_python_build_interfaces_egg.dir/depend:
-	cd /workspace/BMI/build/interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /workspace/BMI/src/interfaces /workspace/BMI/src/interfaces /workspace/BMI/build/interfaces /workspace/BMI/build/interfaces /workspace/BMI/build/interfaces/CMakeFiles/ament_cmake_python_build_interfaces_egg.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/soma/Desktop/BMI/build/interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/soma/Desktop/BMI/src/interfaces /home/soma/Desktop/BMI/src/interfaces /home/soma/Desktop/BMI/build/interfaces /home/soma/Desktop/BMI/build/interfaces /home/soma/Desktop/BMI/build/interfaces/CMakeFiles/ament_cmake_python_build_interfaces_egg.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/ament_cmake_python_build_interfaces_egg.dir/depend
 

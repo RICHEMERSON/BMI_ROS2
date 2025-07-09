@@ -7,5 +7,6 @@
 #include "interfaces/msg/detail/sample__struct.hpp"
 #include "interfaces/msg/detail/sample__builder.hpp"
 #include "interfaces/msg/detail/sample__traits.hpp"
+#include "interfaces/msg/detail/sample__type_support.hpp"
 
 #endif  // INTERFACES__MSG__SAMPLE_HPP_

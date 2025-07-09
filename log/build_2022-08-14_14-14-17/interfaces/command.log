@@ -1,2 +1,0 @@
-Invoking command in '/workspace/BMI/build/interfaces': CMAKE_PREFIX_PATH=/workspace/synchronous_BMI/install/neural_data_generator:/opt/ros/humble /usr/bin/cmake /workspace/BMI/src/interfaces -DCMAKE_INSTALL_PREFIX=/workspace/BMI/install/interfaces
-Invoked command in '/workspace/BMI/build/interfaces' returned '1': CMAKE_PREFIX_PATH=/workspace/synchronous_BMI/install/neural_data_generator:/opt/ros/humble /usr/bin/cmake /workspace/BMI/src/interfaces -DCMAKE_INSTALL_PREFIX=/workspace/BMI/install/interfaces

@@ -7,5 +7,6 @@
 #include "interfaces/msg/detail/decoder_element__struct.hpp"
 #include "interfaces/msg/detail/decoder_element__builder.hpp"
 #include "interfaces/msg/detail/decoder_element__traits.hpp"
+#include "interfaces/msg/detail/decoder_element__type_support.hpp"
 
 #endif  // INTERFACES__MSG__DECODER_ELEMENT_HPP_

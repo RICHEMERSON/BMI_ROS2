@@ -20,13 +20,13 @@ from interfaces.msg import State
 from interfaces.srv import DecodingService
 from collections import deque
 from queue import Queue
-from shared_memory_support import Shared_Array
 from psychopy import visual, core
 from psychopy import data
 import pickle
 from multiprocessing import shared_memory
 import datetime
 import os
+import serial
 
 #%% set udp protocal
 import socket
@@ -38,8 +38,13 @@ udp_socket.settimeout(None)
 
 #%% task parameter
 SurroundRadius = 10
-TouchErr = 2.5
+TouchErr = 4
 mywin = visual.Window(size=(1280, 1024),monitor='testMonitor',color=(-1, -1, -1), units="deg",screen=1,fullscr=True)
+
+#%% set serial protocal
+import serial
+#ser = serial.Serial("/dev/ttyUSB1", 115200)
+
 
 ## object statement map
 object_map = {}
@@ -159,9 +164,15 @@ class PsychopyPresenter(Node):
 def main(args=None):
 
     def marker_publisher(marker):
+        # ser = serial.Serial("/dev/ttyUSB1", 115200)
+        # write_len = ser.write(str(9000+marker).encode('utf-8'))
+        # ser.close()
         TrialEventMarker.append([marker,WithinTrailTimer.getTime()])
         psychopy_presenter.get_logger().info('Publishing: Event marker: {}'.format(str(marker)))
         udp_socket.sendto(str(6000+marker).encode("gbk"),bhvaddr)
+        ser = serial.Serial("/dev/ttyUSB0", 115200)
+        write_len = ser.write(str(90000+marker).encode('utf-8'))
+        ser.close()
     
     #%% construct 
     rclpy.init(args=args)
@@ -252,9 +263,10 @@ def main(args=None):
             CursorTrajectory = CursorTrajectory+[object_instance['Cursor'].pos]
         
             if np.linalg.norm(object_instance['Cursor'].pos-object_instance['SurroundTarget'].pos)<TouchErr:
-                 marker_publisher(4)
+                 marker_publisher(20)
                  BMIExp.addData('TrialError', 0)
                  psychopy_presenter.get_logger().info('Publishing: Trial error: 0')
+                 time.sleep(0.5)
                  break
             
             if np.linalg.norm(object_instance['Cursor'].pos) > 10:

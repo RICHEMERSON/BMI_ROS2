@@ -40,6 +40,8 @@ def model_inference(observation_q, state_q, decoding_element_q, error_buffer, de
             try:
                  decoding_input = observation_q.get()
                  decoding_state = decoding_element.predict(decoding_input)
+                 # decoding_state = [0,0]
+                 
                  state_q.put([decoding_state, decoding_input, par])
             except Exception as e:
                  error_buffer.put(traceback.format_exc().replace('\n','\o'))
@@ -64,13 +66,23 @@ class DecodingElementPredictor(Node):
         parameters['system'] = 0
         parameters['group'] = 0
         parameters['wait'] = False
-        parameters['algorithm'] = 'wiener_filter_synchronous'
+        parameters['algorithm'] = 'refit_kf_lcy_2d'
+        
+        self.declare_parameter('system', 0)
+        self.declare_parameter('group', 0)
+        self.declare_parameter('state', 0)
+        self.declare_parameter('algorithm', 'refit_kf_lcy_2d')
+
+        parameters['system'] = self.get_parameter('system').get_parameter_value().integer_value
+        parameters['group'] = self.get_parameter('group').get_parameter_value().integer_value
+        parameters['state'] = self.get_parameter('state').get_parameter_value().integer_value
+        parameters['algorithm'] = self.get_parameter('algorithm').get_parameter_value().string_value
         
         #%% declare parameters    
-        self.declare_parameter('parameters', list(pickle.dumps(parameters)))
+        # self.declare_parameter('parameters', list(pickle.dumps(parameters)))
         
         #%% get parameters
-        parameters = pickle.loads(bytes(list(self.get_parameter('parameters').get_parameter_value().integer_array_value)))
+        # parameters = pickle.loads(bytes(list(self.get_parameter('parameters').get_parameter_value().integer_array_value)))
         
         #%% logging parameters
         for par in parameters:
@@ -128,8 +140,9 @@ class DecodingElementPredictor(Node):
     
     def neural_data_listener_callback(self, msg):
         
-        _decoding_state = State()
+        # _decoding_state = State()
         # self.get_logger().info('Recieving: neural data: {}'.format(str(msg.y_observation)))
+        # print('@@@@@@@@@@@@@@@@',np.array(msg.y_observation)[np.newaxis,:])
         self._observation_q.put(np.array(msg.y_observation)[np.newaxis,:])
         
         readout = None
@@ -137,31 +150,28 @@ class DecodingElementPredictor(Node):
         while not self._state_q.empty():
             readout = self._state_q.get()
             self._decoding_state = readout[0]
-            par = list(pickle.dumps(readout[-1]))
+            # par = list(pickle.dumps(readout[-1]))
         
         while not self._error_buffer.empty():
             self.get_logger().error(self._error_buffer.get())
         
         if not readout is None:
-            self.get_logger().info('Publishing: decoding state: {}, input: {}'.format(str(readout[0]), str(list(readout[1].squeeze()))))
+            # self.get_logger().info('Publishing: decoding state: {}, input: {}'.format(str(readout[0]), str(list(readout[1].squeeze()))))
+            pass
     
     def decoding_element_predict_callback(self, request, response):
         
         response.res = [0.0] if self._decoding_state is None else list(self._decoding_state.squeeze())
         
-        if self._wait and self._decoding_element is not None:
-            dr = self._decoding_element.predict(np.array(msg.y_observation)[np.newaxis,:])
-            response.res = [0.0] if dr is None else list(dr.squeeze())
-        
         if not self._decoding_state is None:
-            self.get_logger().info('Servicing: decoding element: incoming request : {}, outcoming response : {}'.format(str(request.req), str(response.res)))
+           self.get_logger().info('Publishing: outcoming response : {}'.format(str(response.res)))
         return response
 
 def main(args=None):
     rclpy.init(args=args)
     decoding_element_predictor = DecodingElementPredictor()
     rclpy.spin(decoding_element_predictor)
-    decoding_element_trainer.destroy_node()
+    decoding_element_predictor.destroy_node()
     rclpy.shutdown()
 
 if __name__ == '__main__':

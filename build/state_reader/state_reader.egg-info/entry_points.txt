@@ -2,6 +2,6 @@
 monkeylogic_server = state_reader.monkeylogic_interception:main
 psychopy_1D_center_out = state_reader.psychopy_presenter_1D_center_out:main
 psychopy_2D_center_out = state_reader.psychopy_presenter_2D_center_out:main
+psychopy_2D_center_out_continuous = state_reader.psychopy_presenter_2D_interception_continuous:main
 psychopy_2D_interception = state_reader.psychopy_presenter_2D_interception:main
-psychopy_2D_semi_interception = state_reader.psychopy_presenter_2D_interception_semi:main
-
+psychopy_2D_semi_interception = state_reader.psychopy_presenter_2D_interception_semi_old:main

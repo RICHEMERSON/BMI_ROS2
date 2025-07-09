@@ -27,6 +27,8 @@ import pickle
 from multiprocessing import shared_memory
 import datetime
 import os
+import json
+import serial
 
 def AssistGenerator(t,tau=0.55):
     return (t/tau)**2*np.exp(-((t/tau)**2)/2)
@@ -204,6 +206,25 @@ def main(args=None):
         TrialEventMarker.append([marker,WithinTrailTimer.getTime()])
         psychopy_presenter.get_logger().info('Publishing: Event marker: {}'.format(str(marker)))
         udp_socket.sendto(str(6000+marker).encode("gbk"),bhvaddr)
+        write_len = ser.write(str(9000+marker).encode('utf-8'))
+        ser.close()
+    	
+    def win_flip(mywin, object_instance, psychopy_presenter):
+        object_attr = {}
+        
+        for i in object_instance:
+            object_attr[i] = {}
+            attr = object_instance[i].__dict__
+            
+            for j in attr:
+                if '_' not in j and 'vertices' not in j and 'win' not in j:
+                    if isinstance(attr[j], np.ndarray):
+                        object_attr[i][j] = list(attr[j]) if len(attr[j].shape)!=0 else float(attr[j])
+                    else:
+                        object_attr[i][j] = attr[j]
+        
+        mywin.flip()
+        psychopy_presenter.get_logger().info('Publishing: frame info: {}'.format(json.dumps(object_attr)))
     
     #%% construct 
     rclpy.init(args=args)
@@ -212,6 +233,7 @@ def main(args=None):
     psychopy_presenter = PsychopyPresenter()
     PosFlag[0]=0
     InitialSpeed = 14
+    
     
     for trial_index, trial in enumerate(BMIExp):
         
@@ -240,7 +262,7 @@ def main(args=None):
                               SurroundRadius*np.sin(trial['Reach Direction'])]
     
         UserVars['TargetPos'] = object_instance['SurroundTarget'].pos
-        mywin.flip()
+        win_flip(mywin, object_instance, psychopy_presenter)
         psychopy_presenter.get_logger().info('Publishing: Trial info: Target position: {}, Trial index: {}'.format(str(object_instance['SurroundTarget'].pos), str(trial_index)))
         marker_publisher(1)
         
@@ -259,11 +281,11 @@ def main(args=None):
                 object_instance['SurroundTarget'].pos = [SurroundRadius*np.cos(InitialDegree),
                                                                SurroundRadius*np.sin(InitialDegree)]
             t1 = TrialTimeCounter.getTime()
-            mywin.flip()
+            win_flip(mywin, object_instance, psychopy_presenter)
             
         ## GO signal
         object_instance['Cursor'].fillColor=(1,1,1)
-        mywin.flip()
+        win_flip(mywin, object_instance, psychopy_presenter)
         marker_publisher(2)
         TrialTimeCounter.reset()
         
@@ -275,7 +297,7 @@ def main(args=None):
                 object_instance['SurroundTarget'].pos = [SurroundRadius*np.cos(InitialDegree),
                                                          SurroundRadius*np.sin(InitialDegree)]
             t1 = TrialTimeCounter.getTime()
-            mywin.flip()
+            win_flip(mywin, object_instance, psychopy_presenter)
             
         #%% BMIdecoding
         marker_publisher(3)
@@ -359,7 +381,7 @@ def main(args=None):
             
             t1 = TrialTimeCounter.getTime()
             
-            mywin.flip()
+            win_flip(mywin, object_instance, psychopy_presenter)
             
             #%% adaptive intention state
             vel_norm = np.linalg.norm(vel)
@@ -394,7 +416,7 @@ def main(args=None):
         object_instance['SurroundTarget'].autoDraw = False
         object_instance['Cursor'].fillColor=(0.1,0.1,0.1)
         object_instance['Ring'].fillColor = (-1,-1,-1)
-        mywin.flip()
+        win_flip(mywin, object_instance, psychopy_presenter)
         marker_publisher(5)
     
         BMIExp.addData('EventMarker', TrialEventMarker)

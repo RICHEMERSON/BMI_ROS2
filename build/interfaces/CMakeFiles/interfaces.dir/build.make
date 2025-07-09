@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /workspace/BMI/src/interfaces
+CMAKE_SOURCE_DIR = /home/soma/Desktop/BMI/src/interfaces
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /workspace/BMI/build/interfaces
+CMAKE_BINARY_DIR = /home/soma/Desktop/BMI/build/interfaces
 
 # Utility rule file for interfaces.
 
@@ -66,12 +66,12 @@ include CMakeFiles/interfaces.dir/compiler_depend.make
 # Include the progress variables for this target.
 include CMakeFiles/interfaces.dir/progress.make
 
-CMakeFiles/interfaces: /workspace/BMI/src/interfaces/msg/Ir.msg
-CMakeFiles/interfaces: /workspace/BMI/src/interfaces/msg/Sample.msg
-CMakeFiles/interfaces: /workspace/BMI/src/interfaces/msg/State.msg
-CMakeFiles/interfaces: /workspace/BMI/src/interfaces/msg/DecoderElement.msg
-CMakeFiles/interfaces: /workspace/BMI/src/interfaces/msg/PassiveObservation.msg
-CMakeFiles/interfaces: /workspace/BMI/src/interfaces/srv/DecodingService.srv
+CMakeFiles/interfaces: /home/soma/Desktop/BMI/src/interfaces/msg/Ir.msg
+CMakeFiles/interfaces: /home/soma/Desktop/BMI/src/interfaces/msg/Sample.msg
+CMakeFiles/interfaces: /home/soma/Desktop/BMI/src/interfaces/msg/State.msg
+CMakeFiles/interfaces: /home/soma/Desktop/BMI/src/interfaces/msg/DecoderElement.msg
+CMakeFiles/interfaces: /home/soma/Desktop/BMI/src/interfaces/msg/PassiveObservation.msg
+CMakeFiles/interfaces: /home/soma/Desktop/BMI/src/interfaces/srv/DecodingService.srv
 CMakeFiles/interfaces: rosidl_cmake/srv/DecodingService_Request.msg
 CMakeFiles/interfaces: rosidl_cmake/srv/DecodingService_Response.msg
 
@@ -88,6 +88,6 @@ CMakeFiles/interfaces.dir/clean:
 .PHONY : CMakeFiles/interfaces.dir/clean
 
 CMakeFiles/interfaces.dir/depend:
-	cd /workspace/BMI/build/interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /workspace/BMI/src/interfaces /workspace/BMI/src/interfaces /workspace/BMI/build/interfaces /workspace/BMI/build/interfaces /workspace/BMI/build/interfaces/CMakeFiles/interfaces.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/soma/Desktop/BMI/build/interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/soma/Desktop/BMI/src/interfaces /home/soma/Desktop/BMI/src/interfaces /home/soma/Desktop/BMI/build/interfaces /home/soma/Desktop/BMI/build/interfaces /home/soma/Desktop/BMI/build/interfaces/CMakeFiles/interfaces.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/interfaces.dir/depend
 

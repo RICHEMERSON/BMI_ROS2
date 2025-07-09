@@ -1,3 +1,0 @@
-[console_scripts]
-passive_data_integrator = decoder.data_integrator:main
-

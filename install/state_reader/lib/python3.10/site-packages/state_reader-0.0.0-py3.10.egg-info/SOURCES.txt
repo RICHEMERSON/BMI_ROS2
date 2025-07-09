@@ -10,11 +10,14 @@ setup.py
 ../../build/state_reader/state_reader.egg-info/zip-safe
 resource/state_reader
 state_reader/__init__.py
+state_reader/frame_fix.py
 state_reader/monkeylogic_interception.py
 state_reader/psychopy_presenter_1D_center_out.py
 state_reader/psychopy_presenter_2D_center_out.py
 state_reader/psychopy_presenter_2D_interception.py
+state_reader/psychopy_presenter_2D_interception_continuous.py
 state_reader/psychopy_presenter_2D_interception_semi.py
+state_reader/psychopy_presenter_2D_interception_semi_old.py
 state_reader/psychopy_presenter_2D_interception_w.py
 test/test_copyright.py
 test/test_flake8.py

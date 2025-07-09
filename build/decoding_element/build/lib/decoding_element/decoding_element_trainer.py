@@ -36,15 +36,16 @@ def trainer(decoding_element, sample_buffer, de_buffer, error_buffer):
              try:
              
                  while not sample_buffer.empty():
-                     sample = sample_buffer.get()
-                     decoding_element.update(np.array(sample.y_observation), np.array(sample.x_state))
+                    sample = sample_buffer.get()
+                    decoding_element.update(np.array(sample['y_observation']), np.array(sample['x_state']))
+                     # decoding_element.update(np.array(sample.y_observation), np.array(sample.x_state))
              
                  decoding_element.fit()
                  par = decoding_element.model_par()
                  
                  if not par is None:
-                       _decoding_element_msg = list(pickle.dumps(par))
-                       de_buffer.put(_decoding_element_msg)
+                    _decoding_element_msg = list(pickle.dumps(par))
+                    de_buffer.put(_decoding_element_msg)
              
              except Exception as e:
                  error_buffer.put(traceback.format_exc().replace('\n','\o'))
@@ -70,13 +71,23 @@ class DecodingElementTrainer(Node):
         parameters['system'] = 0
         parameters['group'] = 0
         parameters['decoding_element'] = 'decoder'
-        parameters['algorithm'] = 'wiener_filter_synchronous'
+        parameters['algorithm'] = 'refit_kf_lcy_2d'
+
+        self.declare_parameter('system', 0)
+        self.declare_parameter('group', 0)
+        self.declare_parameter('state', 0)
+        self.declare_parameter('algorithm', 'refit_kf_lcy_2d')
+
+        parameters['system'] = self.get_parameter('system').get_parameter_value().integer_value
+        parameters['group'] = self.get_parameter('group').get_parameter_value().integer_value
+        parameters['state'] = self.get_parameter('state').get_parameter_value().integer_value
+        parameters['algorithm'] = self.get_parameter('algorithm').get_parameter_value().string_value
         
         #%% declare parameters    
-        self.declare_parameter('parameters', list(pickle.dumps(parameters)))
+        # self.declare_parameter('parameters', list(pickle.dumps(parameters)))
         
         #%% get parameters
-        parameters = pickle.loads(bytes(list(self.get_parameter('parameters').get_parameter_value().integer_array_value)))
+        # parameters = pickle.loads(bytes(list(self.get_parameter('parameters').get_parameter_value().integer_array_value)))
         
         #%% logging parameters
         for par in parameters:
@@ -130,8 +141,15 @@ class DecodingElementTrainer(Node):
             self.get_logger().info('Publishing: decoding element: {}'.format(str(_decoding_element_msg.de)))
 
     def sample_listener_callback(self, msg):
-        self.get_logger().info('Recieving: integrated data: x_state : {}, y_observation : {}'.format(str(msg.x_state), str(msg.y_observation)))
-        self._sample_buffer.put(msg)            
+        msg_dict = {}
+        x_state = np.array(msg.x_state).copy()
+        y_observation = np.array(msg.y_observation).copy()
+        msg_dict['x_state'] = x_state
+        msg_dict['y_observation'] = y_observation
+        self._sample_buffer.put(msg_dict)
+        self.get_logger().info('Recieving: integrated data: x_state : {}, y_observation : {}'.format(str(msg_dict['x_state']), str(msg_dict['y_observation'])))
+        # self._sample_buffer.put(msg)
+        # self.get_logger().info('Recieving: integrated data: x_state : {}, y_observation : {}'.format(str(msg.x_state), str(msg.y_observation)))        
 
 def main(args=None):
     rclpy.init(args=args)

@@ -7,5 +7,6 @@
 #include "interfaces/msg/detail/state__struct.hpp"
 #include "interfaces/msg/detail/state__builder.hpp"
 #include "interfaces/msg/detail/state__traits.hpp"
+#include "interfaces/msg/detail/state__type_support.hpp"
 
 #endif  // INTERFACES__MSG__STATE_HPP_

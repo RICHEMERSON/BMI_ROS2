@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /workspace/BMI/src/interfaces
+CMAKE_SOURCE_DIR = /home/soma/Desktop/BMI/src/interfaces
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /workspace/BMI/build/interfaces
+CMAKE_BINARY_DIR = /home/soma/Desktop/BMI/build/interfaces
 
 # Utility rule file for interfaces__py.
 
@@ -103,8 +103,8 @@ rosidl_generator_py/interfaces/_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c:
 rosidl_generator_py/interfaces/_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c: rosidl_adapter/interfaces/msg/DecoderElement.idl
 rosidl_generator_py/interfaces/_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c: rosidl_adapter/interfaces/msg/PassiveObservation.idl
 rosidl_generator_py/interfaces/_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c: rosidl_adapter/interfaces/srv/DecodingService.idl
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/workspace/BMI/build/interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python code for ROS interfaces"
-	cd /workspace/BMI/build/interfaces/interfaces__py && /usr/bin/python3 /opt/ros/humble/share/rosidl_generator_py/cmake/../../../lib/rosidl_generator_py/rosidl_generator_py --generator-arguments-file /workspace/BMI/build/interfaces/rosidl_generator_py__arguments.json --typesupport-impls "rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c;rosidl_typesupport_c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/soma/Desktop/BMI/build/interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python code for ROS interfaces"
+	cd /home/soma/Desktop/BMI/build/interfaces/interfaces__py && /usr/bin/python3 /opt/ros/humble/share/rosidl_generator_py/cmake/../../../lib/rosidl_generator_py/rosidl_generator_py --generator-arguments-file /home/soma/Desktop/BMI/build/interfaces/rosidl_generator_py__arguments.json --typesupport-impls "rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c;rosidl_typesupport_c"
 
 rosidl_generator_py/interfaces/_interfaces_s.ep.rosidl_typesupport_introspection_c.c: rosidl_generator_py/interfaces/_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/interfaces/_interfaces_s.ep.rosidl_typesupport_introspection_c.c
@@ -180,10 +180,10 @@ interfaces__py/CMakeFiles/interfaces__py.dir/build: interfaces__py
 .PHONY : interfaces__py/CMakeFiles/interfaces__py.dir/build
 
 interfaces__py/CMakeFiles/interfaces__py.dir/clean:
-	cd /workspace/BMI/build/interfaces/interfaces__py && $(CMAKE_COMMAND) -P CMakeFiles/interfaces__py.dir/cmake_clean.cmake
+	cd /home/soma/Desktop/BMI/build/interfaces/interfaces__py && $(CMAKE_COMMAND) -P CMakeFiles/interfaces__py.dir/cmake_clean.cmake
 .PHONY : interfaces__py/CMakeFiles/interfaces__py.dir/clean
 
 interfaces__py/CMakeFiles/interfaces__py.dir/depend:
-	cd /workspace/BMI/build/interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /workspace/BMI/src/interfaces /workspace/BMI/build/interfaces/interfaces__py /workspace/BMI/build/interfaces /workspace/BMI/build/interfaces/interfaces__py /workspace/BMI/build/interfaces/interfaces__py/CMakeFiles/interfaces__py.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/soma/Desktop/BMI/build/interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/soma/Desktop/BMI/src/interfaces /home/soma/Desktop/BMI/build/interfaces/interfaces__py /home/soma/Desktop/BMI/build/interfaces /home/soma/Desktop/BMI/build/interfaces/interfaces__py /home/soma/Desktop/BMI/build/interfaces/interfaces__py/CMakeFiles/interfaces__py.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : interfaces__py/CMakeFiles/interfaces__py.dir/depend
 

@@ -7,5 +7,6 @@
 #include "interfaces/msg/detail/ir__struct.hpp"
 #include "interfaces/msg/detail/ir__builder.hpp"
 #include "interfaces/msg/detail/ir__traits.hpp"
+#include "interfaces/msg/detail/ir__type_support.hpp"
 
 #endif  // INTERFACES__MSG__IR_HPP_

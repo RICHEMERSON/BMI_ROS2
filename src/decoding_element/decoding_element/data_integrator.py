@@ -16,7 +16,7 @@ import rclpy
 from rclpy.node import Node
 import numpy as np
 from interfaces.msg import PassiveObservation, State, Sample
-from cerebus import cbpy
+#from cerebus import cbpy
 import time
 from collections import deque
 from queue import Queue
@@ -101,7 +101,7 @@ def _synchro_concatenation_subscriber(self, parameters, shared_buffer, group_nam
             
     if len(concatenate_buffer)!=0:
     
-        if data_type is 'observation':
+        if data_type == 'observation':
             po_msg.y_observation = list(concatenate_buffer)
             po_msg.y_shape = [len(concatenate_buffer),1]
         else:

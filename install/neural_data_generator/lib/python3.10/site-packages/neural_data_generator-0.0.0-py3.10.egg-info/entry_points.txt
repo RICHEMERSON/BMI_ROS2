@@ -1,3 +1,0 @@
-[console_scripts]
-br_ir_talker = neural_data_generator.blackrock_ir_reader:main
-

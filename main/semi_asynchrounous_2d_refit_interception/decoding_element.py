@@ -5,12 +5,12 @@ import time
 import pickle
 import signal
 
-time_file = '/share/'+str(int(time.time()*10))+'_decoding_element'+'/'
+time_file = '/home/soma/data/bmi_data/leb/'+str(int(time.time()*10))+'_decoding_element'+'/'
 if not os.path.exists(time_file):
     os.mkdir(time_file)
 
 parameters = {}
-parameters['system'] = 0
+parameters['system'] = 1
 parameters['group'] = 0
 parameters['state'] = 0
 parameters['AlignedData'] = 'observation'
@@ -21,6 +21,7 @@ def raise_data_integrator_node(**kwargs):
     
     log_file = time_file+'system{}_group{}_integrator.log'.format(str(parameters['system']), str(parameters['group']))
     bash_excution = 'ros2 run decoding_element integrator '
+    # bash_excution = 'ros2 run decoding_element integrator_message_filters '
     node_name = '--ros-args -r __node:=system{}_group{}_integrator '.format(str(parameters['system']), str(parameters['group']))
     par = "--param "+"parameters:={} ".format(list(pickle.dumps(kwargs))).replace(' ', '')
     bash_excution = bash_excution + node_name + par+' 2>{}'.format(log_file)
@@ -36,6 +37,8 @@ parameters['system'] = 0
 parameters['group'] = 0
 parameters['decoding_element'] = 'decoder'
 parameters['algorithm'] = 'refit_kf_lcy_2d'
+# parameters['algorithm'] = 'PSID_2D'
+# parameters['algorithm'] = 'NDT2D'
 
 def raise_trainer_node(**kwargs):
     
@@ -55,7 +58,9 @@ parameters['system'] = 0
 parameters['group'] = 0
 parameters['wait'] = False
 parameters['algorithm'] = 'refit_kf_lcy_2d'
-        
+# parameters['algorithm'] = 'PSID_2D'
+# parameters['algorithm'] = 'NDT2D'
+
 def raise_predictor_node(**kwargs):
     
     log_file = time_file+'system{}_group{}_predictor.log'.format(str(parameters['system']), str(parameters['group']))

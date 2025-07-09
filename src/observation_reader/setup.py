@@ -23,6 +23,8 @@ setup(
     entry_points={
         'console_scripts': [
          'blackrock_ir_talker = observation_reader.blackrock_passive_ir_publisher:main',
+         'blackrock_ir_talker_count = observation_reader.blackrock_passive_ir_publisher_count:main',
+         'spikegadgt_ir_talker = observation_reader.SpikeGadgt_passive_ir_publisher:main',
         ],
     },
 )

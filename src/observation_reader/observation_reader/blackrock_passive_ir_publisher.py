@@ -49,12 +49,26 @@ class BlackrockPassiveIrPublisher(Node):
         parameters['smoothed_parameter'] = list(range(280))
         parameters['system'] = 0
         parameters['time_buffer_length'] = 20
+
+        self.declare_parameter('timer_period', 0.5)
+        self.declare_parameter('chn_num', 280)
+        self.declare_parameter('deque_buffer_length', 20)
+        self.declare_parameter('smoothed_parameter', [10**(i/19-1) for i in range(20)])
+        self.declare_parameter('system', 0)
+        self.declare_parameter('time_buffer_length', 20)
+
+        parameters['timer_period'] = self.get_parameter('timer_period').get_parameter_value().double_value
+        parameters['chn_num'] = self.get_parameter('chn_num').get_parameter_value().integer_value
+        parameters['deque_buffer_length'] = self.get_parameter('deque_buffer_length').get_parameter_value().integer_value
+        parameters['smoothed_parameter'] = self.get_parameter('smoothed_parameter').get_parameter_value().double_array_value
+        parameters['system'] = self.get_parameter('system').get_parameter_value().integer_value
+        parameters['time_buffer_length'] = self.get_parameter('time_buffer_length').get_parameter_value().integer_value
         
         #%% declare parameters
-        self.declare_parameter('parameters', list(pickle.dumps(parameters)))
+        # self.declare_parameter('parameters', list(pickle.dumps(parameters)))
         
         #%% get parameters
-        parameters = pickle.loads(bytes(list(self.get_parameter('parameters').get_parameter_value().integer_array_value)))
+        # parameters = pickle.loads(bytes(list(self.get_parameter('parameters').get_parameter_value().integer_array_value)))
         
         #%% logging parameters
         for par in parameters:
@@ -78,7 +92,8 @@ class BlackrockPassiveIrPublisher(Node):
         print('build connection')
         while True:
             con_params = cbpy.defaultConParams()
-            
+            con_params["inst-addr"] = "192.168.137.200"
+            con_params["inst-port"] = 51002
             re,con = cbpy.open(instance = 0,
                                connection = 'default',
                                parameter = con_params)
@@ -154,7 +169,7 @@ def main(args=None):
     rclpy.init(args=args)
     blackrock_passive_ir_publisher = BlackrockPassiveIrPublisher()
     rclpy.spin(blackrock_passive_ir_publisher)
-    blackrock_ir_publisher.destroy_node()
+    blackrock_passive_ir_publisher.destroy_node()
     rclpy.shutdown()
 
 
