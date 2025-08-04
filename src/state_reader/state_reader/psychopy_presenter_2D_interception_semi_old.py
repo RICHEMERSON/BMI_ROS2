@@ -219,7 +219,7 @@ class PsychopyPresenter(Node):
         
         #%% default parameters
         parameters = {}
-        parameters['system'] = 0
+        parameters['system'] = 5
         parameters['group'] = 0
         parameters['state'] = 0
         parameters['decoding_element'] = 'decoder_0'
@@ -236,8 +236,10 @@ class PsychopyPresenter(Node):
                                       DecodingService, '/system_{}/group_{}/predictor/decoding_service'.format(parameters['system'], parameters['group'])
                                      )
                                      
-        while not self.cli.wait_for_service(timeout_sec=0.02):
-            self.get_logger().info('service not available, waiting again...')
+        while not self.cli.wait_for_service(timeout_sec=None):
+            if not rclpy.ok():
+                self.get_logger().info('service not available, waiting again...')
+                raise RuntimeError
         self.req = DecodingService.Request()
 
     def send_request(self, re):

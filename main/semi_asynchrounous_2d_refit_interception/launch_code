@@ -1,0 +1,3 @@
+ros2 launch /home/soma/Desktop/BMI-ROS2/main/semi_asynchrounous_2d_refit_interception/observation_blackrock_launch.py > /home/soma/data/bmi_data/leb/$(date +%Y%m%d)_$(date +%H%M%S)_observation.log
+ros2 run state_reader psychopy_2D_semi_interception 2>/home/soma/data/bmi_data/leb/$(date +%Y%m%d)_$(date +%H%M%S)_behavior.log
+ros2 launch /home/soma/Desktop/BMI-ROS2/main/semi_asynchrounous_2d_refit_interception/launch.py>/home/soma/data/bmi_data/leb/$(date +%Y%m%d)_$(date +%H%M%S)_decoding_element.log

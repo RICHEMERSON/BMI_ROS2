@@ -25,6 +25,7 @@ setup(
         'psychopy_2D_center_out_continuous = state_reader.psychopy_presenter_2D_interception_continuous:main',
         'psychopy_2D_interception = state_reader.psychopy_presenter_2D_interception:main',
         'psychopy_2D_semi_interception = state_reader.psychopy_presenter_2D_interception_semi_old:main',
+        'psychopy_2D_center_out_gonogo = state_reader.psychopy_presenter_2D_interceptionSemiTest_gonogo:main',
         'monkeylogic_server = state_reader.monkeylogic_interception:main',
         ],
     },

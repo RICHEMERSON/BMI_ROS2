@@ -1,0 +1,5 @@
+ros2 run state_reader psychopy_2D_center_out_continuous 2>/home/soma/data/bmi_data/leb/$(date +%Y%m%d)_$(date +%H%M%S)_behavior.log
+
+ros2 launch /home/soma/Desktop/BMI-ROS2/main/RTT/launch.py>/home/soma/data/bmi_data/leb/$(date +%Y%m%d)_$(date +%H%M%S)_decoding_element.log
+
+ros2 launch /home/soma/Desktop/BMI-ROS2/main/RTT/observation_blackrock_launch.py > /home/soma/data/bmi_data/leb/$(date +%Y%m%d)_$(date +%H%M%S)_observation.log

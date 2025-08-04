@@ -4,6 +4,9 @@ assist_coefficient = shared_memory.ShareableList(name='AssistCoefficient')
 decoder_coefficient = shared_memory.ShareableList(name='DecoderCoefficient')
 training_flag = shared_memory.ShareableList(name='TrainingFlag')
 moving_target_flag = shared_memory.ShareableList(name='MovingTargetFlag')
+ring_flag = shared_memory.ShareableList(name='RingFlag')
+training_flag = shared_memory.ShareableList(name='TrainingFlag')
+AssistCoefficient1 = shared_memory.ShareableList(name='AssistCoefficient1')
 # ff_coefficient = shared_memory.ShareableList(name='FFCoefficient')
 # PosFlag = shared_memory.ShareableList([1],name='PosFlag')
     
@@ -14,5 +17,3 @@ ring_flag = shared_memory.ShareableList(name='RingFlag')
 training_flag = shared_memory.ShareableList(name='TrainingFlag')
 
 DecoderSel = shared_memory.ShareableList(name='DecoderSel')
-
-# ros2 run state_reader psychopy_2D_center_out_continuous 2>/share/$(date +%Y%m%d)_$(date +%H%M%S)_behavior.log
