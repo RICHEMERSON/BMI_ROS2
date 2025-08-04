@@ -102,7 +102,7 @@ class DecodingElementPredictor(Node):
         decoding_input = np.array(msg.y_observation)[np.newaxis,:]
         try:
             state_msg = State()
-            state_msg.state = list(self._decoding_element.predict(decoding_input).squeeze())
+            state_msg.x_state = list(self._decoding_element.predict(decoding_input).squeeze())
             self.state_publisher.publish(state_msg)
         except Exception as e:
             self.get_logger().error(traceback.format_exc().replace('\n','\o'))

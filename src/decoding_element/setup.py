@@ -23,7 +23,8 @@ setup(
         'integrator = decoding_element.data_integrator:main',
         'trainer = decoding_element.decoding_element_model_trainer:main',
         'trainer_buffer = decoding_element.decoding_element_trainer_buffer:main',
-        'predictor = decoding_element.decoding_element_predictor:main',
+        'predictor_buffer = decoding_element.decoding_element_predictor_buffer:main',
+        'predictor = decoding_element.decoding_element_model_predictor:main',
         'integrator_message_filters = decoding_element.data_integrator_message_filters:main'
         ],
     },

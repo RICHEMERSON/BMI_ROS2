@@ -74,13 +74,13 @@ class PredictorBufferNode(Node):
 
         self._decoding_state = [0.0]
     
-    def decoding_element_listener_callback(self, msg):
-        self._decoding_state = msg.state
-    
+    def state_callback(self, msg):
+        self._decoding_state = list(msg.x_state)
+
     def handle_request(self, request, response):
         # 返回缓冲区中的所有数据
-        response.states = self._decoding_state
-        self.get_logger().info('Sent {} predictions.'.format(len(response.states)))
+        response.res = self._decoding_state
+        self.get_logger().info('Sent {} predictions.'.format(len(response.res)))
         return response
 
 def main(args=None):

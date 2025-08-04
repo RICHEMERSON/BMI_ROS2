@@ -39,6 +39,7 @@ def generate_launch_description():
     trainer_log = [log_dir, 'system_', system, '_group_', group, '_trainer.log']
     trainer_buffer_log = [log_dir, 'system_', system, '_group_', group, '_trainer_buffer.log']
     predictor_log = [log_dir, 'system_', system, '_group_', group, '_predictor.log']
+    predictor_buffer_log = [log_dir, 'system_', system, '_group_', group, '_predictor_buffer.log']
     integrator_log = PathJoinSubstitution([log_dir,'integrator.log'])
     
     parameters = {}
@@ -107,6 +108,19 @@ def generate_launch_description():
         output='log',
         arguments=['--log-file', predictor_log]
     )
+
+    predictor_buffer_node = Node(
+        package='decoding_element',
+        executable='predictor_buffer',
+        name=['system_', system, '_group_', group, '_predictor_buffer'],
+        parameters=[{
+                'system': system,
+                'group': group,
+                'state':state
+        }],
+        output='log',
+        arguments=['--log-file', predictor_buffer_log]
+    )
     
     # 7. 日志位置提示
     log_info = LogInfo(msg=['所有节点日志存储在: ', log_dir])
@@ -121,6 +135,7 @@ def generate_launch_description():
             trainer_buffer_node,
             trainer_node,
             predictor_node,
+            predictor_buffer_node,
             log_info
         ]
     )
