@@ -20,29 +20,6 @@ import numpy as np
 import pickle
 from interfaces.msg import DecoderElement
 from neural_decoding.decoder.decoder import decoder
-
-def trainer(decoding_element, sample_buffer, de_buffer, error_buffer):
-      
-      while True: 
-         
-         if not sample_buffer.empty():
-             
-             try:
-             
-                 while not sample_buffer.empty():
-                    sample = sample_buffer.get()
-                    decoding_element.update(np.array(sample['y_observation']), np.array(sample['x_state']))
-                     # decoding_element.update(np.array(sample.y_observation), np.array(sample.x_state))
-             
-                 decoding_element.fit()
-                 par = decoding_element.model_par()
-                 
-                 if not par is None:
-                    _decoding_element_msg = list(pickle.dumps(par))
-                    de_buffer.put(_decoding_element_msg)
-             
-             except Exception as e:
-                 error_buffer.put(traceback.format_exc().replace('\n','\o'))
          
 
 class DecodingElementTrainer(Node):
@@ -118,10 +95,12 @@ class DecodingElementTrainer(Node):
             response = future.result()
             if len(response.data) > 0:
                 # 提取数据并训练模型
-                x_states = np.array([sample.x_state for sample in response.data])
-                y_observations = np.array([sample.y_observation for sample in response.data])
+                # x_states = np.array([sample.x_state for sample in response.data])
+                # y_observations = np.array([sample.y_observation for sample in response.data])
+                # self.get_logger().info('{}'.format([np.array(sample.x_state).shape for sample in response.data]))
+                for data_i in response.data:
+                    self._decoding_element.update(np.array(data_i.y_observation), np.array(data_i.x_state))
 
-                self._decoding_element.update(y_observations, x_states)
                 self._decoding_element.fit()
                 self.get_logger().info('Model trained with {} samples.'.format(len(response.data)))
 

@@ -37,6 +37,7 @@ def generate_launch_description():
     # 4. 节点特定日志文件配置
     # integrator_log = [log_dir, TextSubstitution(text='system_'), system, TextSubstitution(text='_group_'), group, TextSubstitution(text='_integrator.log')]
     trainer_log = [log_dir, 'system_', system, '_group_', group, '_trainer.log']
+    trainer_buffer_log = [log_dir, 'system_', system, '_group_', group, '_trainer_buffer.log']
     predictor_log = [log_dir, 'system_', system, '_group_', group, '_predictor.log']
     integrator_log = PathJoinSubstitution([log_dir,'integrator.log'])
     
@@ -60,6 +61,21 @@ def generate_launch_description():
         }],
         output='log',
         arguments=['--log-file', integrator_log]
+    )
+
+    trainer_buffer_node = Node(
+        package='decoding_element',
+        executable='trainer_buffer',
+        name=['system_', system, '_group_', group, '_trainer_buffer'],
+        parameters=[
+            {
+                'system': system,
+                'group': group,
+                'state':state
+        }
+        ],
+        output='log',
+        arguments=['--log-file', trainer_buffer_log]
     )
     
     trainer_node = Node(
@@ -98,12 +114,11 @@ def generate_launch_description():
     log_info = LogInfo(msg=['integrator节点日志存储在: ', integrator_log])
     # log_info = LogInfo(msg=['trainer日志存储在: ', trainer_log])
     # log_info = LogInfo(msg=['predictor节点日志存储在: ', predictor_log])
-
-
     
     return LaunchDescription(
         arguments + [
             integrator_node,
+            trainer_buffer_node,
             trainer_node,
             predictor_node,
             log_info

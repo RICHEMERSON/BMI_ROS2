@@ -58,18 +58,21 @@ class DataBufferNode(Node):
         
         #%% initialize subscriber
         self.subscription_sample = self.create_subscription(
-            Sample, '/system_{}/group_{}/integrator/integrated_data'.format(parameters['system'], parameters['group']), self.sample_listener_callback, 1
+            Sample, '/system_{}/group_{}/integrator/integrated_data'.format(parameters['system'], parameters['group']), self.data_callback, 1
             )
         self.subscription_sample  # prevent unused variable warning
+
         # 创建服务接口供训练节点请求数据
         self.service = self.create_service(RequestData, 'request_data', self.handle_request_data)
+        self.buffer = deque()
         
     def data_callback(self, msg):
         # 将接收到的数据存入缓冲队列
-        x_state = np.array(msg.x_state).copy()
-        y_observation = np.array(msg.y_observation).copy()
-        self.buffer.append({'x_state': x_state, 'y_observation': y_observation})
-        # self.get_logger().info('Received data: x_state={}, y_observation={}'.format(x_state, y_observation))
+        sample = Sample()
+        sample.x_state = msg.x_state
+        sample.y_observation = msg.y_observation
+        self.buffer.append(sample)
+        # self.get_logger().info('Received data: x_state={}, y_observation={}'.format(sample.x_state, sample.y_observation))
 
     def handle_request_data(self, request, response):
         # 返回缓冲区中的所有数据

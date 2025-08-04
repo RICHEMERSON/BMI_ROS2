@@ -26,6 +26,7 @@ import json
 from multiprocessing import Process
 import traceback
 from neural_decoding.decoder.decoder import decoder
+
 class DecodingElementPredictor(Node):
 
     def __init__(self):

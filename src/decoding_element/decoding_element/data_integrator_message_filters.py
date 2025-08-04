@@ -106,7 +106,7 @@ class PassiveDataIntegratorMessageFilters(Node):
         self.sample_msg.x_state = state.x_state
         self.sample_msg.y_observation = passiveObservation.y_observation
         self.publisher_integrate_data_.publish(self.sample_msg)
-        self.get_logger().info('Publishing: integrated_data: {}'.format(str(self.sample_msg)))
+        # self.get_logger().info('Publishing: integrated_data: {}'.format(str(self.sample_msg)))
 
     def neural_data_listener_callback(self, msg):
         self.publisher_observation_.publish(msg)
