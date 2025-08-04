@@ -68,11 +68,21 @@ class DecodingElementPredictor(Node):
         parameters['wait'] = False
         parameters['algorithm'] = 'refit_kf_lcy_2d'
         
+        self.declare_parameter('system', 0)
+        self.declare_parameter('group', 0)
+        self.declare_parameter('state', 0)
+        self.declare_parameter('algorithm', 'refit_kf_lcy_2d')
+
+        parameters['system'] = self.get_parameter('system').get_parameter_value().integer_value
+        parameters['group'] = self.get_parameter('group').get_parameter_value().integer_value
+        parameters['state'] = self.get_parameter('state').get_parameter_value().integer_value
+        parameters['algorithm'] = self.get_parameter('algorithm').get_parameter_value().string_value
+        
         #%% declare parameters    
-        self.declare_parameter('parameters', list(pickle.dumps(parameters)))
+        # self.declare_parameter('parameters', list(pickle.dumps(parameters)))
         
         #%% get parameters
-        parameters = pickle.loads(bytes(list(self.get_parameter('parameters').get_parameter_value().integer_array_value)))
+        # parameters = pickle.loads(bytes(list(self.get_parameter('parameters').get_parameter_value().integer_array_value)))
         
         #%% logging parameters
         for par in parameters:

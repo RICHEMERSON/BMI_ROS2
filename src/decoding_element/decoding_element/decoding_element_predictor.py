@@ -26,26 +26,6 @@ import json
 from multiprocessing import Process
 import traceback
 from neural_decoding.decoder.decoder import decoder
-
-def model_inference(observation_q, state_q, decoding_element_q, error_buffer, decoding_element):
-
-    par = None
-    while True:
-        
-        while not decoding_element_q.empty():
-            par = decoding_element_q.get()
-            decoding_element.model_update(par)          
-    
-        if not par is None:
-            try:
-                 decoding_input = observation_q.get()
-                 decoding_state = decoding_element.predict(decoding_input)
-                 # decoding_state = [0,0]
-                 
-                 state_q.put([decoding_state, decoding_input, par])
-            except Exception as e:
-                 error_buffer.put(traceback.format_exc().replace('\n','\o'))
-
 class DecodingElementPredictor(Node):
 
     def __init__(self):
@@ -78,12 +58,6 @@ class DecodingElementPredictor(Node):
         parameters['state'] = self.get_parameter('state').get_parameter_value().integer_value
         parameters['algorithm'] = self.get_parameter('algorithm').get_parameter_value().string_value
         
-        #%% declare parameters    
-        # self.declare_parameter('parameters', list(pickle.dumps(parameters)))
-        
-        #%% get parameters
-        # parameters = pickle.loads(bytes(list(self.get_parameter('parameters').get_parameter_value().integer_array_value)))
-        
         #%% logging parameters
         for par in parameters:
             self.get_logger().info('Parameters: {}: {}'.format(par, str(parameters[par])))
@@ -111,60 +85,28 @@ class DecodingElementPredictor(Node):
         # declare protect/private attribute for callback function
         #+-----------------------------------------------------------------------    
         
-        self._decoding_state = None
         self._par = None
         self._decoding_element = decoder[parameters['algorithm']]()
         self._neural_data = []
-        self._wait = parameters['wait']
-        
-        self._observation_q = Queue()
-        self._state_q = Queue()
-        self._decoding_element_q = Queue()
-        self._error_buffer = Queue()
-        
-        self._decoding_element_de = None
-        
-        #%% build sub process for consideration of GIL
-        predictor_process = Process(target=model_inference, args=(self._observation_q, self._state_q, 
-                                                                  self._decoding_element_q, self._error_buffer, self._decoding_element))
-        predictor_process.daemon = True
-        predictor_process.start()
+        self._wait = parameters['wait'] 
+        self._decoding_state = [0.0]
     
     def decoding_element_listener_callback(self, msg):
     
-        # self.get_logger().info('Recieving: decoding element: {}'.format(str(msg.de)))
         self._decoding_element_de = msg.de
         self._par = pickle.loads(bytes(list(msg.de)))
         self._decoding_element.model_update(self._par)
-        self._decoding_element_q.put(self._par)
     
     def neural_data_listener_callback(self, msg):
-        
-        # _decoding_state = State()
-        # self.get_logger().info('Recieving: neural data: {}'.format(str(msg.y_observation)))
-        # print('@@@@@@@@@@@@@@@@',np.array(msg.y_observation)[np.newaxis,:])
-        self._observation_q.put(np.array(msg.y_observation)[np.newaxis,:])
-        
-        readout = None
-
-        while not self._state_q.empty():
-            readout = self._state_q.get()
-            self._decoding_state = readout[0]
-            # par = list(pickle.dumps(readout[-1]))
-        
-        while not self._error_buffer.empty():
-            self.get_logger().error(self._error_buffer.get())
-        
-        if not readout is None:
-            # self.get_logger().info('Publishing: decoding state: {}, input: {}'.format(str(readout[0]), str(list(readout[1].squeeze()))))
-            pass
+        decoding_input = np.array(msg.y_observation)[np.newaxis,:]
+        try:
+            self._decoding_state = list(self._decoding_element.predict(decoding_input).squeeze())
+        except Exception as e:
+            self.get_logger().error(traceback.format_exc().replace('\n','\o'))
     
-    def decoding_element_predict_callback(self, request, response):
-        
-        response.res = [0.0] if self._decoding_state is None else list(self._decoding_state.squeeze())
-        
-        if not self._decoding_state is None:
-           self.get_logger().info('Publishing: outcoming response : {}'.format(str(response.res)))
+    def decoding_element_predict_callback(self, request, response):      
+        response.res = self._decoding_state        
+        self.get_logger().info('Publishing: outcoming response : {}'.format(str(response.res)))
         return response
 
 def main(args=None):

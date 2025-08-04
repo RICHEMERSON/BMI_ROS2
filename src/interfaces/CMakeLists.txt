@@ -20,6 +20,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/DecoderElement.msg"
   "msg/PassiveObservation.msg"
   "srv/DecodingService.srv"
+  "srv/RequestData.srv"
 )
 
 if(BUILD_TESTING)
