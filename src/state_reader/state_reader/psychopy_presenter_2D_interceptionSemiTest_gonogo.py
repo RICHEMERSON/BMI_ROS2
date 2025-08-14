@@ -415,7 +415,7 @@ def main(args=None):
             object_instance['Cursor'].pos = [Xpos,0]
 
             win_flip_info(object_instance, psychopy_presenter)
-            marker_publisher(20)
+            marker_publisher(10)
             TrialTimeCounter.reset()
             
             PosFlag[0]=1
@@ -464,7 +464,7 @@ def main(args=None):
                             )
             
                 if np.linalg.norm(object_instance['Cursor'].pos-object_instance['SurroundTarget'].pos)<TouchErr:
-                    marker_publisher(20)
+                    marker_publisher(11)
                     BMIExp.addData('TrialError', 0)
                     psychopy_presenter.get_logger().info('Publishing: Trial error: 0')
                     object_instance['SurroundTarget'].fillColor=(1,-1,-1)
@@ -486,7 +486,7 @@ def main(args=None):
                     break
             
             PosFlag[0]=0
-            marker_publisher(5)
+            marker_publisher(12)
         # win_flip_info(object_instance, psychopy_presenter)
         # mywin.flip()
         # win_flip_info(object_instance, psychopy_presenter)
